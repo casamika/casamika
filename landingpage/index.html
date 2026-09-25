@@ -5,38 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#1A1410">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PD796LGB');</script>
+    <!-- End Google Tag Manager -->
+
     <script src="/gate.js"></script>
     <script>
-    (function () {
-        try {
-            if (location.pathname !== '/' && location.pathname !== '/index.html') return;
+        (function () {
+            try {
+                if (location.pathname !== '/' && location.pathname !== '/index.html') return;
 
-            // 1. URL param ?lang=xx — explicit override (used by switcher EN links)
-            var params = location.search ? new URLSearchParams(location.search) : null;
-            var force = params ? params.get('lang') : null;
-            if (force) {
-                localStorage.setItem('mika-lang', force);
-                if (force === 'vi') { location.replace('/vi/'); return; }
-                if (force === 'de') { location.replace('/de/'); return; }
-                try { history.replaceState(null, '', '/'); } catch (e) { }
-                return;
-            }
+                // 1. URL param ?lang=xx — explicit override (used by switcher EN links)
+                var params = location.search ? new URLSearchParams(location.search) : null;
+                var force = params ? params.get('lang') : null;
+                if (force) {
+                    localStorage.setItem('mika-lang', force);
+                    if (force === 'vi') { location.replace('/vi/'); return; }
+                    if (force === 'de') { location.replace('/de/'); return; }
+                    try { history.replaceState(null, '', '/'); } catch (e) { }
+                    return;
+                }
 
-            // 2. Saved preference (returning visitor) or browser language (first visit)
-            var saved = localStorage.getItem('mika-lang');
-            var lang = saved || (navigator.language || '').slice(0, 2).toLowerCase();
-            if (lang === 'vi') location.replace('/vi/');
-            else if (lang === 'de') location.replace('/de/');
-            else localStorage.setItem('mika-lang', 'en');
-        } catch (e) { }
-    })();
+                // 2. Saved preference (returning visitor) or browser language (first visit)
+                var saved = localStorage.getItem('mika-lang');
+                var lang = saved || (navigator.language || '').slice(0, 2).toLowerCase();
+                if (lang === 'vi') location.replace('/vi/');
+                else if (lang === 'de') location.replace('/de/');
+                else localStorage.setItem('mika-lang', 'en');
+            } catch (e) { }
+        })();
     </script>
     <meta name="description"
-        content="Casa Mika — A 1,400m² garden table by My Khe Beach, Da Nang. Open daily 06:00 – 23:30. Asian-Western fusion, garden dining, signature cocktails.">
+        content="Casa Mika — A 1,400m² garden restaurant by My Khe Beach, Da Nang. Open Mon–Fri 07:30–00:00, Sat &amp; Sun until 00:30. Asian-Western fusion, garden dining, signature cocktails.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:url" content="https://www.casamika.com/">
+    <meta property="og:locale" content="en_US">
     <meta property="og:title" content="Casa Mika — Where My Khe Lives Slowly">
     <meta property="og:description"
         content="A high-end garden table next to Nguyen Van Thoai Boulevard, in the heart of My Khe Beach — open from first light to last call.">
-    <meta property="og:image" content="/image/image3d.jpg">
+    <meta property="og:image" content="https://www.casamika.com/image/hero/thehouse-new.jpg">
     <meta property="og:type" content="website">
     <title>Casa Mika — Where My Khe Lives Slowly</title>
 
@@ -53,32 +65,85 @@
         rel="stylesheet">
     <link rel="preload" as="image" href="/image/image3d.jpg">
     <link rel="stylesheet" href="/style.css">
+
+    <!-- JSON-LD Structured Data — Restaurant Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Casa Mika",
+      "alternateName": "Casa Mika Coffee & Restaurant",
+      "url": "https://www.casamika.com/",
+      "image": "https://www.casamika.com/image/image3d.jpg",
+      "description": "A 1,400m² garden restaurant by My Khe Beach, Da Nang. Asian-Western fusion cuisine, garden dining, signature cocktails and live piano nightly.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "37 Trần Bạch Đằng",
+        "addressLocality": "Da Nang",
+        "addressRegion": "Ngũ Hành Sơn",
+        "addressCountry": "VN",
+        "postalCode": "550000"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 16.0571741,
+        "longitude": 108.2454052
+      },
+      "telephone": "+84708888007",
+      "email": "info@casamika.com",
+      "servesCuisine": ["Asian", "Western", "Fusion", "Cocktails"],
+      "priceRange": "$$$",
+      "currenciesAccepted": "VND",
+      "paymentAccepted": "Cash, Credit Card",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:30",
+          "closes": "00:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "07:30",
+          "closes": "00:30"
+        }
+      ],
+      "hasMap": "https://www.google.com/maps/place/Casa+MiKa/@16.0571792,108.2428303,17z",
+      "sameAs": [
+        "https://www.facebook.com/official.casamika",
+        "https://www.instagram.com/casamika.official/"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1240",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+
+
 </head>
 
 <body class="site-main">
-<!--
-================================================================================
-  PHOTOGRAPHY BRIEF — pass to photographer / art director
-  All <div class="ms-photo-frame"> blocks below are placeholders awaiting final shots.
-  Each frame contains the brief (mood, framing, time of day) inside its caption.
-  Hero is using image3d.jpg as the current visual anchor — the brief for the
-  ideal replacement hero shot is:
-    "Drone or wide low-angle of the garden at golden hour. Glasshouse silhouette,
-     warm light through canopy, no visible people. Cinematic, very dark mid-tones,
-     gold highlights. 16:9 or wider, suitable as background for white display type."
-================================================================================
--->
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PD796LGB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- ===== Nav ===== -->
     <nav class="ms-nav" id="msNav">
         <div class="container ms-nav-inner">
             <a href="/" class="ms-logo" aria-label="Casa Mika home">
-                <img src="/image/logo.png" alt="Casa Mika"
+                <img src="/image/logo/logo-new.png" alt="Casa Mika"
                     onerror="this.outerHTML='<span class=&quot;ms-logo-text&quot;>CASA MIKA</span>';">
             </a>
             <div class="ms-nav-links" id="msNavLinks">
                 <a href="/about/" class="ms-nav-link">About</a>
-                <a href="/menu/#menu-pdf" class="ms-nav-link">Menu</a>
+                <a href="#" class="ms-nav-link" id="navMenuBtn" onclick="openMenuModal();return false;">Menu</a>
                 <a href="/news/" class="ms-nav-link">News</a>
                 <a href="/career/" class="ms-nav-link">Career</a>
                 <a href="#reserve" class="ms-btn ms-btn-outline ms-btn-sm">Reserve</a>
@@ -99,7 +164,7 @@
     <!-- ===== Hero ===== -->
     <header class="ms-hero" id="hero">
         <div class="ms-hero-bg">
-            <img src="/image/image3d.jpg" alt="" class="ms-hero-image" aria-hidden="true">
+            <img src="/image/hero/thehouse-new.jpg" alt="" class="ms-hero-image" aria-hidden="true">
             <div class="ms-hero-overlay"></div>
         </div>
         <div class="container ms-hero-content">
@@ -115,13 +180,15 @@
     <section class="ms-section ms-house" id="house">
         <div class="container ms-editorial">
             <div class="ms-editorial-img fade-in">
-                <img src="/image/thehouse.jpg" alt="Main dining room at Casa Mika, looking from the entrance toward the fish-tank wall. Garden visible through the glasshouse." class="ms-photo-img" style="aspect-ratio: 4 / 5;">
-          
+                <img src="/image/hero/thehouse-new.jpg"
+                    alt="Main dining room at Casa Mika, looking from the entrance toward the fish-tank wall. Garden visible through the glasshouse."
+                    class="ms-photo-img" style="aspect-ratio: 4 / 5;" loading="eager">
             </div>
             <div class="ms-editorial-text">
                 <span class="ms-eyebrow fade-up">— The House</span>
                 <h2 class="ms-title fade-up">A garden, a kitchen,<br><em>a long table.</em></h2>
-                <p class="ms-lede fade-up delay-1">Located in the bustling heart of the charming My Khe beach, right next
+                <p class="ms-lede fade-up delay-1">Located in the bustling heart of the charming My Khe beach, right
+                    next
                     to Nguyen Van Thoai Boulevard. A high-end, independent location — convenient enough for business
                     connections, yet secluded and quiet enough to inspire great ideas.</p>
                 <p class="ms-body fade-up delay-2">Casa Mika unfolds across 1,400 square metres of garden, glasshouse
@@ -131,7 +198,7 @@
                     keeps its own rhythm.</p>
                 <ul class="ms-house-meta fade-up delay-3">
                     <li><strong>1,400m²</strong><span>Garden &amp; glasshouse</span></li>
-                    <li><strong>06:30 – 23:30</strong><span>Open every day</span></li>
+                    <li><strong>07:30 – 00:00</strong><span>Open every day</span></li>
                     <li><strong>Asian · Western</strong><span>A fusion in conversation</span></li>
                 </ul>
             </div>
@@ -152,29 +219,48 @@
         <div class="container center-text">
             <span class="ms-eyebrow fade-up">— A Day at Casa Mika</span>
             <h2 class="ms-title fade-up">Four moods.<br><em>One garden.</em></h2>
-            <p class="ms-section-sub fade-up delay-1">The light shifts. The soundtrack softens. The house follows the
-                sun.</p>
+            <p class="ms-section-sub fade-up delay-1">The light shifts. The soundtrack softens. The house follows the sun.</p>
         </div>
+
+        <!-- ===== 2 Featured Videos ===== -->
+        <div class="container ms-featured-videos fade-up">
+            <div class="ms-featured-video-item">
+                <video class="ms-video" autoplay muted loop playsinline
+                    aria-label="Casa Mika highlight reel 1">
+                    <source src="/video/video-highlight-1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="ms-featured-video-item">
+                <video class="ms-video" autoplay muted loop playsinline
+                    aria-label="Casa Mika highlight reel 2">
+                    <source src="/video/video-highlight-2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <!-- ===== 4 Time-of-day Videos ===== -->
         <div class="container ms-day-grid">
             <article class="ms-day-card fade-up">
                 <div class="ms-day-img">
-                    <div class="ms-photo-frame" style="--ratio: 3 / 4;">
-                        <span class="ms-photo-frame-tag">Photo brief · Morning</span>
-                        <span class="ms-photo-frame-desc">Hands lifting a Vietnamese drip coffee from a marble side-table. Soft 7am side-light through garden leaves, dappled shadow. Linen napkin, brass spoon. Mood: hushed, unhurried.</span>
-                        <span class="ms-photo-frame-ratio">3 : 4 portrait</span>
-                    </div>
+                    <video class="ms-video" autoplay muted loop playsinline
+                        poster="/video/morning-poster.jpg"
+                        aria-label="Casa Mika morning atmosphere">
+                        <source src="/video/morning.mp4" type="video/mp4">
+                        <img src="/image/day/morning.jpg" alt="Morning at Casa Mika" loading="lazy">
+                    </video>
                 </div>
-                <span class="ms-day-time">06:30 — 10:30</span>
+                <span class="ms-day-time">07:30 — 10:30</span>
                 <h3 class="ms-day-name">Morning</h3>
                 <p class="ms-day-mood">First light through the canopy, the kitchen quietly opens, the garden tunes itself for the day ahead.</p>
             </article>
             <article class="ms-day-card fade-up delay-1">
                 <div class="ms-day-img">
-                    <div class="ms-photo-frame" style="--ratio: 3 / 4;">
-                        <span class="ms-photo-frame-tag">Photo brief · Noon</span>
-                        <span class="ms-photo-frame-desc">Overhead shot of a long lunch: a chilled white wine, a fresh seafood platter on ice, hands reaching across the table. Bright noon light filtered by green canopy — high contrast, summer Mediterranean feel.</span>
-                        <span class="ms-photo-frame-ratio">3 : 4 portrait</span>
-                    </div>
+                    <video class="ms-video" autoplay muted loop playsinline
+                        poster="/video/noon-poster.jpg"
+                        aria-label="Casa Mika noon atmosphere">
+                        <source src="/video/noon.mp4" type="video/mp4">
+                        <img src="/image/day/noon.jpg" alt="Noon at Casa Mika" loading="lazy">
+                    </video>
                 </div>
                 <span class="ms-day-time">11:30 — 14:30</span>
                 <h3 class="ms-day-name">Noon</h3>
@@ -182,11 +268,12 @@
             </article>
             <article class="ms-day-card fade-up delay-2">
                 <div class="ms-day-img">
-                    <div class="ms-photo-frame" style="--ratio: 3 / 4;">
-                        <span class="ms-photo-frame-tag">Photo brief · Evening</span>
-                        <span class="ms-photo-frame-desc">Close-up of Fuji beef searing on a hot volcanic stone, smoke catching candlelight. The chef's hands in soft focus behind. Dark background, deep amber and gold highlights. Tableside theatre.</span>
-                        <span class="ms-photo-frame-ratio">3 : 4 portrait</span>
-                    </div>
+                    <video class="ms-video" autoplay muted loop playsinline
+                        poster="/video/evening-poster.jpg"
+                        aria-label="Casa Mika evening atmosphere">
+                        <source src="/video/evening.mp4" type="video/mp4">
+                        <img src="/image/day/evening.jpg" alt="Evening at Casa Mika" loading="lazy">
+                    </video>
                 </div>
                 <span class="ms-day-time">17:30 — 22:00</span>
                 <h3 class="ms-day-name">Evening</h3>
@@ -194,11 +281,12 @@
             </article>
             <article class="ms-day-card fade-up delay-3">
                 <div class="ms-day-img">
-                    <div class="ms-photo-frame" style="--ratio: 3 / 4;">
-                        <span class="ms-photo-frame-tag">Photo brief · Night</span>
-                        <span class="ms-photo-frame-desc">A signature cocktail in shallow depth-of-field, a sliver of garden light bouncing off the rim. The pianist's silhouette out of focus behind. Very low key, blacks and gold, single source light.</span>
-                        <span class="ms-photo-frame-ratio">3 : 4 portrait</span>
-                    </div>
+                    <video class="ms-video" autoplay muted loop playsinline
+                        poster="/video/night-poster.jpg"
+                        aria-label="Casa Mika night atmosphere">
+                        <source src="/video/night.mp4" type="video/mp4">
+                        <img src="/image/day/night.jpg" alt="Night at Casa Mika" loading="lazy">
+                    </video>
                 </div>
                 <span class="ms-day-time">21:00 — 23:30</span>
                 <h3 class="ms-day-name">Night</h3>
@@ -210,60 +298,67 @@
     <!-- ===== Signature ===== -->
     <section class="ms-section ms-signature-section" id="signature">
         <div class="container center-text">
-            <span class="ms-eyebrow fade-up">— Signature</span>
-            <h2 class="ms-title fade-up">The dishes we<br><em>put our name on.</em></h2>
-            <p class="ms-section-sub fade-up delay-1">A short list. Each one composed for the garden, the hour, the
-                guest in front of us.</p>
+            <span class="ms-eyebrow fade-up">— Đặc Trưng</span>
+            <h2 class="ms-title fade-up">Những món mà chúng tôi<br><em>đặt tên mình lên.</em></h2>
+            <p class="ms-section-sub fade-up delay-1">Một danh sách ngắn. Mỗi món được dựng riêng cho khu vườn, cho giờ giấc, cho người khách trước mặt.</p>
         </div>
         <div class="container ms-signature-grid">
             <article class="ms-sig-card fade-up">
                 <div class="ms-sig-img">
-                    <div class="ms-photo-frame" style="--ratio: 4 / 3;">
-                        <span class="ms-photo-frame-tag">Photo brief · Seafood</span>
-                        <span class="ms-photo-frame-desc">Overhead, tightly cropped: oysters, raw prawns, citrus wedges on crushed ice on a dark slate platter. A bright lemon highlight, otherwise moody and cool. No props beyond a single silver pick.</span>
-                        <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
-                    </div>
+                    <img src="/image/food/goi-hai-san.jpg" alt="Gỏi hải sản Casa Mika — tử chợ sáng Đà Nẵng" class="ms-photo-img" style="aspect-ratio: 4/3; object-fit: cover;" loading="lazy">
                 </div>
                 <div class="ms-sig-info">
-                    <span class="ms-sig-tag">Eastern</span>
-                    <h3>Asian Seafood Platter</h3>
-                    <p>A coastal selection from Da Nang's morning markets, prepared with restraint.</p>
+                    <span class="ms-sig-tag">Phương Đông</span>
+                    <h3>Gỏi Hải Sản</h3>
+                    <p>Tuyển chọn hải sản tươi từ những phiên chợ sớm Đà Nẵng, chế biến tinh giản.</p>
                 </div>
             </article>
             <article class="ms-sig-card fade-up delay-1">
                 <div class="ms-sig-img">
-                    <div class="ms-photo-frame" style="--ratio: 4 / 3;">
-                        <span class="ms-photo-frame-tag">Photo brief · Beef</span>
-                        <span class="ms-photo-frame-desc">Three-quarter angle of marbled Fuji beef searing on a glowing volcanic stone, smoke rising into a dark backdrop. Visible grain, butter melting, single warm key light. The hero shot — book the photographer's best hour for this.</span>
-                        <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
-                    </div>
+                    <img src="/image/food/beeffuji.jpg" alt="Fuji Beef on Stone — món chữ ký của Casa Mika" class="ms-photo-img" style="aspect-ratio: 4/3; object-fit: cover;" loading="lazy">
                 </div>
                 <div class="ms-sig-info">
-                    <span class="ms-sig-tag">Western</span>
+                    <span class="ms-sig-tag">Phương Tây</span>
                     <h3>Fuji Beef on Stone</h3>
-                    <p>Marbled tenderloin seared tableside on volcanic rock — the house signature, since day one.</p>
+                    <p>Thăn bò vân mỡ áp chảo ngay tại bàn trên đá nham thạch — chữ ký của ngôi nhà, từ ngày đầu.</p>
                 </div>
             </article>
             <article class="ms-sig-card fade-up delay-2">
                 <div class="ms-sig-img">
-                    <div class="ms-photo-frame" style="--ratio: 4 / 3;">
-                        <span class="ms-photo-frame-tag">Photo brief · Cocktail</span>
-                        <span class="ms-photo-frame-desc">A tall coupe glass with a smoky amber cocktail, single ice block, an orange-peel garnish. Backlit so steam/smoke is visible. Almost monochrome dark, only the drink glows.</span>
-                        <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
-                    </div>
+                    <img src="/image/food/bo-luc-lac.jpg" alt="Bò lúc lắc xốt tiêu xanh Casa Mika" class="ms-photo-img" style="aspect-ratio: 4/3; object-fit: cover;" loading="lazy">
+                </div>
+                <div class="ms-sig-info">
+                    <span class="ms-sig-tag">Phương Tây</span>
+                    <h3>Bò Lúc Lắc Xốt Tiêu Xanh</h3>
+                    <p>Bò phi lê thượng hạng xào lúc lắc, xốt tiêu xanh thơm nồng — một cách kết thúc buổi tối hoàn hảo.</p>
+                </div>
+            </article>
+            <article class="ms-sig-card fade-up delay-1">
+                <div class="ms-sig-img">
+                    <img src="/image/food/dau-khuon.jpg" alt="Đậu khuôn chiên xốt cà Casa Mika" class="ms-photo-img" style="aspect-ratio: 4/3; object-fit: cover;" loading="lazy">
+                </div>
+                <div class="ms-sig-info">
+                    <span class="ms-sig-tag">Phương Đông</span>
+                    <h3>Đậu Khuôn Chiên Xốt Cà</h3>
+                    <p>Đậu khuôn giòn lớn được chiên vàng, chan xốt cà thơm ngọt — sự giản dị được nâng tầm.</p>
+                </div>
+            </article>
+            <article class="ms-sig-card fade-up delay-2">
+                <div class="ms-sig-img">
+                    <img src="/image/food/cocktail.jpg" alt="An Thuợng Night — cocktail đặc trưng Casa Mika" class="ms-photo-img" style="aspect-ratio: 4/3; object-fit: cover;" loading="lazy">
                 </div>
                 <div class="ms-sig-info">
                     <span class="ms-sig-tag">Bar</span>
-                    <h3>An Thượng Night</h3>
-                    <p>A cocktail composed for the garden after dark — bitter, smoke, citrus, in long shadow.</p>
+                    <h3>An Thuợng Night</h3>
+                    <p>Một ly cocktail dành riêng cho khu vườn sau hoàng hôn — đắng, khói, cam quýt, kéo dài bóng tối.</p>
                 </div>
             </article>
         </div>
         <div class="container center-text ms-signature-cta">
-            <a href="/menu/#menu-pdf" class="ms-btn ms-btn-outline fade-up">View Full Menu</a>
-            <p class="ms-menu-note fade-up delay-1">Or <a href="tel:+84708888007">call the host stand</a> to walk you through tonight's kitchen.</p>
-        </div>
+            <button onclick="openMenuModal()" class="ms-btn ms-btn-outline fade-up" id="viewMenuBtn">Xem Thực Đơn</button>
+            <p class="ms-menu-note fade-up delay-1">Hoặc <a href="tel:+84708888007">gọi lễ tân</a> để được tư vấn thực đơn tối nay.</p>
     </section>
+
 
     <!-- ===== Atmosphere & Private Events ===== -->
     <section class="ms-section ms-atmos" id="atmosphere">
@@ -276,13 +371,7 @@
         <div class="container ms-atmos-grid">
             <article class="ms-atmos-card fade-up">
                 <div class="ms-atmos-img">
-                    <div class="ms-photo-frame" style="--ratio: 4 / 5;">
-                        <span class="ms-photo-frame-tag">Photo brief · Fish-tank wall</span>
-                        <span class="ms-photo-frame-desc">A recessed wall aquarium running the length of the main dining
-                            room. Blue-green light spilling onto the floor, silhouette of a guest seated in foreground.
-                            Long exposure to soften the water. Cinematic, dark surroundings.</span>
-                        <span class="ms-photo-frame-ratio">4 : 5 portrait</span>
-                    </div>
+                    <img src="/image/venue/fish-tank.jpg" alt="Recessed fish-tank wall running the length of the main dining room at Casa Mika" class="ms-photo-img" style="aspect-ratio: 4/5;" loading="lazy">
                 </div>
                 <span class="ms-atmos-tag">In the main hall</span>
                 <h3 class="ms-atmos-name">The Fish-Tank Wall</h3>
@@ -291,13 +380,7 @@
             </article>
             <article class="ms-atmos-card fade-up delay-1">
                 <div class="ms-atmos-img">
-                    <div class="ms-photo-frame" style="--ratio: 4 / 5;">
-                        <span class="ms-photo-frame-tag">Photo brief · Live piano</span>
-                        <span class="ms-photo-frame-desc">Pianist mid-performance at a grand piano in the lobby/main
-                            hall. Shot from behind the player, looking past the keys toward the dining room. Warm
-                            spotlight on the hands. Evening, low ambient light, no flash.</span>
-                        <span class="ms-photo-frame-ratio">4 : 5 portrait</span>
-                    </div>
+                    <img src="/image/venue/piano.jpg" alt="Live grand piano performance at Casa Mika every evening" class="ms-photo-img" style="aspect-ratio: 4/5;" loading="lazy">
                 </div>
                 <span class="ms-atmos-tag">From the lobby</span>
                 <h3 class="ms-atmos-name">A Pianist, Each Evening</h3>
@@ -329,35 +412,19 @@
         </div>
         <div class="container ms-gallery">
             <div class="ms-gal-item ms-gal-tall fade-up">
-                <div class="ms-photo-frame" style="--ratio: 3 / 4;">
-                    <span class="ms-photo-frame-tag">Gallery · Garden</span>
-                    <span class="ms-photo-frame-desc">Vertical drone or ladder shot of the garden + glasshouse from above, golden hour. Should feel like an aerial portrait. The signature hero shot of the property.</span>
-                    <span class="ms-photo-frame-ratio">3 : 4 portrait · tall</span>
-                </div>
+                <img src="/image/venue/hinh1.jpg" alt="Casa Mika garden and glasshouse at golden hour" class="ms-photo-img" style="aspect-ratio: 3/4; object-fit: cover;" loading="lazy">
                 <span class="ms-gal-caption">The garden, at first light</span>
             </div>
             <div class="ms-gal-item fade-up delay-1">
-                <div class="ms-photo-frame" style="--ratio: 4 / 3;">
-                    <span class="ms-photo-frame-tag">Gallery · Long table</span>
-                    <span class="ms-photo-frame-desc">Long communal table set for service — linen, glassware in a row, candle flames. Looking down the length of the table, focal point at the far end.</span>
-                    <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
-                </div>
+                <img src="/image/hero/thehouse-new.jpg" alt="Main dining room at Casa Mika" class="ms-photo-img" style="aspect-ratio: 4/3; object-fit: cover;" loading="lazy">
                 <span class="ms-gal-caption">The long table</span>
             </div>
             <div class="ms-gal-item fade-up delay-2">
-                <div class="ms-photo-frame" style="--ratio: 4 / 3;">
-                    <span class="ms-photo-frame-tag">Gallery · Glasshouse</span>
-                    <span class="ms-photo-frame-desc">Interior of the glasshouse mid-afternoon — sunlight through panels, plants, one empty table. Architectural feeling, no people. Warm green-gold palette.</span>
-                    <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
-                </div>
-                <span class="ms-gal-caption">Glasshouse afternoon</span>
+                <img src="/image/food/goi-hai-san.jpg" alt="Gỏi hải sản tươi từ chợ Đà Nẵng" class="ms-photo-img" style="aspect-ratio: 4/3; object-fit: cover;" loading="lazy">
+                <span class="ms-gal-caption">From the kitchen</span>
             </div>
             <div class="ms-gal-item fade-up delay-3">
-                <div class="ms-photo-frame" style="--ratio: 4 / 3;">
-                    <span class="ms-photo-frame-tag">Gallery · Terrace</span>
-                    <span class="ms-photo-frame-desc">Shaded terrace at dusk, lanterns on. Two empty chairs and a low table, garden beyond. Mood: invitation, intimacy.</span>
-                    <span class="ms-photo-frame-ratio">4 : 3 landscape</span>
-                </div>
+                <img src="/image/food/bo-luc-lac.jpg" alt="Bò lúc lắc xốt tiêu xanh" class="ms-photo-img" style="aspect-ratio: 4/3; object-fit: cover;" loading="lazy">
                 <span class="ms-gal-caption">Terrace, into the evening</span>
             </div>
         </div>
@@ -399,7 +466,8 @@
                     knew our story. That doesn't happen often anymore."</p>
                 <footer>
                     <span>— K. T., Hong Kong</span>
-                    <a href="https://www.google.com/maps/place/Casa+MiKa/@16.0571792,108.2428303,17z/data=!3m1!4b1!4m6!3m5!1s0x31421737deda4ad1:0xf6fb5ca72c7d33f!8m2!3d16.0571741!4d108.2454052!16s%2Fg%2F11nhx2glc_?hl=vi&entry=ttu" target="_blank" rel="noopener" class="ms-voice-link">Read on Google ↗</a>
+                    <a href="https://www.google.com/maps/place/Casa+MiKa/@16.0571792,108.2428303,17z/data=!3m1!4b1!4m6!3m5!1s0x31421737deda4ad1:0xf6fb5ca72c7d33f!8m2!3d16.0571741!4d108.2454052!16s%2Fg%2F11nhx2glc_?hl=vi&entry=ttu"
+                        target="_blank" rel="noopener" class="ms-voice-link">Read on Google ↗</a>
                 </footer>
             </blockquote>
             <blockquote class="ms-voice fade-up delay-1">
@@ -411,7 +479,8 @@
                     hours and felt like we'd booked the place out."</p>
                 <footer>
                     <span>— M. R., Sydney</span>
-                    <a href="https://www.google.com/maps/place/Casa+MiKa/@16.0571792,108.2428303,17z/data=!3m1!4b1!4m6!3m5!1s0x31421737deda4ad1:0xf6fb5ca72c7d33f!8m2!3d16.0571741!4d108.2454052!16s%2Fg%2F11nhx2glc_?hl=vi&entry=ttu" target="_blank" rel="noopener" class="ms-voice-link">Read on Google ↗</a>
+                    <a href="https://www.google.com/maps/place/Casa+MiKa/@16.0571792,108.2428303,17z/data=!3m1!4b1!4m6!3m5!1s0x31421737deda4ad1:0xf6fb5ca72c7d33f!8m2!3d16.0571741!4d108.2454052!16s%2Fg%2F11nhx2glc_?hl=vi&entry=ttu"
+                        target="_blank" rel="noopener" class="ms-voice-link">Read on Google ↗</a>
                 </footer>
             </blockquote>
             <blockquote class="ms-voice fade-up delay-2">
@@ -423,7 +492,8 @@
                     said yes before dessert."</p>
                 <footer>
                     <span>— J. L., Singapore</span>
-                    <a href="https://www.google.com/maps/place/Casa+MiKa/@16.0571792,108.2428303,17z/data=!3m1!4b1!4m6!3m5!1s0x31421737deda4ad1:0xf6fb5ca72c7d33f!8m2!3d16.0571741!4d108.2454052!16s%2Fg%2F11nhx2glc_?hl=vi&entry=ttu" target="_blank" rel="noopener" class="ms-voice-link">Read on Google ↗</a>
+                    <a href="https://www.google.com/maps/place/Casa+MiKa/@16.0571792,108.2428303,17z/data=!3m1!4b1!4m6!3m5!1s0x31421737deda4ad1:0xf6fb5ca72c7d33f!8m2!3d16.0571741!4d108.2454052!16s%2Fg%2F11nhx2glc_?hl=vi&entry=ttu"
+                        target="_blank" rel="noopener" class="ms-voice-link">Read on Google ↗</a>
                 </footer>
             </blockquote>
         </div>
@@ -437,38 +507,39 @@
         <div class="container center-text">
             <span class="ms-eyebrow fade-up">— Follow the garden</span>
             <h2 class="ms-title fade-up"><em>@casamika.official</em></h2>
-            <p class="ms-section-sub fade-up delay-1">A slower scroll. One frame a day, mostly the kitchen, sometimes the
+            <p class="ms-section-sub fade-up delay-1">A slower scroll. One frame a day, mostly the kitchen, sometimes
+                the
                 garden, occasionally the cat.</p>
         </div>
         <div class="container ms-insta-grid" style="margin-top: 10px;">
             <a class="ms-insta-tile fade-up" href="https://www.instagram.com/casamika.official/" target="_blank"
                 rel="noopener" aria-label="See on Instagram">
-                <img src="/image/insta-1.jpg" alt="Casa Mika lifestyle detail">
+                <img src="/image/instagram/insta-1.jpg" alt="Casa Mika lifestyle detail">
             </a>
             <a class="ms-insta-tile fade-up delay-1" href="https://www.instagram.com/casamika.official/" target="_blank"
                 rel="noopener" aria-label="See on Instagram">
-                <img src="/image/insta-2.jpg" alt="Casa Mika food presentation">
+                <img src="/image/instagram/insta-2.jpg" alt="Casa Mika food presentation">
             </a>
             <a class="ms-insta-tile fade-up delay-2" href="https://www.instagram.com/casamika.official/" target="_blank"
                 rel="noopener" aria-label="See on Instagram">
-                <img src="/image/insta-3.jpg" alt="Casa Mika cocktail and atmosphere">
+                <img src="/image/instagram/insta-3.jpg" alt="Casa Mika cocktail and atmosphere">
             </a>
             <a class="ms-insta-tile fade-up" href="https://www.instagram.com/casamika.official/" target="_blank"
                 rel="noopener" aria-label="See on Instagram">
-                <img src="/image/beeffuji.jpg" alt="Hands plating the Fuji beef tartare">
+                <img src="/image/food/beeffuji.jpg" alt="Hands plating the Fuji beef tartare">
             </a>
             <a class="ms-insta-tile fade-up delay-1" href="https://www.instagram.com/casamika.official/" target="_blank"
                 rel="noopener" aria-label="See on Instagram">
-                <img src="/image/thehouse.jpg" alt="Garden at first light">
+                <img src="/image/hero/thehouse.jpg" alt="Garden at first light">
             </a>
             <a class="ms-insta-tile fade-up delay-2" href="https://www.instagram.com/casamika.official/" target="_blank"
                 rel="noopener" aria-label="See on Instagram">
-                <img src="/image/NightCocktail.jpg" alt="Signature cocktail at night">
+                <img src="/image/food/cocktail.jpg" alt="Signature cocktail at night">
             </a>
         </div>
-        <div class="container center-text ms-insta-cta" style="margin-top: 20px;>
+        <div class="container center-text ms-insta-cta" style="margin-top: 20px;">
             <a href="https://www.instagram.com/casamika.official/" target="_blank" rel="noopener"
-                class="ms-btn ms-btn-outline">Follow on Instagram</a>
+            class="ms-btn ms-btn-outline">Follow on Instagram</a>
         </div>
     </section>
 
@@ -480,7 +551,8 @@
                     <span class="ms-eyebrow fade-up">— Reserve</span>
                     <h2 class="ms-title fade-up">Save a seat<br><em>at the garden table.</em></h2>
                     <p class="ms-body fade-up delay-1">Open daily, 06:30 – 23:30. We recommend reserving in advance for
-                        dinner and weekends — <strong>Zalo is the fastest way to reach the host stand.</strong> Walk-ins welcome
+                        dinner and weekends — <strong>Zalo is the fastest way to reach the host stand.</strong> Walk-ins
+                        welcome
                         whenever the kitchen is on.</p>
                     <dl class="ms-reserve-meta fade-up delay-2">
                         <div>
@@ -522,8 +594,7 @@
                         </div>
                     </a>
                     <a href="https://www.google.com/maps/place/Casa+MiKa/@16.0571792,108.2428303,17z/data=!3m1!4b1!4m6!3m5!1s0x31421737deda4ad1:0xf6fb5ca72c7d33f!8m2!3d16.0571741!4d108.2454052!16s%2Fg%2F11nhx2glc_?hl=vi&entry=ttu"
-                        target="_blank" rel="noopener"
-                        class="ms-contact-card fade-up delay-2">
+                        target="_blank" rel="noopener" class="ms-contact-card fade-up delay-2">
                         <span class="ms-contact-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
                                 stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -551,14 +622,14 @@
     <footer class="ms-footer">
         <div class="container ms-footer-inner">
             <div class="ms-footer-brand">
-                <img src="/image/logo.png" alt="Casa Mika"
+                <img src="/image/logo/logo-new.png" alt="Casa Mika"
                     onerror="this.outerHTML='<span class=&quot;ms-footer-logo-text&quot;>CASA MIKA</span>';">
                 <p>A garden table by My Khe Beach.</p>
             </div>
             <div class="ms-footer-col">
                 <h4>Visit</h4>
                 <p>37 Trần Bạch Đằng<br>Ngũ Hành Sơn, Da Nang<br>Vietnam</p>
-                <p>Open daily · 06:00 – 23:30</p>
+                <p>Mon – Fri · 07:30 – 00:00<br>Sat &amp; Sun · 07:30 – 00:30</p>
             </div>
             <div class="ms-footer-col">
                 <h4>Contact</h4>
@@ -610,7 +681,70 @@
         <img class="ms-lightbox-img" id="msLightboxImg" alt="">
     </div>
 
+    <!-- ===== PDF Menu Modal ===== -->
+    <div id="menuModal" class="ms-menu-modal" aria-hidden="true" role="dialog" aria-label="Casa Mika Menu">
+        <div class="ms-menu-modal-overlay" onclick="closeMenuModal()"></div>
+        <div class="ms-menu-modal-box">
+            <div class="ms-menu-modal-header">
+                <div class="ms-menu-tabs" role="tablist">
+                    <button class="ms-menu-tab is-active" role="tab" aria-selected="true"
+                        onclick="switchMenu(this, '/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20%C3%82u.pdf')">Menu Âu</button>
+                    <button class="ms-menu-tab" role="tab" aria-selected="false"
+                        onclick="switchMenu(this, '/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20Vi%E1%BB%87t%20Nam.pdf')">Menu Việt</button>
+                    <button class="ms-menu-tab" role="tab" aria-selected="false"
+                        onclick="switchMenu(this, '/menu/Menu%20danh%20s%C3%A1ch%20c%C3%A1c%20lo%E1%BA%A1i%20r%C6%B0%E1%BB%A3u.pdf')">Menu Rượu</button>
+                </div>
+                <div class="ms-menu-modal-actions">
+                    <a id="menuDownloadBtn" href="/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20%C3%82u.pdf"
+                        download class="ms-menu-download" aria-label="Tải menu">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Tải PDF
+                    </a>
+                    <button class="ms-menu-modal-close" onclick="closeMenuModal()" aria-label="Đóng">&times;</button>
+                </div>
+            </div>
+            <div class="ms-menu-modal-body">
+                <iframe id="menuIframe"
+                    src="/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20%C3%82u.pdf"
+                    title="Casa Mika Menu"
+                    class="ms-menu-iframe"
+                    loading="lazy">
+                    <p>Trình duyệt của bạn không hiển thị PDF. <a id="menuFallbackLink" href="/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20%C3%82u.pdf" target="_blank">Nhấn đây để mở menu.</a></p>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
     <script src="/script.js"></script>
+    <script>
+        // ===== PDF Menu Modal =====
+        function openMenuModal() {
+            var modal = document.getElementById('menuModal');
+            modal.setAttribute('aria-hidden', 'false');
+            modal.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMenuModal() {
+            var modal = document.getElementById('menuModal');
+            modal.setAttribute('aria-hidden', 'true');
+            modal.classList.remove('is-open');
+            document.body.style.overflow = '';
+        }
+        function switchMenu(btn, pdfUrl) {
+            document.querySelectorAll('.ms-menu-tab').forEach(function(t) {
+                t.classList.remove('is-active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            btn.classList.add('is-active');
+            btn.setAttribute('aria-selected', 'true');
+            document.getElementById('menuIframe').src = pdfUrl;
+            document.getElementById('menuDownloadBtn').href = pdfUrl;
+        }
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeMenuModal();
+        });
+    </script>
 </body>
 
 </html>

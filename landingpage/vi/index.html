@@ -8,7 +8,10 @@
     <script src="/gate.js"></script>
     <script>try { localStorage.setItem('mika-lang', 'vi'); } catch (e) { }</script>
     <meta name="description"
-        content="Casa Mika — 1.400m² bàn vườn tại khu Mỹ Khê, Đà Nẵng. Mở cửa hàng ngày 06:00 – 23:30. Tinh hoa Á–Âu, không gian vườn, cocktail đặc trưng.">
+        content="Casa Mika — 1.400m² nhà hàng vườn tại khu Mỹ Khê, Đà Nẵng. Mở cửa 07:30 – 00:00 · T7-CN đến 00:30. Ẩm thực Khải-Âu, không gian vườn, cocktail đặc trưng.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:url" content="https://www.casamika.com/vi/">
+    <meta property="og:locale" content="vi_VN">
     <meta property="og:title" content="Casa Mika — Nơi Mỹ Khê sống thật chậm">
     <meta property="og:description"
         content="Bàn vườn cao cấp 1.400m² tại khu Mỹ Khê, ngay đại lộ Nguyễn Văn Thoại — mở cửa từ tia nắng đầu đến ly cocktail cuối.">
@@ -29,6 +32,65 @@
         rel="stylesheet">
     <link rel="preload" as="image" href="/image/image3d.jpg">
     <link rel="stylesheet" href="/style.css">
+
+    <!-- JSON-LD Structured Data — Restaurant Schema (VI) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Casa Mika",
+      "alternateName": "Casa Mika Coffee & Restaurant",
+      "url": "https://www.casamika.com/vi/",
+      "image": "https://www.casamika.com/image/image3d.jpg",
+      "description": "Nhà hàng vườn 1.400m² tại khu Mỹ Khê, Đà Nẵng. Ẩm thực Khải-Âu, không gian vườn, cocktail đặc trưng và piano sống mỗi tối.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "37 Trần Bạch Đằng",
+        "addressLocality": "Đà Nẵng",
+        "addressRegion": "Ngũ Hành Sơn",
+        "addressCountry": "VN",
+        "postalCode": "550000"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 16.0571741,
+        "longitude": 108.2454052
+      },
+      "telephone": "+84708888007",
+      "email": "info@casamika.com",
+      "servesCuisine": ["Asian", "Western", "Fusion", "Cocktails"],
+      "priceRange": "$$$",
+      "currenciesAccepted": "VND",
+      "paymentAccepted": "Cash, Credit Card",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:30",
+          "closes": "00:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "07:30",
+          "closes": "00:30"
+        }
+      ],
+      "hasMap": "https://www.google.com/maps/place/Casa+MiKa/@16.0571792,108.2428303,17z",
+      "sameAs": [
+        "https://www.facebook.com/official.casamika",
+        "https://www.instagram.com/casamika.official/"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1240",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+
 </head>
 
 <body class="site-main">
@@ -420,7 +482,7 @@
                 <div class="ms-reserve-text">
                     <span class="ms-eyebrow fade-up">— Đặt Bàn</span>
                     <h2 class="ms-title fade-up">Giữ một chỗ<br><em>bên chiếc bàn vườn.</em></h2>
-                    <p class="ms-body fade-up delay-1">Mở cửa hàng ngày, 06:30 – 23:30. Khuyến khích đặt trước cho bữa tối và cuối tuần — <strong>Zalo là cách nhanh nhất để gặp lễ tân.</strong> Khách lỡ ghé vẫn được chào đón bất kỳ khi nào gian bếp còn lửa.</p>
+                    <p class="ms-body fade-up delay-1">Mở cửa 07:30 – 00:00 · T7 &amp; CN đến 00:30. Khuyến khích đặt trước cho bữa tối và cuối tuần — <strong>Zalo là cách nhanh nhất để gặp lễ tân.</strong> Khách lỡ ghé vẫn được chào đón bất kỳ khi nào gian bếp còn lửa.</p>
                     <dl class="ms-reserve-meta fade-up delay-2">
                         <div>
                             <dt>Địa chỉ</dt>
@@ -428,7 +490,7 @@
                         </div>
                         <div>
                             <dt>Giờ mở cửa</dt>
-                            <dd>Mỗi ngày · 06:30 – 23:30</dd>
+                            <dd>T2 – T6 · 07:30 – 00:00<br>T7 &amp; CN · 07:30 – 00:30</dd>
                         </div>
                     </dl>
                 </div>
@@ -444,7 +506,7 @@
                         </span>
                         <div class="ms-contact-text">
                             <span class="ms-contact-label">Đặt bàn qua Zalo · Trả lời nhanh nhất</span>
-                            <span class="ms-contact-value">+84 706 024 684</span>
+                            <span class="ms-contact-value">+84 708 888 007</span>
                         </div>
                     </a>
                     <a href="tel:+84708888007" class="ms-contact-card fade-up delay-1">
@@ -496,12 +558,12 @@
             <div class="ms-footer-col">
                 <h4>Đến với chúng tôi</h4>
                 <p>37 Trần Bạch Đằng<br>Ngũ Hành Sơn, Đà Nẵng<br>Việt Nam</p>
-                <p>Mở cửa hàng ngày · 06:00 – 23:30</p>
+                <p>T2 – T6 · 07:30 – 00:00<br>T7 &amp; CN · 07:30 – 00:30</p>
             </div>
             <div class="ms-footer-col">
                 <h4>Liên hệ</h4>
                 <p><a href="tel:+84708888007">+84 708 888 007</a></p>
-                <p><a href="https://zalo.me/0708888007" target="_blank" rel="noopener">Zalo · +84 706 024 684</a></p>
+                <p><a href="https://zalo.me/0708888007" target="_blank" rel="noopener">Zalo · +84 708 888 007</a></p>
                 <p><a href="mailto:info@casamika.com">info@casamika.com</a></p>
             </div>
             <div class="ms-footer-col">
