@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+const initCasaMika = () => {
     // 1. Sticky Navbar Effect (doi-tac.html only)
     const navbar = document.getElementById('navbar');
     if (navbar) {
@@ -316,4 +316,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-});
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCasaMika);
+} else {
+    initCasaMika();
+}

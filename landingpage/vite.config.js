@@ -1,7 +1,37 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import fs from 'fs'
+
+function copyStaticAssets() {
+  return {
+    name: 'copy-static-assets',
+    closeBundle() {
+      const dist = resolve(__dirname, 'dist')
+      const files = ['script.js', 'gate.js', 'robots.txt', 'sitemap.xml']
+      for (const f of files) {
+        const src = resolve(__dirname, f)
+        const dest = resolve(dist, f)
+        if (fs.existsSync(src)) {
+          fs.copyFileSync(src, dest)
+          console.log(`[copy-static-assets] Copied ${f} -> dist/${f}`)
+        }
+      }
+      const menuDir = resolve(__dirname, 'menu')
+      const distMenuDir = resolve(dist, 'menu')
+      if (fs.existsSync(menuDir) && fs.existsSync(distMenuDir)) {
+        for (const f of fs.readdirSync(menuDir)) {
+          if (f.endsWith('.pdf')) {
+            fs.copyFileSync(resolve(menuDir, f), resolve(distMenuDir, f))
+            console.log(`[copy-static-assets] Copied menu/${f} -> dist/menu/${f}`)
+          }
+        }
+      }
+    }
+  }
+}
 
 export default defineConfig({
+  plugins: [copyStaticAssets()],
   // Serve the landingpage folder as root
   root: '.',
 

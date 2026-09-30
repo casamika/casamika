@@ -1813,6 +1813,13 @@ a {
   transition: opacity 1.6s ease;
 }
 
+/* Hero text should be visible immediately for good UX & fallback */
+.site-main .ms-hero-content .fade-up,
+.site-main .ms-hero-content .fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .site-main .fade-up.visible,
 .site-main .fade-in.visible {
   opacity: 1;

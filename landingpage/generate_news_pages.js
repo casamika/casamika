@@ -286,7 +286,7 @@ function generateNewsPage(lang) {
             </div>
         </div>
     </footer>
-    <script src="/script.js"></script>
+    <script type="module" src="/script.js"></script>
 </body>
 </html>`;
 
