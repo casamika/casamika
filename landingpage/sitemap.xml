@@ -2,76 +2,242 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- ===== Home ===== -->
+  <!-- =================================================== -->
+  <!-- 1. HOMEPAGES (Multi-language)                      -->
+  <!-- =================================================== -->
   <url>
-    <loc>https://www.casamika.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.casamika.com/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://www.casamika.com/vi/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.casamika.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casamika.com/"/>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://casamika.com/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.casamika.com/vi/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.casamika.com/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://www.casamika.com/vi/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.casamika.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casamika.com/"/>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://casamika.com/vi/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.casamika.com/de/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.casamika.com/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://www.casamika.com/vi/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.casamika.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casamika.com/"/>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://casamika.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- ===== About ===== -->
   <url>
-    <loc>https://www.casamika.com/about/</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://casamika.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
 
-  <!-- ===== Menu ===== -->
   <url>
-    <loc>https://www.casamika.com/menu/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <loc>https://casamika.com/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- =================================================== -->
+  <!-- 2. MENU PAGES (Multi-language)                      -->
+  <!-- =================================================== -->
+  <url>
+    <loc>https://casamika.com/vi/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/menu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/menu/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/menu/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/menu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/menu/"/>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ===== News ===== -->
   <url>
-    <loc>https://www.casamika.com/news/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <loc>https://casamika.com/en/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/menu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/menu/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/menu/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/menu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/menu/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://casamika.com/de/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/menu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/menu/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/menu/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/menu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/menu/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://casamika.com/ko/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/menu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/menu/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/menu/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/menu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/menu/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- =================================================== -->
+  <!-- 3. ABOUT PAGES (Multi-language)                     -->
+  <!-- =================================================== -->
+  <url>
+    <loc>https://casamika.com/vi/about/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/about/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://casamika.com/en/about/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/about/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://casamika.com/de/about/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/about/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://casamika.com/ko/about/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/about/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- =================================================== -->
+  <!-- 4. NEWS PAGES (Multi-language)                      -->
+  <!-- =================================================== -->
+  <url>
+    <loc>https://casamika.com/vi/news/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/news/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/news/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/news/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/news/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://casamika.com/en/news/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/news/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/news/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/news/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/news/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://casamika.com/de/news/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/news/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/news/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/news/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/news/"/>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- ===== Career ===== -->
   <url>
-    <loc>https://www.casamika.com/career/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <loc>https://casamika.com/ko/news/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://casamika.com/vi/news/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://casamika.com/en/news/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://casamika.com/de/news/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://casamika.com/ko/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://casamika.com/en/news/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- =================================================== -->
+  <!-- 5. CAREER & B2B PAGES                               -->
+  <!-- =================================================== -->
+  <url>
+    <loc>https://casamika.com/career/</loc>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- ===== Soft Opening ===== -->
   <url>
-    <loc>https://www.casamika.com/soft-opening/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <loc>https://casamika.com/doi-tac.html</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://casamika.com/soft-opening/</loc>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

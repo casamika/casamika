@@ -224,28 +224,77 @@ function buildMenuPage(lang) {
 
   const showcaseSection = generateShowcaseHTML(lang);
 
+  const localeMap = { vi: 'vi_VN', en: 'en_US', de: 'de_DE', ko: 'ko_KR' };
   const html = `<!DOCTYPE html>
 <html lang="${meta.lang}">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PD796LGB');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#1A1410">
     <script src="/gate.js"></script>
     <script>try { localStorage.setItem('mika-lang', '${meta.lang}'); } catch (e) { }</script>
     <meta name="description" content="${meta.desc}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Open Graph / Facebook / Zalo -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Casa Mika">
+    <meta property="og:locale" content="${localeMap[meta.lang] || 'en_US'}">
+    <meta property="og:url" content="https://casamika.com/${meta.lang}/menu/">
     <meta property="og:title" content="${meta.title}">
     <meta property="og:description" content="${meta.desc}">
-    <meta property="og:image" content="/image/image3d.jpg">
-    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://casamika.com/image/image3d.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Casa Mika Menu — Garden Dining, Fine Wine & Lounge">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${meta.title}">
+    <meta name="twitter:description" content="${meta.desc}">
+    <meta name="twitter:image" content="https://casamika.com/image/image3d.jpg">
+
     <title>${meta.title}</title>
 
+    <link rel="icon" type="image/png" href="/image/logo/logo-new.png">
+    <link rel="apple-touch-icon" href="/image/logo/logo-new.png">
     <link rel="canonical" href="https://casamika.com/${meta.lang}/menu/">
     <link rel="alternate" hreflang="en" href="https://casamika.com/en/menu/">
     <link rel="alternate" hreflang="vi" href="https://casamika.com/vi/menu/">
     <link rel="alternate" hreflang="de" href="https://casamika.com/de/menu/">
     <link rel="alternate" hreflang="ko" href="https://casamika.com/ko/menu/">
     <link rel="alternate" hreflang="x-default" href="https://casamika.com/en/menu/">
+
+    <!-- Schema.org JSON-LD: BreadcrumbList & Menu -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Casa Mika",
+          "item": "https://casamika.com/${meta.lang}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "${meta.navMenu}",
+          "item": "https://casamika.com/${meta.lang}/menu/"
+        }
+      ]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -255,6 +304,10 @@ function buildMenuPage(lang) {
 </head>
 
 <body class="site-main">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PD796LGB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- ===== Nav ===== -->
     <nav class="ms-nav" id="msNav">

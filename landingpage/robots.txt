@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.casamika.com/sitemap.xml
+# Host
+Host: https://casamika.com
+
+# Sitemaps
+Sitemap: https://casamika.com/sitemap.xml
