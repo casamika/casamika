@@ -1,165 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#1A1410">
-    <script src="/gate.js"></script>
-    <script>try { localStorage.setItem('mika-lang', 'en'); } catch (e) { }</script>
-    <meta name="description"
-        content="Casa Mika menu — Asian-Western fusion, signature cocktails, garden-fresh plates. Browse or download the full menu. Open daily 06:00 – 23:30, My Khe Beach, Da Nang.">
-    <meta property="og:title" content="Menu — Casa Mika">
-    <meta property="og:description"
-        content="The full Casa Mika menu — kitchen, bar, and wine list composed for the garden and the hour.">
-    <meta property="og:image" content="/image/image3d.jpg">
-    <meta property="og:type" content="website">
-    <title>Menu — Casa Mika</title>
-
-    <link rel="canonical" href="https://casamika.com/menu/">
-    <link rel="alternate" hreflang="en" href="https://casamika.com/menu/">
-    <link rel="alternate" hreflang="x-default" href="https://casamika.com/menu/">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
-        rel="stylesheet">
-    <link rel="preload" as="image" href="/image/image3d.jpg">
-    <link rel="stylesheet" href="/style.css">
+    <title>Menu — Casa Mika — Redirecting…</title>
+    <script>
+        (function () {
+            try {
+                var lang = localStorage.getItem('mika-lang') || 'en';
+                location.replace('/' + lang + '/menu/');
+            } catch (e) {
+                location.replace('/en/menu/');
+            }
+        })();
+    </script>
+    <noscript><meta http-equiv="refresh" content="0;url=/en/menu/"></noscript>
 </head>
-
-<body class="site-main">
-
-    <!-- ===== Nav ===== -->
-    <nav class="ms-nav" id="msNav">
-        <div class="container ms-nav-inner">
-            <a href="/" class="ms-logo" aria-label="Casa Mika home">
-                <img src="/image/logo.png" alt="Casa Mika"
-                    onerror="this.outerHTML='<span class=&quot;ms-logo-text&quot;>CASA MIKA</span>';">
-            </a>
-            <div class="ms-nav-links" id="msNavLinks">
-                <a href="/about/" class="ms-nav-link">About</a>
-                <a href="/menu/" class="ms-nav-link is-active" aria-current="page">Menu</a>
-                <a href="/news/" class="ms-nav-link">News</a>
-                <a href="/career/" class="ms-nav-link">Career</a>
-                <a href="/#reserve" class="ms-btn ms-btn-outline ms-btn-sm">Reserve</a>
-            </div>
-            <span class="ms-lang-switch" role="group" aria-label="Language">
-                <!-- TODO Phase 6: point to /vi/menu/ + /de/menu/ once VI/DE variants exist -->
-                <a href="/vi/" class="ms-lang" data-lang="vi" hreflang="vi">VI</a>
-                <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/menu/" class="ms-lang is-active" data-lang="en" aria-current="page">EN</a>
-                <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/de/" class="ms-lang" data-lang="de" hreflang="de">DE</a>
-            </span>
-            <button class="ms-nav-toggle" id="msNavToggle" aria-label="Open menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- ===== Hero ===== -->
-    <header class="ms-hero ms-menu-hero" id="hero">
-        <div class="ms-hero-bg">
-            <img src="/image/image3d.jpg" alt="" class="ms-hero-image" aria-hidden="true">
-            <div class="ms-hero-overlay"></div>
-        </div>
-        <div class="container ms-hero-content">
-            <span class="ms-hero-eyebrow fade-up">— Menu</span>
-            <h1 class="ms-hero-title fade-up delay-2">The full menu,<br><em>for the garden table.</em></h1>
-            <p class="ms-hero-stub-note fade-up delay-3">Asian-Western kitchen, bar, and wine — composed for the hour
-                and the guest in front of us. Browse below or download to keep.</p>
-        </div>
-    </header>
-
-    <!-- ===== PDF Menu ===== -->
-    <section class="ms-section ms-menu-pdf" id="menu-pdf">
-        <div class="container center-text">
-            <span class="ms-eyebrow fade-up">— Full Menu</span>
-            <h2 class="ms-title fade-up">Kitchen, bar,<br><em>and wine.</em></h2>
-            <p class="ms-section-sub fade-up delay-1">Seasonal where it matters. Signature where it counts. Prices in
-                Vietnamese đồng unless noted.</p>
-            <div class="ms-menu-pdf-actions fade-up delay-2">
-                <a href="/menu/menu-casamika.pdf" target="_blank" rel="noopener"
-                    class="ms-btn ms-btn-primary ms-btn-lg">Full Menu</a>
-                <a href="/menu/menu-breakfast-brunch.pdf" target="_blank" rel="noopener"
-                    class="ms-btn ms-btn-outline ms-btn-lg">Breakfast &amp; Brunch</a>
-            </div>
-            <div class="container ms-menu-pdf-viewer fade-in">
-                <iframe src="/menu/menu-casamika.pdf#view=FitH" title="Casa Mika full menu" loading="lazy"></iframe>
-            </div>
-            <p class="ms-menu-pdf-mobile-hint container fade-up">On iPhone? Tap <strong>Open Full Menu</strong> above — Safari
-                will open the PDF directly.</p>
-        </div>
-    </section>
-
-    <!-- ===== Final CTA ===== -->
-    <section class="ms-section ms-final-cta" id="visit">
-        <div class="container">
-            <span class="ms-eyebrow fade-up">— Reserve</span>
-            <h2 class="ms-title fade-up">Save a seat<br><em>at the garden table.</em></h2>
-            <p class="ms-section-sub fade-up delay-1">Open every day from six in the morning until eleven-thirty at
-                night. Zalo is the fastest way to reach the host stand.</p>
-            <div class="ms-final-cta-actions fade-up delay-2">
-                <a href="/#reserve" class="ms-btn ms-btn-primary ms-btn-lg">Reserve a Table</a>
-                <a href="https://zalo.me/0708888007" target="_blank" rel="noopener"
-                    class="ms-btn ms-btn-outline ms-btn-lg">Message on Zalo</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== Footer ===== -->
-    <footer class="ms-footer">
-        <div class="container ms-footer-inner">
-            <div class="ms-footer-brand">
-                <img src="/image/logo.png" alt="Casa Mika"
-                    onerror="this.outerHTML='<span class=&quot;ms-footer-logo-text&quot;>CASA MIKA</span>';">
-                <p>A garden table by My Khe Beach.</p>
-            </div>
-            <div class="ms-footer-col">
-                <h4>Visit</h4>
-                <p>37 Trần Bạch Đằng<br>Ngũ Hành Sơn, Da Nang<br>Vietnam</p>
-                <p>Open daily · 06:00 – 23:30</p>
-            </div>
-            <div class="ms-footer-col">
-                <h4>Contact</h4>
-                <p><a href="tel:+84708888007">+84 708 888 007</a></p>
-                <p><a href="https://zalo.me/0708888007" target="_blank" rel="noopener">Zalo · +84 708 888 007</a></p>
-                <p><a href="mailto:info@casamika.com">info@casamika.com</a></p>
-            </div>
-            <div class="ms-footer-col">
-                <h4>Follow</h4>
-                <div class="ms-footer-social">
-                    <a href="https://www.facebook.com/official.casamika" target="_blank" rel="noopener"
-                        aria-label="Casa Mika on Facebook">
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                            <path
-                                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/casamika.official/" target="_blank" rel="noopener"
-                        aria-label="Casa Mika on Instagram">
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
-                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="ms-footer-bottom">
-            <div class="container ms-footer-bottom-inner">
-                <p>&copy; 2026 Casa Mika. All rights reserved.</p>
-                <a href="/doi-tac.html" class="ms-partner-link">For tour operators &amp; partners → Vietnamese B2B page
-                    →</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="/script.js"></script>
+<body>
+    <p>Redirecting… <a href="/en/menu/">Click here</a></p>
 </body>
-
 </html>

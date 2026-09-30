@@ -1,0 +1,14 @@
+{
+  "name": "casamika-landingpage",
+  "version": "1.0.0",
+  "description": "Casa Mika — Coffee & Restaurant, Da Nang",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "food": [
+    {
+      "src": "Hàu nướng mỡ hành.jpg",
+      "dest": "hau-nuong-mo-hanh.jpg",
+      "nameVi": "Hàu Nướng Mỡ Hành",
+      "nameEn": "Grilled Oysters with Scallion Oil",
+      "nameDe": "Gegrillte Austern mit Frühlingszwiebelöl",
+      "nameKo": "파기름 구이 굴 요리"
+    },
+    {
+      "src": "Bò lúc lắc.png",
+      "dest": "bo-luc-lac.png",
+      "nameVi": "Bò Lúc Lắc",
+      "nameEn": "Shaken Beef Tenderloin",
+      "nameDe": "Geschütteltes Rindfleisch",
+      "nameKo": "소고기 룩락",
+      "price": "265.000₫"
+    },
+    {
+      "src": "Bò sốt tiêu xanh.png",
+      "dest": "bo-sot-tieu-xanh.png",
+      "nameVi": "Bò Sốt Tiêu Xanh",
+      "nameEn": "Beef in Green Peppercorn Sauce",
+      "nameDe": "Rindfleisch in grüner Pfeffersauce",
+      "nameKo": "그린 페퍼 소스 소고기",
+      "price": "285.000₫"
+    },
+    {
+      "src": "Tôm hùm sốt trứng muối.png",
+      "dest": "tom-hum-trung-muoi.png",
+      "nameVi": "Tôm Hùm Sốt Trứng Muối",
+      "nameEn": "Lobster with Salted Egg Sauce",
+      "nameDe": "Hummer in Salzeisauce",
+      "nameKo": "솔티드 에그 소스 랍스터",
+      "price": "680.000₫"
+    },
+    {
+      "src": "Vẹm Mika Casa sốt vang.png",
+      "dest": "vem-mika-sot-vang.png",
+      "nameVi": "Vẹm Casa Mika Sốt Vang",
+      "nameEn": "Casa Mika Mussels in White Wine",
+      "nameDe": "Miesmuscheln in Weißweinsauce",
+      "nameKo": "화이트와인 홍합 요리",
+      "price": "240.000₫"
+    },
+    {
+      "src": "Đĩa nướng tổng hợp.png",
+      "dest": "dia-nuong-tong-hop.png",
+      "nameVi": "Đĩa Nướng Tổng Hợp",
+      "nameEn": "Casa Mika BBQ Mixed Platter",
+      "nameDe": "Gemischte Grillplatte Casa Mika",
+      "nameKo": "믹스 바비큐 플래터",
+      "price": "420.000₫"
+    },
+    {
+      "src": "Ngó sen hải sản.png",
+      "dest": "ngo-sen-hai-san.png",
+      "nameVi": "Gỏi Ngó Sen Hải Sản",
+      "nameEn": "Seafood Lotus Stem Salad",
+      "nameDe": "Meeresfrüchte-Lotussalat",
+      "nameKo": "해산물 연근 샐러드",
+      "price": "195.000₫"
+    },
+    {
+      "src": "Bạch tuộc lớn nướng muối ớt.png",
+      "dest": "bach-tuoc-nuong.png",
+      "nameVi": "Bạch Tuộc Nướng Muối Ớt",
+      "nameEn": "Grilled Octopus with Chili Salt",
+      "nameDe": "Gegrillter Oktopus mit Chilisalz",
+      "nameKo": "칠리 소금 구이 문어",
+      "price": "235.000₫"
+    },
+    {
+      "src": "Bánh xèo bò.jpg",
+      "dest": "banh-xeo-bo.jpg",
+      "nameVi": "Bánh Xèo Giòn Nhân Bò",
+      "nameEn": "Crispy Vietnamese Beef Pancake",
+      "nameDe": "Knuspriger Bánh Xèo mit Rindfleisch",
+      "nameKo": "소고기 반세오",
+      "price": "165.000₫"
+    },
+    {
+      "src": "Mika casa breakfast.png",
+      "dest": "mika-casa-breakfast.png",
+      "nameVi": "Bữa Sáng Casa Mika",
+      "nameEn": "Casa Mika Signature Breakfast",
+      "nameDe": "Casa Mika Signature Frühstück",
+      "nameKo": "까사 미카 시그니처 조식",
+      "price": "185.000₫"
+    },
+    {
+      "src": "Pho bo.png",
+      "dest": "pho-bo.png",
+      "nameVi": "Phở Bò Thượng Hạng",
+      "nameEn": "Signature Beef Phở",
+      "nameDe": "Traditionelle Rindfleisch-Phở",
+      "nameKo": "소고기 쌀국수",
+      "price": "145.000₫"
+    },
+    {
+      "src": "Tiramisu.png",
+      "dest": "tiramisu.png",
+      "nameVi": "Bánh Tiramisu Casa Mika",
+      "nameEn": "Classic Casa Mika Tiramisu",
+      "nameDe": "Klassisches Tiramisu",
+      "nameKo": "수제 티라미수",
+      "price": "120.000₫"
+    }
+  ],
+  "drink": [
+    {
+      "src": "Cà phê muối.jpg",
+      "dest": "ca-phe-muoi.jpg",
+      "nameVi": "Cà Phê Muối Đà Nẵng",
+      "nameEn": "Da Nang Salted Cream Coffee",
+      "nameDe": "Da Nang Salz-Kaffee",
+      "nameKo": "다낭 솔트 커피",
+      "price": "65.000₫"
+    },
+    {
+      "src": "Cà phê dừa.jpg",
+      "dest": "ca-phe-dua.jpg",
+      "nameVi": "Cà Phê Dừa Tuyết",
+      "nameEn": "Frozen Coconut Coffee",
+      "nameDe": "Kokos-Kaffee frappiert",
+      "nameKo": "코코넛 커피 스무디",
+      "price": "75.000₫"
+    },
+    {
+      "src": "Bạc xỉu.jpg",
+      "dest": "bac-xiu.jpg",
+      "nameVi": "Bạc Xỉu Sữa Mềm",
+      "nameEn": "Vietnamese White Coffee",
+      "nameDe": "Süßer Milchkaffee Bạc Xỉu",
+      "nameKo": "베트남 화이트 커피",
+      "price": "60.000₫"
+    },
+    {
+      "src": "Cappuchino.jpg",
+      "dest": "cappuccino.jpg",
+      "nameVi": "Cappuccino Thượng Hạng",
+      "nameEn": "Artisan Cappuccino",
+      "nameDe": "Klassischer Cappuccino",
+      "nameKo": "아티잔 카푸치노",
+      "price": "75.000₫"
+    },
+    {
+      "src": "Americano.jpg",
+      "dest": "americano.jpg",
+      "nameVi": "Cà Phê Americano",
+      "nameEn": "Classic Americano",
+      "nameDe": "Klassischer Americano",
+      "nameKo": "클래식 아메리카노",
+      "price": "60.000₫"
+    },
+    {
+      "src": "caramel latte.jpg",
+      "dest": "caramel-latte.jpg",
+      "nameVi": "Caramel Macchiato Latte",
+      "nameEn": "Caramel Macchiato Latte",
+      "nameDe": "Karamell Latte Macchiato",
+      "nameKo": "카라멜 마키아토 라떼",
+      "price": "80.000₫"
+    },
+    {
+      "src": "Trà hạt sen.jpg",
+      "dest": "tra-hat-sen.jpg",
+      "nameVi": "Trà Sen Tinh Khiết",
+      "nameEn": "Pure Lotus Seed Tea",
+      "nameDe": "Reiner Lotussamen-Tee",
+      "nameKo": "연꽃씨 차",
+      "price": "70.000₫"
+    },
+    {
+      "src": "Trà dâu ổi hồng.jpg",
+      "dest": "tra-dau-oi-hong.jpg",
+      "nameVi": "Trà Dâu Ổi Hồng",
+      "nameEn": "Strawberry Pink Guava Tea",
+      "nameDe": "Erdbeer-Guaven-Eistee",
+      "nameKo": "딸기 핑크 구아바 티",
+      "price": "75.000₫"
+    },
+    {
+      "src": "Trà xoài chanh dây.jpg",
+      "dest": "tra-xoai-chanh-day.jpg",
+      "nameVi": "Trà Xoài Chanh Dây",
+      "nameEn": "Mango Passionfruit Tea",
+      "nameDe": "Mango-Maracuja-Tee",
+      "nameKo": "망고 패션프루트 티",
+      "price": "75.000₫"
+    },
+    {
+      "src": "Nước ép dưa hấu.jpg",
+      "dest": "nuoc-ep-dua-hau.jpg",
+      "nameVi": "Nước Ép Dưa Hấu Tươi",
+      "nameEn": "Fresh Watermelon Juice",
+      "nameDe": "Frischer Wassermelonensaft",
+      "nameKo": "생수박 주스",
+      "price": "65.000₫"
+    },
+    {
+      "src": "Sinh tố việt quất.jpg",
+      "dest": "sinh-to-viet-quat.jpg",
+      "nameVi": "Sinh Tố Việt Quất",
+      "nameEn": "Wild Blueberry Smoothie",
+      "nameDe": "Blaubeer-Smoothie",
+      "nameKo": "블루베리 스무디",
+      "price": "85.000₫"
+    },
+    {
+      "src": "Sinh tố bơ.jpg",
+      "dest": "sinh-to-bo.jpg",
+      "nameVi": "Sinh Tố Bơ Đắk Lắk",
+      "nameEn": "Dak Lak Avocado Smoothie",
+      "nameDe": "Cremiger Avocado-Smoothie",
+      "nameKo": "아보카도 스무디",
+      "price": "85.000₫"
+    }
+  ],
+  "mocktail": [
+    {
+      "src": "Sunset.jpg",
+      "dest": "sunset.jpg",
+      "nameVi": "Sunset Over My Khe",
+      "nameEn": "Sunset Over My Khe",
+      "nameDe": "Sunset Over My Khe",
+      "nameKo": "선셋 오버 미케",
+      "price": "95.000₫"
+    },
+    {
+      "src": "Midnight.jpg",
+      "dest": "midnight.jpg",
+      "nameVi": "Midnight Garden",
+      "nameEn": "Midnight Garden",
+      "nameDe": "Midnight Garden",
+      "nameKo": "미드나잇 가든",
+      "price": "95.000₫"
+    },
+    {
+      "src": "Dragon Vietnamese.jpg",
+      "dest": "dragon-vietnamese.jpg",
+      "nameVi": "Dragon Bridge Spirit",
+      "nameEn": "Dragon Bridge Spirit",
+      "nameDe": "Dragon Bridge Spirit",
+      "nameKo": "드래곤 브릿지 스피릿",
+      "price": "105.000₫"
+    },
+    {
+      "src": "Glowhot.jpg",
+      "dest": "glowhot.jpg",
+      "nameVi": "Glow Hot Tropical",
+      "nameEn": "Glow Hot Tropical",
+      "nameDe": "Glow Hot Tropical",
+      "nameKo": "글로우 핫 트로피컬",
+      "price": "95.000₫"
+    },
+    {
+      "src": "Green soul.jpg",
+      "dest": "green-soul.jpg",
+      "nameVi": "Green Soul Botanical",
+      "nameEn": "Green Soul Botanical",
+      "nameDe": "Green Soul Botanical",
+      "nameKo": "그린 소울 보태니컬",
+      "price": "95.000₫"
+    },
+    {
+      "src": "Passion matcha.jpg",
+      "dest": "passion-matcha.jpg",
+      "nameVi": "Passion Matcha Fusion",
+      "nameEn": "Passion Matcha Fusion",
+      "nameDe": "Passion Matcha Fusion",
+      "nameKo": "패션 말차 퓨전",
+      "price": "95.000₫"
+    },
+    {
+      "src": "Pear pink.jpg",
+      "dest": "pear-pink.jpg",
+      "nameVi": "Pink Pear Bliss",
+      "nameEn": "Pink Pear Bliss",
+      "nameDe": "Pink Pear Bliss",
+      "nameKo": "핑크 페어 블리스",
+      "price": "95.000₫"
+    },
+    {
+      "src": "Ruby sotic.jpg",
+      "dest": "ruby-sotic.jpg",
+      "nameVi": "Ruby Exotic Cooler",
+      "nameEn": "Ruby Exotic Cooler",
+      "nameDe": "Ruby Exotic Cooler",
+      "nameKo": "루비 이그조틱 쿨러",
+      "price": "105.000₫"
+    },
+    {
+      "src": "Sony tonuc.jpg",
+      "dest": "sony-tonic.jpg",
+      "nameVi": "Casa Mika Signature Tonic",
+      "nameEn": "Casa Mika Signature Tonic",
+      "nameDe": "Casa Mika Signature Tonic",
+      "nameKo": "까사 미카 시그니처 토닉",
+      "price": "95.000₫"
+    }
+  ]
+}

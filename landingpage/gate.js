@@ -19,7 +19,7 @@
 
         var path = location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '') || '/';
         var onCountdown = path === '/soft-opening';
-        var publicDuringSoftOpening = path === '/menu';
+        var publicDuringSoftOpening = path === '/menu' || /\/(vi|en|de|ko)\/menu$/.test(path);
 
         if (Date.now() < openAt) {
             if (!onCountdown && !publicDuringSoftOpening) location.replace('/soft-opening/');

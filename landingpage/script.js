@@ -235,4 +235,85 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    /* =====================================================================
+       CASA MIKA — INLINE PDF MENU SWITCHER (For all /menu/ pages)
+       ===================================================================== */
+    const inlineMenuBtns = document.querySelectorAll('.ms-inline-menu-btn');
+    const inlinePdfFrame = document.querySelector('.ms-inline-pdf-frame');
+
+    if (inlineMenuBtns.length && inlinePdfFrame) {
+        inlineMenuBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                inlineMenuBtns.forEach(b => b.classList.remove('is-active'));
+                btn.classList.add('is-active');
+
+                const targetPdf = btn.getAttribute('data-pdf');
+                if (targetPdf) {
+                    inlinePdfFrame.src = targetPdf + '#view=FitH';
+                }
+            });
+        });
+    }
+
+    /* =====================================================================
+       CASA MIKA — 9:16 VIDEO REELS HIGHLIGHT (Sound Toggle & Playback)
+       ===================================================================== */
+    const reelCards = document.querySelectorAll('.ms-reel-card');
+    reelCards.forEach(card => {
+        const video = card.querySelector('.ms-reel-video');
+        const soundBtn = card.querySelector('.ms-reel-sound-btn');
+
+        if (video) {
+            // Auto play muted when page is ready or clicked
+            video.muted = true;
+            video.play().catch(() => {});
+
+            if (soundBtn) {
+                soundBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    video.muted = !video.muted;
+                    soundBtn.innerHTML = video.muted
+                        ? '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>'
+                        : '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
+                });
+            }
+
+            // Click video to toggle play/pause
+            card.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        }
+    });
+
+    /* =====================================================================
+       CASA MIKA — MENU SHOWCASE CATEGORY FILTER
+       ===================================================================== */
+    const showcaseTabs = document.querySelectorAll('.ms-showcase-tab');
+    const dishCards = document.querySelectorAll('.ms-dish-card');
+
+    if (showcaseTabs.length && dishCards.length) {
+        showcaseTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                showcaseTabs.forEach(t => t.classList.remove('is-active'));
+                tab.classList.add('is-active');
+
+                const filter = tab.getAttribute('data-filter') || 'all';
+                dishCards.forEach(card => {
+                    const cat = card.getAttribute('data-category');
+                    if (filter === 'all' || cat === filter) {
+                        card.style.display = 'flex';
+                        card.classList.add('fade-up', 'visible');
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
 });

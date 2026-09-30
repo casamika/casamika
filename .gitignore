@@ -1,2 +1,10 @@
 .DS_Store
 Du_Lieu_B2B_Tong_Hop.xlsx
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Vite build output
+landingpage/dist/
+dist/
