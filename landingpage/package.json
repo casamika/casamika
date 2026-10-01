@@ -9,6 +9,9 @@
     "preview": "vite preview --host"
   },
   "devDependencies": {
+    "@napi-rs/canvas": "^1.0.9",
+    "faststart": "^1.0.0",
+    "pdfjs-dist": "^6.3.289",
     "sharp": "^0.35.5",
     "vite": "^5.4.0"
   }

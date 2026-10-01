@@ -26,8 +26,26 @@ function copyStaticAssets() {
           }
         }
       }
-      // Ensure critical direct-referenced images (OG image, 3D renders, logos) exist in dist/image/
+      // Ensure menu-pages, posters, and assets exist in dist
+      const menuPagesSrc = resolve(__dirname, 'image/menu-pages')
+      const menuPagesDest = resolve(dist, 'image/menu-pages')
+      if (fs.existsSync(menuPagesSrc)) {
+        if (!fs.existsSync(resolve(dist, 'image'))) fs.mkdirSync(resolve(dist, 'image'), { recursive: true })
+        fs.cpSync(menuPagesSrc, menuPagesDest, { recursive: true })
+        console.log(`[copy-static-assets] Copied image/menu-pages/ -> dist/image/menu-pages/`)
+      }
+
+      const videoDirSrc = resolve(__dirname, 'video')
+      const videoDirDest = resolve(dist, 'video')
+      if (fs.existsSync(videoDirSrc)) {
+        fs.cpSync(videoDirSrc, videoDirDest, { recursive: true })
+        console.log(`[copy-static-assets] Copied video/ -> dist/video/`)
+      }
+
+      // Ensure critical direct-referenced images (OG image, posters, logos) exist in dist/image/
       const imgCopies = [
+        'image/reel-poster-1.webp',
+        'image/reel-poster-2.webp',
         'image/imagenhahang.jpg',
         'image/imagenhahang.webp',
         'image/imagenhahang.png',

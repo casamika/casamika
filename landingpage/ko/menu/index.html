@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 
 <head>
@@ -537,26 +537,123 @@
         </div>
     </section>
 
-    <!-- ===== INLINE PDF MENU VIEWER ===== -->
-    <section class="ms-section ms-menu-pdf" id="menu-pdf">
+    <!-- ===== INLINE INTERACTIVE MENU VIEWER ===== -->
+    <section class="ms-section ms-menu-viewer-section" id="menu-pdf">
         <div class="container center-text">
             <span class="ms-eyebrow fade-up">— 전체 메뉴북</span>
-            <h2 class="ms-title fade-up">페이지 내에서 직접<br><em>메뉴북을 확인하세요.</em></h2>
-            <p class="ms-section-sub fade-up delay-1">새 창을 열지 않고 화면에서 바로 양식 메뉴, 베트남 메뉴, 와인 리스트를 전환하여 감상하실 수 있습니다.</p>
+            <h2 class="ms-title fade-up">페이지 내에서 직접<br><em>메뉴북을 감상하세요.</em></h2>
+            <p class="ms-section-sub fade-up delay-1">스마트폰에서 부드럽게 넘겨보거나 양식 메뉴, 베트남 메뉴, 와인 리스트를 바로 확인하실 수 있습니다.</p>
             
-            <!-- Nút bấm chuyển trực tiếp trong trang -->
-            <div class="ms-inline-menu-actions fade-up delay-2">
-                <button type="button" class="ms-inline-menu-btn is-active" data-pdf="/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20%C3%82u.pdf">웨스턴 메뉴</button>
-                <button type="button" class="ms-inline-menu-btn" data-pdf="/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20Vi%E1%BB%87t%20Nam.pdf">베트남 메뉴</button>
-                <button type="button" class="ms-inline-menu-btn" data-pdf="/menu/Menu%20danh%20s%C3%A1ch%20c%C3%A1c%20lo%E1%BA%A1i%20r%C6%B0%E1%BB%A3u.pdf">와인 리스트</button>
+            <!-- Book selector tabs -->
+            <div class="ms-menu-book-tabs fade-up delay-1" role="tablist">
+                <button type="button" class="ms-menu-book-tab is-active" data-book="au" role="tab" aria-selected="true">
+                    <span class="tab-badge">8 페이지</span>
+                    <span class="tab-name">웨스턴 메뉴</span>
+                </button>
+                <button type="button" class="ms-menu-book-tab" data-book="viet" role="tab" aria-selected="false">
+                    <span class="tab-badge">15 페이지</span>
+                    <span class="tab-name">베트남 메뉴</span>
+                </button>
+                <button type="button" class="ms-menu-book-tab" data-book="ruou" role="tab" aria-selected="false">
+                    <span class="tab-badge">11 페이지</span>
+                    <span class="tab-name">와인 리스트</span>
+                </button>
             </div>
 
-            <!-- Khung nhúng PDF trực tiếp -->
-            <div class="ms-inline-pdf-box fade-in">
-                <iframe class="ms-inline-pdf-frame" src="/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20%C3%82u.pdf#view=FitH" title="Casa Mika Menu" loading="lazy"></iframe>
+            <!-- Toolbar: View mode toggles & Action buttons -->
+            <div class="ms-menu-toolbar fade-up delay-2">
+                <div class="ms-menu-mode-group">
+                    <button type="button" class="ms-mode-btn is-active" data-mode="swipe" title="한 장씩 넘기기">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        <span>한 장씩 넘기기</span>
+                    </button>
+                    <button type="button" class="ms-mode-btn" data-mode="scroll" title="연속 스크롤">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                        <span>연속 스크롤</span>
+                    </button>
+                </div>
+                
+                <div class="ms-menu-action-group">
+                    <button type="button" class="ms-action-btn" id="msFullscreenBtn">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                        <span>전체화면</span>
+                    </button>
+                    <a href="/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20%C3%82u.pdf" target="_blank" rel="noopener" class="ms-action-btn" id="msDownloadPdfLink">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span>PDF 다운로드</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Viewer Card -->
+            <div class="ms-menu-viewer-card fade-in">
+                <!-- SWIPE VIEW -->
+                <div class="ms-menu-swipe-view" id="msMenuSwipeView">
+                    <button type="button" class="ms-viewer-nav-btn ms-viewer-prev" id="msViewerPrev" aria-label="이전">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    
+                    <div class="ms-viewer-stage" id="msViewerStage">
+                        <div class="ms-stage-page" id="msStagePage">
+                            <img src="/image/menu-pages/au/page-1.webp" alt="Menu Casa Mika" class="ms-stage-img" id="msStageImg" draggable="false">
+                            <div class="ms-stage-tap-hint">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                <span>터치하여 전체화면 확대</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="ms-viewer-nav-btn ms-viewer-next" id="msViewerNext" aria-label="다음">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+
+                <!-- Page indicator pill -->
+                <div class="ms-viewer-page-pill" id="msViewerPagePill">
+                    <span id="msCurrentPageNum">1</span> / <span id="msTotalPagesNum">8</span>
+                </div>
+
+                <!-- CONTINUOUS SCROLL VIEW (hidden by default) -->
+                <div class="ms-menu-scroll-view" id="msMenuScrollView" style="display: none;">
+                    <!-- Pages dynamically rendered vertically -->
+                </div>
+
+                <!-- Thumbnails bar -->
+                <div class="ms-menu-thumbs-bar" id="msMenuThumbsBar">
+                    <!-- Thumbnails dynamically rendered -->
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- ===== FULLSCREEN LIGHTBOX MODAL ===== -->
+    <div class="ms-menu-lightbox" id="msMenuLightbox" aria-hidden="true" role="dialog">
+        <div class="ms-lightbox-backdrop" id="msLightboxBackdrop"></div>
+        <div class="ms-lightbox-content">
+            <button type="button" class="ms-lightbox-close" id="msLightboxClose" aria-label="Đóng">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="ms-lightbox-nav">
+                <button type="button" class="ms-lightbox-prev" id="msLightboxPrev" aria-label="이전">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="ms-lightbox-img-wrap" id="msLightboxImgWrap">
+                    <img src="/image/menu-pages/au/page-1.webp" alt="Menu Fullscreen" class="ms-lightbox-img" id="msLightboxImg">
+                </div>
+                <button type="button" class="ms-lightbox-next" id="msLightboxNext" aria-label="다음">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+            <div class="ms-lightbox-footer">
+                <span class="ms-lightbox-counter" id="msLightboxCounter">1 / 8</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Embedded Manifest for Instant Client-side Navigation -->
+    <script id="msMenuManifest" type="application/json">
+    {"au":{"key":"au","title":"Menu đồ ăn Âu","totalPages":8,"pages":[{"page":1,"src":"/image/menu-pages/au/page-1.webp","width":1200,"height":1697},{"page":2,"src":"/image/menu-pages/au/page-2.webp","width":1200,"height":1697},{"page":3,"src":"/image/menu-pages/au/page-3.webp","width":1200,"height":1697},{"page":4,"src":"/image/menu-pages/au/page-4.webp","width":1200,"height":1697},{"page":5,"src":"/image/menu-pages/au/page-5.webp","width":1200,"height":1697},{"page":6,"src":"/image/menu-pages/au/page-6.webp","width":1200,"height":1697},{"page":7,"src":"/image/menu-pages/au/page-7.webp","width":1200,"height":1697},{"page":8,"src":"/image/menu-pages/au/page-8.webp","width":1200,"height":1697}]},"viet":{"key":"viet","title":"Menu đồ ăn Việt Nam","totalPages":15,"pages":[{"page":1,"src":"/image/menu-pages/viet/page-1.webp","width":1200,"height":1697},{"page":2,"src":"/image/menu-pages/viet/page-2.webp","width":1200,"height":1697},{"page":3,"src":"/image/menu-pages/viet/page-3.webp","width":1200,"height":1697},{"page":4,"src":"/image/menu-pages/viet/page-4.webp","width":1200,"height":1697},{"page":5,"src":"/image/menu-pages/viet/page-5.webp","width":1200,"height":1697},{"page":6,"src":"/image/menu-pages/viet/page-6.webp","width":1200,"height":1697},{"page":7,"src":"/image/menu-pages/viet/page-7.webp","width":1200,"height":1697},{"page":8,"src":"/image/menu-pages/viet/page-8.webp","width":1200,"height":1697},{"page":9,"src":"/image/menu-pages/viet/page-9.webp","width":1200,"height":1697},{"page":10,"src":"/image/menu-pages/viet/page-10.webp","width":1200,"height":1697},{"page":11,"src":"/image/menu-pages/viet/page-11.webp","width":1200,"height":1697},{"page":12,"src":"/image/menu-pages/viet/page-12.webp","width":1200,"height":1697},{"page":13,"src":"/image/menu-pages/viet/page-13.webp","width":1200,"height":1697},{"page":14,"src":"/image/menu-pages/viet/page-14.webp","width":1200,"height":1697},{"page":15,"src":"/image/menu-pages/viet/page-15.webp","width":1200,"height":1697}]},"ruou":{"key":"ruou","title":"Menu danh sách các loại rượu","totalPages":11,"pages":[{"page":1,"src":"/image/menu-pages/ruou/page-1.webp","width":1200,"height":1697},{"page":2,"src":"/image/menu-pages/ruou/page-2.webp","width":1200,"height":1697},{"page":3,"src":"/image/menu-pages/ruou/page-3.webp","width":1200,"height":1697},{"page":4,"src":"/image/menu-pages/ruou/page-4.webp","width":1200,"height":1697},{"page":5,"src":"/image/menu-pages/ruou/page-5.webp","width":1200,"height":1697},{"page":6,"src":"/image/menu-pages/ruou/page-6.webp","width":1200,"height":1697},{"page":7,"src":"/image/menu-pages/ruou/page-7.webp","width":1200,"height":1697},{"page":8,"src":"/image/menu-pages/ruou/page-8.webp","width":1200,"height":1697},{"page":9,"src":"/image/menu-pages/ruou/page-9.webp","width":1200,"height":1697},{"page":10,"src":"/image/menu-pages/ruou/page-10.webp","width":1200,"height":1697},{"page":11,"src":"/image/menu-pages/ruou/page-11.webp","width":1200,"height":1697}]}}
+    </script>
 
     <!-- ===== Final CTA ===== -->
     <section class="ms-section ms-final-cta" id="visit">

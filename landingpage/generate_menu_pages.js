@@ -1,4 +1,4 @@
-﻿const fs = require('fs');
+const fs = require('fs');
 const path = require('path');
 
 const GOOGLE_RESERVE_URL = 'https://www.google.com/maps/reserve/v/dine/c/tx1PNeAwXj8?source=pa&opi=79508299&hl=vi&gei=xsq8ap2nGfek2roPv8oj&ahbb=1&sourceurl=https://www.google.com/maps/preview/place?authuser%3D0%26hl%3Dvi%26pb%3D!1m14!1s0x31421737deda4ad1:0xf6fb5ca72c7d33f!3m12!1m3!1d26061.27722053428!2d108.24709075!3d16.0497664!2m3!1f0!2f0!3f0!3m2!1i2560!2i1305!4f13.1!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m5!1swsq8aszpL_7d2roPy8Od-As:49!2s1i:0,t:150714,p:wsq8aszpL_7d2roPy8Od-As:49!7e81!12e3!17swsq8aszpL_7d2roPy8Od-As:53!15m108!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b1!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i1305!1m6!1m2!1i2510!2i0!2m2!1i2560!2i1305!1m6!1m2!1i0!2i0!2m2!1i2560!2i20!1m6!1m2!1i0!2i1285!2m2!1i2560!2i1305!22m1!1e81!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i797!39zQ2FzYSBNaWthIOKAkyBDb2ZmZWUgJiBSZXN0YXVyYW50IOKAkyBXb3Jrc3BhY2UsIMSQxrDhu51uZyBUcuG6p24gQuG6oWNoIMSQ4bqxbmcsIEFuIEjhuqNpLCBOZ8WpIEjDoG5oIFPGoW4sIMSQw6AgTuG6tW5n%26q%3DCasa%2BMika%2B%25E2%2580%2593%2BCoffee%2B%2526%2BRestaurant%2B%25E2%2580%2593%2BWorkspace,%2B%25C4%2590%25C6%25B0%25E1%25BB%259Dng%2BTr%25E1%25BA%25A7n%2BB%25E1%25BA%25A1ch%2B%25C4%2590%25E1%25BA%25B1ng,%2BAn%2BH%25E1%25BA%25A3i,%2BNg%25C5%25A9%2BH%25C3%25A0nh%2BS%25C6%25A1n,%2B%25C4%2590%25C3%25A0%2BN%25E1%25BA%25B5ng';
@@ -9,6 +9,7 @@ function getGoogleReserveUrl(lang) {
 }
 
 const menuData = JSON.parse(fs.readFileSync(path.join(__dirname, 'image', 'menu-items', 'menu-data.json'), 'utf8'));
+const menuManifest = JSON.parse(fs.readFileSync(path.join(__dirname, 'image', 'menu-pages', 'menu-manifest.json'), 'utf8'));
 
 function generateShowcaseHTML(lang) {
   let allItems = [];
@@ -67,7 +68,6 @@ function generateShowcaseHTML(lang) {
     }
   }[lang];
 
-  // KHÔNG HIỂN THỊ GIÁ TIỀN
   let cardsHtml = allItems.map(item => {
     const name = lang === 'vi' ? item.nameVi : lang === 'de' ? item.nameDe : lang === 'ko' ? item.nameKo : item.nameEn;
     const badge = lang === 'vi' ? item.badgeVi : lang === 'de' ? item.badgeDe : lang === 'ko' ? item.badgeKo : item.badgeEn;
@@ -117,10 +117,18 @@ function buildMenuPage(lang) {
       heroSub: 'Bếp Á-Âu, bar và rượu — được sáng tạo cho giờ giấc và vị khách trước mặt. Khám phá tuyển chọn bên dưới hoặc xem trực tiếp các cuốn menu.',
       pdfEyebrow: '— Toàn Bộ Cuốn Thực Đơn',
       pdfTitle: 'Xem menu trực tiếp<br><em>ngay tại đây.</em>',
-      pdfSub: 'Nhấp chọn để chuyển đổi giữa Menu Âu, Menu Việt và Danh Sách Rượu ngay trên màn hình.',
+      pdfSub: 'Vuốt chạm mượt mà trên điện thoại hoặc chuyển đổi giữa Menu Âu, Menu Việt và Danh Sách Rượu.',
       btnAu: 'Menu Âu',
       btnViet: 'Menu Việt',
       btnRuou: 'Menu Rượu',
+      modeSwipe: 'Lướt trang',
+      modeScroll: 'Cuộn liên tục',
+      btnFullscreen: 'Phóng to',
+      btnDownloadPdf: 'Tải PDF gốc',
+      hintTapZoom: 'Chạm để phóng to toàn màn hình',
+      pageCountSuffix: 'trang',
+      btnPrev: 'Trang trước',
+      btnNext: 'Trang sau',
       navAbout: 'Về Chúng Tôi',
       navMenu: 'Thực Đơn',
       navNews: 'Tin Tức',
@@ -145,10 +153,18 @@ function buildMenuPage(lang) {
       heroSub: 'Asian-Western kitchen, bar and wine list composed for the hour and the guest before us.',
       pdfEyebrow: '— Complete Menu Books',
       pdfTitle: 'Browse menu books<br><em>inline right here.</em>',
-      pdfSub: 'Click below to switch between Western Menu, Vietnamese Menu, and Wine List directly on this page.',
+      pdfSub: 'Smooth swipe on phone or switch between Western Menu, Vietnamese Menu, and Curated Wine Cellar.',
       btnAu: 'Western Menu',
       btnViet: 'Vietnamese Menu',
       btnRuou: 'Wine List',
+      modeSwipe: 'Flip Pages',
+      modeScroll: 'Continuous Scroll',
+      btnFullscreen: 'Fullscreen',
+      btnDownloadPdf: 'Download PDF',
+      hintTapZoom: 'Tap to view fullscreen',
+      pageCountSuffix: 'pages',
+      btnPrev: 'Previous',
+      btnNext: 'Next',
       navAbout: 'About',
       navMenu: 'Menu',
       navNews: 'News',
@@ -173,10 +189,18 @@ function buildMenuPage(lang) {
       heroSub: 'Küche, Bar und Weinkarte, komponiert für den Garten und die Stunde.',
       pdfEyebrow: '— Vollständige Menükarten',
       pdfTitle: 'Speisekarten interaktiv<br><em>direkt hier durchblättern.</em>',
-      pdfSub: 'Klicken Sie unten, um direkt zwischen westlicher Küche, vietnamesischer Karte und Weinen zu wechseln.',
+      pdfSub: 'Wischen Sie auf dem Smartphone durch die Seiten oder wählen Sie zwischen Western, Vietnamesisch und Wein.',
       btnAu: 'Westliches Menü',
       btnViet: 'Vietnamesisches Menü',
       btnRuou: 'Weinkarte',
+      modeSwipe: 'Seiten blättern',
+      modeScroll: 'Durchgehend scrollen',
+      btnFullscreen: 'Vollbild',
+      btnDownloadPdf: 'PDF herunterladen',
+      hintTapZoom: 'Tippen für Vollbildansicht',
+      pageCountSuffix: 'Seiten',
+      btnPrev: 'Zurück',
+      btnNext: 'Weiter',
       navAbout: 'Über uns',
       navMenu: 'Speisekarte',
       navNews: 'Aktuelles',
@@ -200,11 +224,19 @@ function buildMenuPage(lang) {
       heroTitle: '정원 식탁을 위한<br><em>전체 메뉴.</em>',
       heroSub: '정원과 시간, 그리고 손님을 위해 정성스레 준비된 주방, 바, 와인 리스트.',
       pdfEyebrow: '— 전체 메뉴북',
-      pdfTitle: '페이지 내에서 직접<br><em>메뉴북을 확인하세요.</em>',
-      pdfSub: '새 창을 열지 않고 화면에서 바로 양식 메뉴, 베트남 메뉴, 와인 리스트를 전환하여 감상하실 수 있습니다.',
+      pdfTitle: '페이지 내에서 직접<br><em>메뉴북을 감상하세요.</em>',
+      pdfSub: '스마트폰에서 부드럽게 넘겨보거나 양식 메뉴, 베트남 메뉴, 와인 리스트를 바로 확인하실 수 있습니다.',
       btnAu: '웨스턴 메뉴',
       btnViet: '베트남 메뉴',
       btnRuou: '와인 리스트',
+      modeSwipe: '한 장씩 넘기기',
+      modeScroll: '연속 스크롤',
+      btnFullscreen: '전체화면',
+      btnDownloadPdf: 'PDF 다운로드',
+      hintTapZoom: '터치하여 전체화면 확대',
+      pageCountSuffix: '페이지',
+      btnPrev: '이전',
+      btnNext: '다음',
       navAbout: '소개',
       navMenu: '메뉴',
       navNews: '소식',
@@ -223,8 +255,8 @@ function buildMenuPage(lang) {
   }[lang];
 
   const showcaseSection = generateShowcaseHTML(lang);
-
   const localeMap = { vi: 'vi_VN', en: 'en_US', de: 'de_DE', ko: 'ko_KR' };
+  
   const html = `<!DOCTYPE html>
 <html lang="${meta.lang}">
 
@@ -352,26 +384,123 @@ function buildMenuPage(lang) {
 
     ${showcaseSection}
 
-    <!-- ===== INLINE PDF MENU VIEWER ===== -->
-    <section class="ms-section ms-menu-pdf" id="menu-pdf">
+    <!-- ===== INLINE INTERACTIVE MENU VIEWER ===== -->
+    <section class="ms-section ms-menu-viewer-section" id="menu-pdf">
         <div class="container center-text">
             <span class="ms-eyebrow fade-up">${meta.pdfEyebrow}</span>
             <h2 class="ms-title fade-up">${meta.pdfTitle}</h2>
             <p class="ms-section-sub fade-up delay-1">${meta.pdfSub}</p>
             
-            <!-- Nút bấm chuyển trực tiếp trong trang -->
-            <div class="ms-inline-menu-actions fade-up delay-2">
-                <button type="button" class="ms-inline-menu-btn is-active" data-pdf="/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20%C3%82u.pdf">${meta.btnAu}</button>
-                <button type="button" class="ms-inline-menu-btn" data-pdf="/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20Vi%E1%BB%87t%20Nam.pdf">${meta.btnViet}</button>
-                <button type="button" class="ms-inline-menu-btn" data-pdf="/menu/Menu%20danh%20s%C3%A1ch%20c%C3%A1c%20lo%E1%BA%A1i%20r%C6%B0%E1%BB%A3u.pdf">${meta.btnRuou}</button>
+            <!-- Book selector tabs -->
+            <div class="ms-menu-book-tabs fade-up delay-1" role="tablist">
+                <button type="button" class="ms-menu-book-tab is-active" data-book="au" role="tab" aria-selected="true">
+                    <span class="tab-badge">8 ${meta.pageCountSuffix}</span>
+                    <span class="tab-name">${meta.btnAu}</span>
+                </button>
+                <button type="button" class="ms-menu-book-tab" data-book="viet" role="tab" aria-selected="false">
+                    <span class="tab-badge">15 ${meta.pageCountSuffix}</span>
+                    <span class="tab-name">${meta.btnViet}</span>
+                </button>
+                <button type="button" class="ms-menu-book-tab" data-book="ruou" role="tab" aria-selected="false">
+                    <span class="tab-badge">11 ${meta.pageCountSuffix}</span>
+                    <span class="tab-name">${meta.btnRuou}</span>
+                </button>
             </div>
 
-            <!-- Khung nhúng PDF trực tiếp -->
-            <div class="ms-inline-pdf-box fade-in">
-                <iframe class="ms-inline-pdf-frame" src="/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20%C3%82u.pdf#view=FitH" title="Casa Mika Menu" loading="lazy"></iframe>
+            <!-- Toolbar: View mode toggles & Action buttons -->
+            <div class="ms-menu-toolbar fade-up delay-2">
+                <div class="ms-menu-mode-group">
+                    <button type="button" class="ms-mode-btn is-active" data-mode="swipe" title="${meta.modeSwipe}">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        <span>${meta.modeSwipe}</span>
+                    </button>
+                    <button type="button" class="ms-mode-btn" data-mode="scroll" title="${meta.modeScroll}">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                        <span>${meta.modeScroll}</span>
+                    </button>
+                </div>
+                
+                <div class="ms-menu-action-group">
+                    <button type="button" class="ms-action-btn" id="msFullscreenBtn">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                        <span>${meta.btnFullscreen}</span>
+                    </button>
+                    <a href="/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20%C3%82u.pdf" target="_blank" rel="noopener" class="ms-action-btn" id="msDownloadPdfLink">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span>${meta.btnDownloadPdf}</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Viewer Card -->
+            <div class="ms-menu-viewer-card fade-in">
+                <!-- SWIPE VIEW -->
+                <div class="ms-menu-swipe-view" id="msMenuSwipeView">
+                    <button type="button" class="ms-viewer-nav-btn ms-viewer-prev" id="msViewerPrev" aria-label="${meta.btnPrev}">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    
+                    <div class="ms-viewer-stage" id="msViewerStage">
+                        <div class="ms-stage-page" id="msStagePage">
+                            <img src="/image/menu-pages/au/page-1.webp" alt="Menu Casa Mika" class="ms-stage-img" id="msStageImg" draggable="false">
+                            <div class="ms-stage-tap-hint">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                <span>${meta.hintTapZoom}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="ms-viewer-nav-btn ms-viewer-next" id="msViewerNext" aria-label="${meta.btnNext}">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+
+                <!-- Page indicator pill -->
+                <div class="ms-viewer-page-pill" id="msViewerPagePill">
+                    <span id="msCurrentPageNum">1</span> / <span id="msTotalPagesNum">8</span>
+                </div>
+
+                <!-- CONTINUOUS SCROLL VIEW (hidden by default) -->
+                <div class="ms-menu-scroll-view" id="msMenuScrollView" style="display: none;">
+                    <!-- Pages dynamically rendered vertically -->
+                </div>
+
+                <!-- Thumbnails bar -->
+                <div class="ms-menu-thumbs-bar" id="msMenuThumbsBar">
+                    <!-- Thumbnails dynamically rendered -->
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- ===== FULLSCREEN LIGHTBOX MODAL ===== -->
+    <div class="ms-menu-lightbox" id="msMenuLightbox" aria-hidden="true" role="dialog">
+        <div class="ms-lightbox-backdrop" id="msLightboxBackdrop"></div>
+        <div class="ms-lightbox-content">
+            <button type="button" class="ms-lightbox-close" id="msLightboxClose" aria-label="Đóng">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="ms-lightbox-nav">
+                <button type="button" class="ms-lightbox-prev" id="msLightboxPrev" aria-label="${meta.btnPrev}">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="ms-lightbox-img-wrap" id="msLightboxImgWrap">
+                    <img src="/image/menu-pages/au/page-1.webp" alt="Menu Fullscreen" class="ms-lightbox-img" id="msLightboxImg">
+                </div>
+                <button type="button" class="ms-lightbox-next" id="msLightboxNext" aria-label="${meta.btnNext}">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+            <div class="ms-lightbox-footer">
+                <span class="ms-lightbox-counter" id="msLightboxCounter">1 / 8</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Embedded Manifest for Instant Client-side Navigation -->
+    <script id="msMenuManifest" type="application/json">
+    ${JSON.stringify(menuManifest)}
+    </script>
 
     <!-- ===== Final CTA ===== -->
     <section class="ms-section ms-final-cta" id="visit">
@@ -436,7 +565,7 @@ function buildMenuPage(lang) {
 </html>`;
 
   fs.writeFileSync(path.join(__dirname, lang, 'menu', 'index.html'), html, 'utf8');
-  console.log(`Generated ${lang}/menu/index.html without price display!`);
+  console.log(`Generated ${lang}/menu/index.html with interactive menu viewer!`);
 }
 
 ['vi', 'en', 'de', 'ko'].forEach(buildMenuPage);

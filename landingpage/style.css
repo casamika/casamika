@@ -2019,15 +2019,18 @@ a {
     backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    padding: 2rem;
-    padding-top: calc(2rem + env(safe-area-inset-top));
+    justify-content: flex-start;
+    gap: 1.2rem;
+    padding: 2rem 1.5rem;
+    padding-top: calc(5rem + env(safe-area-inset-top));
     padding-bottom: calc(2rem + env(safe-area-inset-bottom));
     opacity: 0;
     pointer-events: none;
     transform: translateY(-12px);
     transition: opacity 0.4s ease, transform 0.4s ease;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
 
   .ms-nav.open .ms-nav-links {
@@ -2043,20 +2046,30 @@ a {
     text-transform: none;
     font-style: italic;
     color: #FAF7F2;
+    flex-shrink: 0;
   }
 
   .ms-nav-link::after {
     display: none;
   }
 
+  .ms-nav-links .ms-btn {
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+  }
+
   .ms-nav-toggle {
     display: flex;
+    z-index: 101;
+    position: relative;
   }
 
   .ms-lang-switch {
     font-size: 0.7rem;
     gap: 0.45rem;
     letter-spacing: 0.15em;
+    z-index: 101;
+    position: relative;
   }
 }
 
@@ -5067,6 +5080,69 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
+  background: #0a0806;
+}
+
+/* Play button overlay for mobile - shown via JS when video can't autoplay */
+.ms-reel-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: rgba(19, 18, 9, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(200, 162, 90, 0.5);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 4;
+  transition: transform 0.3s ease, background 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ms-reel-play-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ms-reel-play-btn:hover {
+  background: var(--gold-primary);
+  color: #0b0d11;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.ms-reel-play-btn svg {
+  margin-left: 3px;
+}
+
+/* Loading spinner for video */
+.ms-reel-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid rgba(200, 162, 90, 0.2);
+  border-top-color: rgba(200, 162, 90, 0.8);
+  border-radius: 50%;
+  animation: ms-spin 0.8s linear infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ms-reel-loading.hidden {
+  display: none;
+}
+
+@keyframes ms-spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .ms-reel-badge {
@@ -5297,27 +5373,650 @@ a {
   box-shadow: 0 4px 20px rgba(200, 162, 90, 0.3);
 }
 
-.ms-inline-pdf-box {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  height: 820px;
-  border-radius: 14px;
+/* =====================================================================
+   CASA MIKA — LUXURY INTERACTIVE MENU VIEWER (Mobile & Desktop)
+   ===================================================================== */
+.ms-menu-viewer-section {
+  padding: 5rem 0 6rem;
+  background: radial-gradient(circle at 50% 20%, rgba(200, 162, 90, 0.06) 0%, transparent 70%), #0e0b08;
+  position: relative;
   overflow: hidden;
-  border: 1px solid var(--border-color);
-  background: #191612;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
 }
 
-.ms-inline-pdf-frame {
+/* Book selector tabs */
+.ms-menu-book-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.2rem 0 1.8rem;
+  flex-wrap: wrap;
+}
+
+.ms-menu-book-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 100px;
+  background: rgba(26, 21, 16, 0.8);
+  border: 1px solid rgba(200, 162, 90, 0.25);
+  color: #c9bfb0;
+  font-family: var(--font-text);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.ms-menu-book-tab:hover {
+  border-color: rgba(200, 162, 90, 0.6);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.ms-menu-book-tab.is-active {
+  background: linear-gradient(135deg, rgba(200, 162, 90, 0.95), rgba(175, 135, 65, 0.95));
+  color: #0c0a08;
+  font-weight: 600;
+  border-color: var(--gold-light);
+  box-shadow: 0 6px 25px rgba(200, 162, 90, 0.4);
+  transform: translateY(-2px);
+}
+
+.ms-menu-book-tab .tab-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--gold-light);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.ms-menu-book-tab.is-active .tab-badge {
+  background: rgba(0, 0, 0, 0.2);
+  color: #0c0a08;
+  font-weight: 600;
+}
+
+/* Toolbar: Mode switcher & Actions */
+.ms-menu-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto 1.5rem;
+  padding: 0 0.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ms-menu-mode-group,
+.ms-menu-action-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ms-mode-btn,
+.ms-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  background: rgba(26, 21, 16, 0.6);
+  border: 1px solid rgba(200, 162, 90, 0.2);
+  color: rgba(245, 237, 214, 0.75);
+  font-family: var(--font-text);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.ms-mode-btn:hover,
+.ms-action-btn:hover {
+  border-color: rgba(200, 162, 90, 0.5);
+  color: var(--gold-light);
+  background: rgba(35, 28, 22, 0.8);
+}
+
+.ms-mode-btn.is-active {
+  background: rgba(200, 162, 90, 0.15);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+/* Viewer Card */
+.ms-menu-viewer-card {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #14100c;
+  border: 1px solid rgba(200, 162, 90, 0.25);
+  border-radius: 16px;
+  padding: 2rem 1.5rem 1.5rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(200, 162, 90, 0.05);
+  position: relative;
+}
+
+/* SWIPE VIEW */
+.ms-menu-swipe-view {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+}
+
+.ms-viewer-stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.ms-stage-page {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 1200 / 1697;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.65), 0 2px 10px rgba(0, 0, 0, 0.4);
+  background: #1e1914;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  touch-action: pan-y;
+}
+
+.ms-stage-page:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(200, 162, 90, 0.2);
+}
+
+.ms-stage-img {
   width: 100%;
   height: 100%;
-  border: none;
+  object-fit: contain;
+  display: block;
+  background: #1a1511;
+  pointer-events: none;
+}
+
+/* Tap to zoom hint */
+.ms-stage-tap-hint {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 50px;
+  background: rgba(12, 10, 8, 0.75);
+  border: 1px solid rgba(200, 162, 90, 0.4);
+  color: var(--gold-light);
+  font-family: var(--font-text);
+  font-size: 0.74rem;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.ms-stage-page:hover .ms-stage-tap-hint {
+  opacity: 1;
+}
+
+/* Nav arrows */
+.ms-viewer-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background: rgba(22, 18, 14, 0.85);
+  border: 1.5px solid rgba(200, 162, 90, 0.35);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.ms-viewer-nav-btn:hover {
+  background: var(--gold-primary);
+  color: #0b0d11;
+  border-color: var(--gold-light);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 20px rgba(200, 162, 90, 0.4);
+}
+
+.ms-viewer-prev {
+  left: 0.5rem;
+}
+
+.ms-viewer-next {
+  right: 0.5rem;
+}
+
+.ms-viewer-nav-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Page Indicator pill */
+.ms-viewer-page-pill {
+  margin: 1.5rem auto 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1.4rem;
+  border-radius: 100px;
+  background: rgba(26, 21, 16, 0.8);
+  border: 1px solid rgba(200, 162, 90, 0.3);
+  font-family: var(--font-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* CONTINUOUS SCROLL VIEW */
+.ms-menu-scroll-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  padding: 1rem 0;
+  max-height: 800px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  border-radius: 10px;
+}
+
+.ms-menu-scroll-view::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ms-menu-scroll-view::-webkit-scrollbar-track {
+  background: rgba(20, 16, 12, 0.5);
+}
+
+.ms-menu-scroll-view::-webkit-scrollbar-thumb {
+  background: rgba(200, 162, 90, 0.3);
+  border-radius: 4px;
+}
+
+.ms-scroll-page-item {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: #1a1511;
+  position: relative;
+  cursor: pointer;
+}
+
+.ms-scroll-page-item img {
+  width: 100%;
+  height: auto;
   display: block;
 }
 
-@media (max-width: 768px) {
-  .ms-inline-pdf-box {
-    height: 600px;
-  }
+.ms-scroll-page-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+  background: rgba(12, 10, 8, 0.75);
+  border: 1px solid rgba(200, 162, 90, 0.3);
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
 }
+
+/* Thumbnails strip */
+.ms-menu-thumbs-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 0.5rem 0.3rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+}
+
+.ms-menu-thumbs-bar::-webkit-scrollbar {
+  height: 5px;
+}
+
+.ms-menu-thumbs-bar::-webkit-scrollbar-thumb {
+  background: rgba(200, 162, 90, 0.25);
+  border-radius: 3px;
+}
+
+.ms-thumb-item {
+  flex-shrink: 0;
+  width: 58px;
+  height: 82px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1.5px solid rgba(200, 162, 90, 0.2);
+  background: #1a1511;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0;
+}
+
+.ms-thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ms-thumb-item:hover {
+  border-color: rgba(200, 162, 90, 0.6);
+  transform: translateY(-2px);
+}
+
+.ms-thumb-item.is-active {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 12px rgba(200, 162, 90, 0.5);
+  transform: translateY(-3px) scale(1.04);
+}
+
+.ms-thumb-item .thumb-num {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 0.62rem;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+/* FULLSCREEN LIGHTBOX MODAL */
+.ms-menu-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.ms-menu-lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ms-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 6, 4, 0.92);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.ms-lightbox-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+}
+
+.ms-lightbox-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: rgba(26, 21, 16, 0.8);
+  border: 1px solid rgba(200, 162, 90, 0.4);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.ms-lightbox-close:hover {
+  background: var(--gold-primary);
+  color: #0c0a08;
+  transform: rotate(90deg);
+}
+
+.ms-lightbox-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(100% - 5rem);
+  gap: 1rem;
+}
+
+.ms-lightbox-prev,
+.ms-lightbox-next {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: rgba(26, 21, 16, 0.75);
+  border: 1.5px solid rgba(200, 162, 90, 0.35);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  z-index: 5;
+}
+
+.ms-lightbox-prev:hover,
+.ms-lightbox-next:hover {
+  background: var(--gold-primary);
+  color: #0c0a08;
+  transform: scale(1.1);
+}
+
+.ms-lightbox-prev:disabled,
+.ms-lightbox-next:disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.ms-lightbox-img-wrap {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-x pan-y pinch-zoom;
+}
+
+.ms-lightbox-img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  transition: transform 0.25s ease;
+  transform-origin: center center;
+}
+
+.ms-lightbox-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+.ms-lightbox-counter {
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  background: rgba(26, 21, 16, 0.8);
+  border: 1px solid rgba(200, 162, 90, 0.35);
+  color: var(--gold-light);
+  font-family: var(--font-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* =====================================================================
+   MOBILE OPTIMIZATIONS FOR MENU VIEWER (Screen width <= 768px)
+   ===================================================================== */
+@media (max-width: 768px) {
+  .ms-menu-viewer-section {
+    padding: 3.5rem 0 4.5rem;
+  }
+
+  .ms-menu-book-tabs {
+    gap: 0.5rem;
+    margin: 1.5rem 0 1.2rem;
+    justify-content: stretch;
+  }
+
+  .ms-menu-book-tab {
+    flex: 1 1 30%;
+    justify-content: center;
+    padding: 0.75rem 0.6rem;
+    font-size: 0.78rem;
+    gap: 0.4rem;
+  }
+
+  .ms-menu-book-tab .tab-badge {
+    display: none;
+  }
+
+  .ms-menu-toolbar {
+    margin-bottom: 1rem;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .ms-mode-btn,
+  .ms-action-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .ms-menu-viewer-card {
+    padding: 1.2rem 0.6rem 1rem;
+    border-radius: 12px;
+  }
+
+  .ms-menu-swipe-view {
+    min-height: auto;
+  }
+
+  .ms-stage-page {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  }
+
+  .ms-stage-tap-hint {
+    font-size: 0.68rem;
+    padding: 0.35rem 0.7rem;
+    bottom: 0.6rem;
+  }
+
+  /* Make nav arrows smaller and overlay edge on mobile */
+  .ms-viewer-nav-btn {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .ms-viewer-prev {
+    left: -0.3rem;
+  }
+
+  .ms-viewer-next {
+    right: -0.3rem;
+  }
+
+  .ms-menu-thumbs-bar {
+    justify-content: flex-start;
+    padding: 0.6rem 0.2rem 0.2rem;
+  }
+
+  .ms-thumb-item {
+    width: 48px;
+    height: 68px;
+  }
+
+  .ms-lightbox-nav {
+    position: relative;
+  }
+
+  .ms-lightbox-prev,
+  .ms-lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.8rem;
+    height: 2.8rem;
+    background: rgba(18, 14, 10, 0.85);
+  }
+
+  .ms-lightbox-prev {
+    left: 0.2rem;
+  }
+
+  .ms-lightbox-next {
+    right: 0.2rem;
+  }
+
+  .ms-lightbox-img {
+    max-height: 82vh;
+  }
+}
