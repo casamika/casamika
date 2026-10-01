@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const menuData = JSON.parse(fs.readFileSync(path.join(__dirname, 'image', 'menu-items', 'menu-data.json'), 'utf8'));
@@ -360,7 +360,7 @@ function buildHomepage(lang) {
     <meta property="og:url" content="https://casamika.com/${t.lang}/">
     <meta property="og:title" content="${t.title}">
     <meta property="og:description" content="${t.metaDesc}">
-    <meta property="og:image" content="https://casamika.com/image/image3d.jpg">
+    <meta property="og:image" content="https://casamika.com/image/imagenhahang.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Casa Mika — Garden Dining, Fine Wine & Acoustic Lounge">
@@ -369,7 +369,7 @@ function buildHomepage(lang) {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${t.title}">
     <meta name="twitter:description" content="${t.metaDesc}">
-    <meta name="twitter:image" content="https://casamika.com/image/image3d.jpg">
+    <meta name="twitter:image" content="https://casamika.com/image/imagenhahang.jpg">
 
     <title>${t.title}</title>
 
@@ -391,7 +391,7 @@ function buildHomepage(lang) {
       "name": "Casa Mika",
       "alternateName": ["Casa Mika Da Nang", "Casa Mika Garden Dining & Lounge", "Nhà hàng Casa Mika"],
       "image": [
-        "https://casamika.com/image/image3d.jpg",
+        "https://casamika.com/image/imagenhahang.jpg",
         "https://casamika.com/image/logo/logo-new.png"
       ],
       "url": "https://casamika.com/${t.lang}/",
@@ -446,7 +446,7 @@ function buildHomepage(lang) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="/image/image3d.jpg">
+    <link rel="preload" as="image" href="/image/imagenhahang.jpg">
     <link rel="stylesheet" href="/style.css">
 </head>
 
@@ -487,7 +487,7 @@ function buildHomepage(lang) {
     <!-- ===== Hero Header (About ở đầu trang) ===== -->
     <header class="ms-hero ms-about-hero" id="hero">
         <div class="ms-hero-bg">
-            <img src="/image/image3d.jpg" alt="" class="ms-hero-image" aria-hidden="true">
+            <img src="/image/imagenhahang.jpg" alt="" class="ms-hero-image" aria-hidden="true">
             <div class="ms-hero-overlay"></div>
         </div>
         <div class="container ms-hero-content">

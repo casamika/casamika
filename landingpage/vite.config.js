@@ -26,6 +26,27 @@ function copyStaticAssets() {
           }
         }
       }
+      // Ensure critical direct-referenced images (OG image, 3D renders, logos) exist in dist/image/
+      const imgCopies = [
+        'image/imagenhahang.jpg',
+        'image/imagenhahang.webp',
+        'image/imagenhahang.png',
+        'image/hero/imagenhahang.jpg',
+        'image/hero/imagenhahang.webp',
+        'image/hero/imagenhahang.png',
+        'image/logo.png',
+        'image/logo/logo-new.png',
+      ]
+      for (const rel of imgCopies) {
+        const src = resolve(__dirname, rel)
+        const dest = resolve(dist, rel)
+        if (fs.existsSync(src)) {
+          const destDir = resolve(dest, '..')
+          if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true })
+          fs.copyFileSync(src, dest)
+          console.log(`[copy-static-assets] Copied ${rel} -> dist/${rel}`)
+        }
+      }
     }
   }
 }

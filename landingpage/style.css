@@ -620,7 +620,7 @@ a {
 
 /* CTA Section */
 .cta-section {
-  background: url('image/image3d.jpg') center/cover no-fixed;
+  background: url('image/imagenhahang.jpg') center/cover no-repeat;
   position: relative;
   padding: 6rem 0;
 }
@@ -2190,36 +2190,75 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform-origin: center 30%;
+  /* Daytime facade: center horizontally, show the glass gables + logo area */
+  object-position: 55% 38%;
+  transform-origin: 55% 38%;
   animation:
-    msHeroPullBack 5.2s cubic-bezier(0.22, 1, 0.36, 1) both,
-    msKenBurns 22s ease-in-out 5.2s infinite alternate;
+    msHeroPullBack 4.8s cubic-bezier(0.16, 1, 0.3, 1) both,
+    msKenBurns 24s ease-in-out 4.8s infinite alternate;
   will-change: transform;
+  /* Subtle warm-toning for luxury mood on a bright daytime shot */
+  filter: brightness(0.88) saturate(0.92) contrast(1.06);
 }
 
 .ms-hero-overlay {
   position: absolute;
   inset: 0;
-  /* Light luxury atmospheric scrim:
-     - Gentle horizontal gradient on the left side where text sits, letting the building on the right stay 100% clear and radiant
-     - Subtle top fade for navbar and bottom fade for smooth section blend */
+  /* Multi-layered architectural scrim optimised for a BRIGHT daytime facade:
+     1. Stronger left veil for guaranteed text legibility over daylight sky & foliage.
+     2. Gentle top gradient for navbar contrast against bright blue sky.
+     3. Firm bottom gradient for seamless dark-theme section transition.
+     The right side stays transparent to showcase the Casa Mika glass house & crest. */
   background:
-    linear-gradient(90deg, rgba(16, 12, 9, 0.65) 0%, rgba(16, 12, 9, 0.35) 36%, transparent 60%),
-    linear-gradient(180deg, rgba(16, 12, 9, 0.45) 0%, transparent 22%, transparent 72%, rgba(26, 20, 16, 0.88) 100%);
+    linear-gradient(90deg,
+      rgba(10, 8, 6, 0.88) 0%,
+      rgba(10, 8, 6, 0.76) 26%,
+      rgba(10, 8, 6, 0.48) 46%,
+      rgba(10, 8, 6, 0.18) 62%,
+      rgba(10, 8, 6, 0.06) 76%,
+      transparent 88%
+    ),
+    linear-gradient(180deg,
+      rgba(10, 8, 6, 0.50) 0%,
+      rgba(10, 8, 6, 0.18) 14%,
+      transparent 30%,
+      transparent 65%,
+      rgba(18, 14, 11, 0.60) 82%,
+      rgba(18, 14, 11, 0.96) 100%
+    );
   pointer-events: none;
 }
 
-@keyframes msHeroPullBack {
+@media (max-width: 768px) {
+  .ms-hero-image {
+    /* Mobile: shift right to keep the Casa Mika gable + logo visible */
+    object-position: 62% 35%;
+    transform-origin: 62% 35%;
+  }
 
-  /* Subtle cinematic establishing reveal with full brightness */
+  .ms-hero-overlay {
+    /* Mobile: uniform vertical overlay since text stacks full-width */
+    background:
+      linear-gradient(180deg,
+        rgba(10, 8, 6, 0.72) 0%,
+        rgba(10, 8, 6, 0.50) 30%,
+        rgba(10, 8, 6, 0.42) 55%,
+        rgba(10, 8, 6, 0.68) 78%,
+        rgba(18, 14, 11, 0.98) 100%
+      );
+  }
+}
+
+@keyframes msHeroPullBack {
+  /* Cinematic establishing reveal — slightly brighter start to darken into final */
   0% {
-    transform: scale(1.6) translate(-1%, 3%);
-    filter: brightness(0.96) contrast(1.02);
+    transform: scale(1.10) translate(0, 1%);
+    filter: brightness(0.82) saturate(0.88) contrast(1.08);
   }
 
   100% {
     transform: scale(1) translate(0, 0);
-    filter: brightness(1) contrast(1);
+    filter: brightness(0.88) saturate(0.92) contrast(1.06);
   }
 }
 
@@ -2229,7 +2268,8 @@ a {
   }
 
   100% {
-    transform: scale(1.08) translate(-1.5%, -1.5%);
+    /* Gentle drift toward the Casa Mika logo crest on the right gable */
+    transform: scale(1.05) translate(-1.5%, -0.6%);
   }
 }
 

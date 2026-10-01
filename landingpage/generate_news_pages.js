@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const GOOGLE_RESERVE_URL = 'https://www.google.com/maps/reserve/v/dine/c/tx1PNeAwXj8?source=pa&opi=79508299&hl=vi&gei=xsq8ap2nGfek2roPv8oj&ahbb=1&sourceurl=https://www.google.com/maps/preview/place?authuser%3D0%26hl%3Dvi%26pb%3D!1m14!1s0x31421737deda4ad1:0xf6fb5ca72c7d33f!3m12!1m3!1d26061.27722053428!2d108.24709075!3d16.0497664!2m3!1f0!2f0!3f0!3m2!1i2560!2i1305!4f13.1!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m5!1swsq8aszpL_7d2roPy8Od-As:49!2s1i:0,t:150714,p:wsq8aszpL_7d2roPy8Od-As:49!7e81!12e3!17swsq8aszpL_7d2roPy8Od-As:53!15m108!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b1!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i1305!1m6!1m2!1i2510!2i0!2m2!1i2560!2i1305!1m6!1m2!1i0!2i0!2m2!1i2560!2i20!1m6!1m2!1i0!2i1285!2m2!1i2560!2i1305!22m1!1e81!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i797!39zQ2FzYSBNaWthIOKAkyBDb2ZmZWUgJiBSZXN0YXVyYW50IOKAkyBXb3Jrc3BhY2UsIMSQxrDhu51uZyBUcuG6p24gQuG6oWNoIMSQ4bqxbmcsIEFuIEjhuqNpLCBOZ8WpIEjDoG5oIFPGoW4sIMSQw6AgTuG6tW5n%26q%3DCasa%2BMika%2B%25E2%2580%2593%2BCoffee%2B%2526%2BRestaurant%2B%25E2%2580%2593%2BWorkspace,%2B%25C4%2590%25C6%25B0%25E1%25BB%259Dng%2BTr%25E1%25BA%25A7n%2BB%25E1%25BA%25A1ch%2B%25C4%2590%25E1%25BA%25B1ng,%2BAn%2BH%25E1%25BA%25A3i,%2BNg%25C5%25A9%2BH%25C3%25A0nh%2BS%25C6%25A1n,%2B%25C4%2590%25C3%25A0%2BN%25E1%25BA%25B5ng';
@@ -211,7 +211,7 @@ function generateNewsPage(lang) {
     <meta property="og:url" content="https://casamika.com/${d.lang}/news/">
     <meta property="og:title" content="${d.title}">
     <meta property="og:description" content="${d.desc}">
-    <meta property="og:image" content="https://casamika.com/image/image3d.jpg">
+    <meta property="og:image" content="https://casamika.com/image/imagenhahang.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Casa Mika News & Events">
@@ -220,7 +220,7 @@ function generateNewsPage(lang) {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${d.title}">
     <meta name="twitter:description" content="${d.desc}">
-    <meta name="twitter:image" content="https://casamika.com/image/image3d.jpg">
+    <meta name="twitter:image" content="https://casamika.com/image/imagenhahang.jpg">
 
     <title>${d.title}</title>
 
@@ -295,7 +295,7 @@ function generateNewsPage(lang) {
 
     <header class="ms-hero ms-hero-stub" id="hero">
         <div class="ms-hero-bg">
-            <img src="/image/image3d.jpg" alt="" class="ms-hero-image" aria-hidden="true">
+            <img src="/image/imagenhahang.jpg" alt="" class="ms-hero-image" aria-hidden="true">
             <div class="ms-hero-overlay"></div>
         </div>
         <div class="container ms-hero-content">
