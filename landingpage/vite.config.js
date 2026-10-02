@@ -108,6 +108,7 @@ export default defineConfig({
         about: resolve(__dirname, 'about/index.html'),
         news: resolve(__dirname, 'news/index.html'),
         career: resolve(__dirname, 'career/index.html'),
+        vi_career: resolve(__dirname, 'vi/career/index.html'),
         soft_opening: resolve(__dirname, 'soft-opening/index.html'),
       },
     },
