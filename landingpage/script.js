@@ -641,29 +641,51 @@ const initCasaMika = () => {
 
 
     /* =====================================================================
-       CASA MIKA — MENU SHOWCASE CATEGORY FILTER
+       CASA MIKA — MENU SHOWCASE CATEGORY FILTER (Max 12 items displayed)
        ===================================================================== */
-    const showcaseTabs = document.querySelectorAll('.ms-showcase-tab');
-    const dishCards = document.querySelectorAll('.ms-dish-card');
+    const showcaseSection = document.querySelector('.ms-showcase');
+    if (showcaseSection) {
+        const showcaseTabs = showcaseSection.querySelectorAll('.ms-showcase-tab');
+        const dishCards = showcaseSection.querySelectorAll('.ms-dish-card');
 
-    if (showcaseTabs.length && dishCards.length) {
-        showcaseTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                showcaseTabs.forEach(t => t.classList.remove('is-active'));
-                tab.classList.add('is-active');
+        if (showcaseTabs.length && dishCards.length) {
+            showcaseTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    showcaseTabs.forEach(t => t.classList.remove('is-active'));
+                    tab.classList.add('is-active');
 
-                const filter = tab.getAttribute('data-filter') || 'all';
-                dishCards.forEach(card => {
-                    const cat = card.getAttribute('data-category');
-                    if (filter === 'all' || cat === filter) {
-                        card.style.display = 'flex';
-                        card.classList.add('fade-up', 'visible');
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    const filter = tab.getAttribute('data-filter') || 'all';
+                    let shownCount = 0;
+
+                    dishCards.forEach(card => {
+                        const cat = card.getAttribute('data-category');
+                        const isFeatured = card.getAttribute('data-featured') === 'true';
+                        let shouldShow = false;
+
+                        if (filter === 'all') {
+                            if (isFeatured && shownCount < 12) {
+                                shouldShow = true;
+                                shownCount++;
+                            }
+                        } else if (cat === filter) {
+                            if (shownCount < 12) {
+                                shouldShow = true;
+                                shownCount++;
+                            }
+                        }
+
+                        if (shouldShow) {
+                            card.style.display = 'flex';
+                            card.classList.remove('fade-up');
+                            void card.offsetWidth;
+                            card.classList.add('fade-up', 'visible');
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
                 });
             });
-        });
+        }
     }
 };
 

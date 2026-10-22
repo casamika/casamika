@@ -20,7 +20,7 @@ const filesInMenu = fs.readdirSync(menuDir);
 const pdfFiles = [
   { key: 'au', filename: filesInMenu.find(f => f.includes('Âu')) },
   { key: 'viet', filename: filesInMenu.find(f => f.includes('Việt')) },
-  { key: 'ruou', filename: filesInMenu.find(f => f.includes('rượu')) }
+  { key: 'ruou', filename: filesInMenu.find(f => f.endsWith('.pdf') && !f.includes('Âu') && !f.includes('Việt') && !f.includes('Au') && f !== 'index.html') }
 ];
 
 async function convertPdf(pdfItem) {

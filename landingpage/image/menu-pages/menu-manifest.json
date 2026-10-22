@@ -1,8 +1,8 @@
 {
   "au": {
     "key": "au",
-    "title": "Menu đồ ăn Âu",
-    "totalPages": 8,
+    "title": "Menu Au CasaMika 21_10",
+    "totalPages": 7,
     "pages": [
       {
         "page": 1,
@@ -45,18 +45,12 @@
         "src": "/image/menu-pages/au/page-7.webp",
         "width": 1200,
         "height": 1697
-      },
-      {
-        "page": 8,
-        "src": "/image/menu-pages/au/page-8.webp",
-        "width": 1200,
-        "height": 1697
       }
     ]
   },
   "viet": {
     "key": "viet",
-    "title": "Menu đồ ăn Việt Nam",
+    "title": "Menu do an Viet Nam - Vietnamese Menu",
     "totalPages": 15,
     "pages": [
       {
@@ -153,8 +147,8 @@
   },
   "ruou": {
     "key": "ruou",
-    "title": "Menu danh sách các loại rượu",
-    "totalPages": 11,
+    "title": "Menu Rượu CasaMika 21_10",
+    "totalPages": 12,
     "pages": [
       {
         "page": 1,
@@ -219,6 +213,12 @@
       {
         "page": 11,
         "src": "/image/menu-pages/ruou/page-11.webp",
+        "width": 1200,
+        "height": 1697
+      },
+      {
+        "page": 12,
+        "src": "/image/menu-pages/ruou/page-12.webp",
         "width": 1200,
         "height": 1697
       }

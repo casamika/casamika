@@ -1,69 +1,55 @@
 {
   "food": [
     {
-      "src": "Hàu nướng mỡ hành.jpg",
-      "dest": "hau-nuong-mo-hanh.jpg",
-      "nameVi": "Hàu Nướng Mỡ Hành",
-      "nameEn": "Grilled Oysters with Scallion Oil",
-      "nameDe": "Gegrillte Austern mit Frühlingszwiebelöl",
-      "nameKo": "파기름 구이 굴 요리"
+      "src": "avocada-salad.png",
+      "dest": "avocada-salad.png",
+      "nameVi": "Gỏi Bơ",
+      "nameEn": "Avocado Salad",
+      "nameDe": "Avocado-Salat",
+      "nameKo": "아보카도 샐러드"
     },
     {
-      "src": "Bò lúc lắc.png",
-      "dest": "bo-luc-lac.png",
-      "nameVi": "Bò Lúc Lắc",
-      "nameEn": "Shaken Beef Tenderloin",
-      "nameDe": "Geschütteltes Rindfleisch",
-      "nameKo": "소고기 룩락",
-      "price": "265.000₫"
+      "src": "avocado-toast.png",
+      "dest": "avocado-toast.png",
+      "nameVi": "Bánh Mì Nướng Bơ",
+      "nameEn": "Avocado Toast",
+      "nameDe": "Avocado Toast",
+      "nameKo": "아보카도 토스트"
     },
     {
-      "src": "Bò sốt tiêu xanh.png",
-      "dest": "bo-sot-tieu-xanh.png",
-      "nameVi": "Bò Sốt Tiêu Xanh",
-      "nameEn": "Beef in Green Peppercorn Sauce",
-      "nameDe": "Rindfleisch in grüner Pfeffersauce",
-      "nameKo": "그린 페퍼 소스 소고기",
-      "price": "285.000₫"
+      "src": "bach-tuoc-lon-nuong-muoi-ot.png",
+      "dest": "bach-tuoc-lon-nuong-muoi-ot.png",
+      "nameVi": "Bạch Tuộc Lớn Nướng Muối Ớt",
+      "nameEn": "Large Octopus Grilled with Chili Salt",
+      "nameDe": "Großer Oktopus Chilisalz gegrillt",
+      "nameKo": "대형 문어 칠리 소금 구이"
     },
     {
-      "src": "Tôm hùm sốt trứng muối.png",
-      "dest": "tom-hum-trung-muoi.png",
-      "nameVi": "Tôm Hùm Sốt Trứng Muối",
-      "nameEn": "Lobster with Salted Egg Sauce",
-      "nameDe": "Hummer in Salzeisauce",
-      "nameKo": "솔티드 에그 소스 랍스터",
-      "price": "680.000₫"
+      "src": "bach-tuoc-lon-nuong-sa-te.jpg",
+      "dest": "bach-tuoc-lon-nuong-sa-te.jpg",
+      "nameVi": "Bạch Tuộc Lớn Nướng Sa Tế",
+      "nameEn": "Large Octopus Grilled with Satay",
+      "nameDe": "Großer Oktopus Satay gegrillt",
+      "nameKo": "대형 문어 사테 구이"
     },
     {
-      "src": "Vẹm Mika Casa sốt vang.png",
-      "dest": "vem-mika-sot-vang.png",
-      "nameVi": "Vẹm Casa Mika Sốt Vang",
-      "nameEn": "Casa Mika Mussels in White Wine",
-      "nameDe": "Miesmuscheln in Weißweinsauce",
-      "nameKo": "화이트와인 홍합 요리",
-      "price": "240.000₫"
+      "src": "bach-tuoc-nho-nuong-muoi-ot.png",
+      "dest": "bach-tuoc-nho-nuong-muoi-ot.png",
+      "nameVi": "Bạch Tuộc Nhỏ Nướng Muối Ớt",
+      "nameEn": "Small Octopus Grilled with Chili Salt",
+      "nameDe": "Kleiner Oktopus Chilisalz gegrillt",
+      "nameKo": "소형 문어 칠리 소금 구이"
     },
     {
-      "src": "Đĩa nướng tổng hợp.png",
-      "dest": "dia-nuong-tong-hop.png",
-      "nameVi": "Đĩa Nướng Tổng Hợp",
-      "nameEn": "Casa Mika BBQ Mixed Platter",
-      "nameDe": "Gemischte Grillplatte Casa Mika",
-      "nameKo": "믹스 바비큐 플래터",
-      "price": "420.000₫"
+      "src": "bach-tuoc-nho-nuong-sa-te.jpg",
+      "dest": "bach-tuoc-nho-nuong-sa-te.jpg",
+      "nameVi": "Bạch Tuộc Nhỏ Nướng Sa Tế",
+      "nameEn": "Small Octopus Grilled with Satay",
+      "nameDe": "Kleiner Oktopus Satay gegrillt",
+      "nameKo": "소형 문어 사테 구이"
     },
     {
-      "src": "Ngó sen hải sản.png",
-      "dest": "ngo-sen-hai-san.png",
-      "nameVi": "Gỏi Ngó Sen Hải Sản",
-      "nameEn": "Seafood Lotus Stem Salad",
-      "nameDe": "Meeresfrüchte-Lotussalat",
-      "nameKo": "해산물 연근 샐러드",
-      "price": "195.000₫"
-    },
-    {
-      "src": "Bạch tuộc lớn nướng muối ớt.png",
+      "src": "bach-tuoc-nuong.png",
       "dest": "bach-tuoc-nuong.png",
       "nameVi": "Bạch Tuộc Nướng Muối Ớt",
       "nameEn": "Grilled Octopus with Chili Salt",
@@ -72,7 +58,23 @@
       "price": "235.000₫"
     },
     {
-      "src": "Bánh xèo bò.jpg",
+      "src": "banh-canh-bo.png",
+      "dest": "banh-canh-bo.png",
+      "nameVi": "Bánh Canh Bò",
+      "nameEn": "Beef Thick Noodle Soup",
+      "nameDe": "Rinder-Bánhcạnh-Suppe",
+      "nameKo": "소고기 반깐"
+    },
+    {
+      "src": "banh-canh-hai-san.png",
+      "dest": "banh-canh-hai-san.png",
+      "nameVi": "Bánh Canh Hải Sản",
+      "nameEn": "Seafood Thick Noodle Soup",
+      "nameDe": "Meeresfrüchte-Bánhcạnh-Suppe",
+      "nameKo": "해산물 반깐"
+    },
+    {
+      "src": "banh-xeo-bo.jpg",
       "dest": "banh-xeo-bo.jpg",
       "nameVi": "Bánh Xèo Giòn Nhân Bò",
       "nameEn": "Crispy Vietnamese Beef Pancake",
@@ -81,7 +83,434 @@
       "price": "165.000₫"
     },
     {
-      "src": "Mika casa breakfast.png",
+      "src": "banh-xeo-chay.jpg",
+      "dest": "banh-xeo-chay.jpg",
+      "nameVi": "Bánh Xèo Chay",
+      "nameEn": "Crispy Vegan Vietnamese Pancake",
+      "nameDe": "Veganer Bánh Xèo",
+      "nameKo": "채식 반세오"
+    },
+    {
+      "src": "bo-luc-lac.png",
+      "dest": "bo-luc-lac.png",
+      "nameVi": "Bò Lúc Lắc",
+      "nameEn": "Shaken Beef Tenderloin",
+      "nameDe": "Geschütteltes Rindfleisch",
+      "nameKo": "소고기 룩락",
+      "price": "265.000₫"
+    },
+    {
+      "src": "bo-sot-tieu-xanh.png",
+      "dest": "bo-sot-tieu-xanh.png",
+      "nameVi": "Bò Sốt Tiêu Xanh",
+      "nameEn": "Beef in Green Peppercorn Sauce",
+      "nameDe": "Rindfleisch in grüner Pfeffersauce",
+      "nameKo": "그린 페퍼 소스 소고기",
+      "price": "285.000₫"
+    },
+    {
+      "src": "bo-xao-hanh-can.png",
+      "dest": "bo-xao-hanh-can.png",
+      "nameVi": "Bò Xào Hành Cần",
+      "nameEn": "Stir-fried Beef with Celery",
+      "nameDe": "Wok-Rindfleisch mit Sellerie",
+      "nameKo": "셀러리 볶음 소고기"
+    },
+    {
+      "src": "bo-xao-thom-ca.png",
+      "dest": "bo-xao-thom-ca.png",
+      "nameVi": "Bò Xào Thơm Cà",
+      "nameEn": "Stir-fried Beef with Pineapple & Tomato",
+      "nameDe": "Wok-Rindfleisch mit Ananas & Tomate",
+      "nameKo": "파인애플 토마토 볶음 소고기"
+    },
+    {
+      "src": "bun-bo-hue.png",
+      "dest": "bun-bo-hue.png",
+      "nameVi": "Bún Bò Huế",
+      "nameEn": "Hue Spicy Beef Noodle Soup",
+      "nameDe": "Hue Rindfleisch-Reisnudeln",
+      "nameKo": "분보후에 (후에식 매운 소고기 국수)"
+    },
+    {
+      "src": "ca-cam-nuong-muoi-ot.png",
+      "dest": "ca-cam-nuong-muoi-ot.png",
+      "nameVi": "Cá Cam Nướng Muối Ớt",
+      "nameEn": "Grilled Amberjack with Chili Salt",
+      "nameDe": "Gegrillter Heilbutt mit Chilisalz",
+      "nameKo": "부리 생선 칠리 소금 구이"
+    },
+    {
+      "src": "ca-cam-nuong-sa-te.jpg",
+      "dest": "ca-cam-nuong-sa-te.jpg",
+      "nameVi": "Cá Cam Nướng Sa Tế",
+      "nameEn": "Grilled Amberjack with Satay",
+      "nameDe": "Gegrillter Heilbutt mit Satay",
+      "nameKo": "부리 생선 사테 구이"
+    },
+    {
+      "src": "ca-chim-chien.jpg",
+      "dest": "ca-chim-chien.jpg",
+      "nameVi": "Cá Chim Chiên",
+      "nameEn": "Fried Pomfret Fish",
+      "nameDe": "Gebratener Stachelmakrele",
+      "nameKo": "병어 튀김"
+    },
+    {
+      "src": "ca-chim-nuong.png",
+      "dest": "ca-chim-nuong.png",
+      "nameVi": "Cá Chim Nướng",
+      "nameEn": "Grilled Pomfret Fish",
+      "nameDe": "Gegrillter Stachelmakrele",
+      "nameKo": "병어 구이"
+    },
+    {
+      "src": "ca-dieu-hong-chien-mam-xoai.png",
+      "dest": "ca-dieu-hong-chien-mam-xoai.png",
+      "nameVi": "Cá Điêu Hồng Chiên Mắm Xoài",
+      "nameEn": "Fried Red Tilapia with Mango Fish Sauce",
+      "nameDe": "Gebratener Roter Tilapia mit Mangofischsauce",
+      "nameKo": "레드 틸라피아 망고 소스 튀김"
+    },
+    {
+      "src": "ca-loc-chien-xu-mam-xoai.png",
+      "dest": "ca-loc-chien-xu-mam-xoai.png",
+      "nameVi": "Cá Lóc Chiên Xù Mắm Xoài",
+      "nameEn": "Crispy Snakehead Fish with Mango Fish Sauce",
+      "nameDe": "Knuspriger Schlangenkopffisch mit Mangofischsauce",
+      "nameKo": "스네이크헤드 망고 소스 튀김"
+    },
+    {
+      "src": "ca-loc-kho-to.png",
+      "dest": "ca-loc-kho-to.png",
+      "nameVi": "Cá Lóc Kho Tộ",
+      "nameEn": "Braised Snakehead Fish in Clay Pot",
+      "nameDe": "Geschmorter Schlangenkopffisch im Tontopf",
+      "nameKo": "스네이크헤드 토냄비 조림"
+    },
+    {
+      "src": "ca-tim-chien-mo-hanh.jpg",
+      "dest": "ca-tim-chien-mo-hanh.jpg",
+      "nameVi": "Cà Tím Chiên Mỡ Hành",
+      "nameEn": "Fried Eggplant with Scallion Oil",
+      "nameDe": "Gebratene Aubergine mit Frühlingszwiebelöl",
+      "nameKo": "파기름 가지 튀김"
+    },
+    {
+      "src": "canh-cha-ca-that-lat-rau-thi-la.png",
+      "dest": "canh-cha-ca-that-lat-rau-thi-la.png",
+      "nameVi": "Canh Chả Cá Thát Lát Rau Thì Là",
+      "nameEn": "Featherback Fish Cake Soup with Dill",
+      "nameDe": "Federrücken-Fischkuchen-Suppe mit Dill",
+      "nameKo": "비늘 생선 완자 딜 수프"
+    },
+    {
+      "src": "canh-chua-dieu-hong-ca-loc.png",
+      "dest": "canh-chua-dieu-hong-ca-loc.png",
+      "nameVi": "Canh Chua Cá Điêu Hồng & Cá Lóc",
+      "nameEn": "Sweet & Sour Soup with Red Tilapia & Snakehead",
+      "nameDe": "Süß-saure Fischsuppe",
+      "nameKo": "새콤한 물고기 수프"
+    },
+    {
+      "src": "canh-chua-hai-san-com-trang.png",
+      "dest": "canh-chua-hai-san-com-trang.png",
+      "nameVi": "Canh Chua Hải Sản & Cơm Trắng",
+      "nameEn": "Sweet & Sour Seafood Soup with Steamed Rice",
+      "nameDe": "Süß-saure Meeresfrüchtesuppe mit Reis",
+      "nameKo": "해산물 새콤 수프와 밥"
+    },
+    {
+      "src": "canh-ngheu-thom.png",
+      "dest": "canh-ngheu-thom.png",
+      "nameVi": "Canh Nghêu Thơm",
+      "nameEn": "Aromatic Clam Soup",
+      "nameDe": "Aromatische Muschelsuppe",
+      "nameKo": "향기로운 조개 수프"
+    },
+    {
+      "src": "canh-ngheu-xa-la-e.png",
+      "dest": "canh-ngheu-xa-la-e.png",
+      "nameVi": "Canh Nghêu Xả Lá É",
+      "nameEn": "Lemongrass Basil Clam Soup",
+      "nameDe": "Zitronengras-Basilikum-Muschelsuppe",
+      "nameKo": "레몬그라스 바질 조개 수프"
+    },
+    {
+      "src": "casera-salad.png",
+      "dest": "casera-salad.png",
+      "nameVi": "Casera Salad",
+      "nameEn": "Casera Salad",
+      "nameDe": "Casera Salat",
+      "nameKo": "카세라 샐러드"
+    },
+    {
+      "src": "cha-gio-chien-chay.png",
+      "dest": "cha-gio-chien-chay.png",
+      "nameVi": "Chả Giò Chiên Chay",
+      "nameEn": "Crispy Vegan Spring Rolls",
+      "nameDe": "Vegane Frühlingsrollen",
+      "nameKo": "채식 춘권"
+    },
+    {
+      "src": "cha-gio-hai-san.jpg",
+      "dest": "cha-gio-hai-san.jpg",
+      "nameVi": "Chả Giò Hải Sản",
+      "nameEn": "Crispy Seafood Spring Rolls",
+      "nameDe": "Meeresfrüchte-Frühlingsrollen",
+      "nameKo": "해산물 춘권"
+    },
+    {
+      "src": "cha-gio-tom-thit.jpg",
+      "dest": "cha-gio-tom-thit.jpg",
+      "nameVi": "Chả Giò Tôm Thịt",
+      "nameEn": "Crispy Shrimp & Pork Spring Rolls",
+      "nameDe": "Garnelen-Schweinefleisch-Frühlingsrollen",
+      "nameKo": "새우 돼지고기 춘권"
+    },
+    {
+      "src": "chocolate-lava.png",
+      "dest": "chocolate-lava.png",
+      "nameVi": "Bánh Chocolate Lava",
+      "nameEn": "Chocolate Lava Cake",
+      "nameDe": "Schokoladenlava-Kuchen",
+      "nameKo": "초콜릿 라바 케이크"
+    },
+    {
+      "src": "cold-plate.png",
+      "dest": "cold-plate.png",
+      "nameVi": "Đĩa Nguội Tổng Hợp",
+      "nameEn": "Cold Plate Selection",
+      "nameDe": "Kalte Platte",
+      "nameKo": "콜드 플레이트"
+    },
+    {
+      "src": "com-chien-chay.png",
+      "dest": "com-chien-chay.png",
+      "nameVi": "Cơm Chiên Chay",
+      "nameEn": "Vegan Fried Rice",
+      "nameDe": "Veganes gebratenes Reis",
+      "nameKo": "채식 볶음밥"
+    },
+    {
+      "src": "com-chien-hai-san.png",
+      "dest": "com-chien-hai-san.png",
+      "nameVi": "Cơm Chiên Hải Sản",
+      "nameEn": "Seafood Fried Rice",
+      "nameDe": "Meeresfrüchte gebratenes Reis",
+      "nameKo": "해산물 볶음밥"
+    },
+    {
+      "src": "com-tam.png",
+      "dest": "com-tam.png",
+      "nameVi": "Cơm Tấm",
+      "nameEn": "Broken Rice with Grilled Pork",
+      "nameDe": "Gebrochener Reis mit gegrilltem Schweinefleisch",
+      "nameKo": "껌떰 (부서진 쌀)"
+    },
+    {
+      "src": "com-thit-heo-chien-xu.png",
+      "dest": "com-thit-heo-chien-xu.png",
+      "nameVi": "Cơm Thịt Heo Chiên Xù",
+      "nameEn": "Crispy Pork Cutlet Rice",
+      "nameDe": "Knuspriges Schweineschnitzel mit Reis",
+      "nameKo": "돈까스 밥"
+    },
+    {
+      "src": "creme-bulle.png",
+      "dest": "creme-bulle.png",
+      "nameVi": "Crème Brûlée",
+      "nameEn": "Classic Crème Brûlée",
+      "nameDe": "Klassische Crème Brûlée",
+      "nameKo": "크렘 브륄레"
+    },
+    {
+      "src": "croisant.png",
+      "dest": "croisant.png",
+      "nameVi": "Bánh Croissant",
+      "nameEn": "Butter Croissant",
+      "nameDe": "Buttercroissant",
+      "nameKo": "버터 크루아상"
+    },
+    {
+      "src": "croit-sandwich.png",
+      "dest": "croit-sandwich.png",
+      "nameVi": "Croissant Sandwich",
+      "nameEn": "Croissant Sandwich",
+      "nameDe": "Croissant Sandwich",
+      "nameKo": "크루아상 샌드위치"
+    },
+    {
+      "src": "dia-nuong-tong-hop.png",
+      "dest": "dia-nuong-tong-hop.png",
+      "nameVi": "Đĩa Nướng Tổng Hợp",
+      "nameEn": "Casa Mika BBQ Mixed Platter",
+      "nameDe": "Gemischte Grillplatte Casa Mika",
+      "nameKo": "믹스 바비큐 플래터",
+      "price": "420.000₫"
+    },
+    {
+      "src": "egg-benedit.png",
+      "dest": "egg-benedit.png",
+      "nameVi": "Eggs Benedict",
+      "nameEn": "Eggs Benedict",
+      "nameDe": "Eggs Benedict",
+      "nameKo": "에그 베네딕트"
+    },
+    {
+      "src": "english-breafast.png",
+      "dest": "english-breafast.png",
+      "nameVi": "English Breakfast",
+      "nameEn": "English Breakfast",
+      "nameDe": "Englisches Frühstück",
+      "nameKo": "잉글리시 브렉퍼스트"
+    },
+    {
+      "src": "ga-chien-mam.png",
+      "dest": "ga-chien-mam.png",
+      "nameVi": "Gà Chiên Mắm",
+      "nameEn": "Fish Sauce Fried Chicken",
+      "nameDe": "Fischsauce gebratenes Hähnchen",
+      "nameKo": "피쉬 소스 치킨"
+    },
+    {
+      "src": "ga-kho-to.png",
+      "dest": "ga-kho-to.png",
+      "nameVi": "Gà Kho Tộ",
+      "nameEn": "Braised Chicken in Clay Pot",
+      "nameDe": "Geschmortes Hähnchen im Tontopf",
+      "nameKo": "토냄비 닭 조림"
+    },
+    {
+      "src": "ga-xao-casa-mika.png",
+      "dest": "ga-xao-casa-mika.png",
+      "nameVi": "Gà Xào Casa Mika",
+      "nameEn": "Casa Mika Signature Stir-fried Chicken",
+      "nameDe": "Casa Mika Wok-Hähnchen",
+      "nameKo": "까사 미카 시그니처 볶음 닭"
+    },
+    {
+      "src": "ga-xao-chua-ngot.png",
+      "dest": "ga-xao-chua-ngot.png",
+      "nameVi": "Gà Xào Chua Ngọt",
+      "nameEn": "Sweet & Sour Stir-fried Chicken",
+      "nameDe": "Süß-saures Wok-Hähnchen",
+      "nameKo": "새콤달콤 볶음 닭"
+    },
+    {
+      "src": "garden-salad.png",
+      "dest": "garden-salad.png",
+      "nameVi": "Garden Salad",
+      "nameEn": "Garden Salad",
+      "nameDe": "Gartensalat",
+      "nameKo": "가든 샐러드"
+    },
+    {
+      "src": "goi-cuon-chay.jpg",
+      "dest": "goi-cuon-chay.jpg",
+      "nameVi": "Gỏi Cuốn Chay",
+      "nameEn": "Fresh Vegan Spring Rolls",
+      "nameDe": "Vegane frische Frühlingsrollen",
+      "nameKo": "채식 생춘권"
+    },
+    {
+      "src": "goi-cuon-hai-san.jpg",
+      "dest": "goi-cuon-hai-san.jpg",
+      "nameVi": "Gỏi Cuốn Hải Sản",
+      "nameEn": "Fresh Seafood Spring Rolls",
+      "nameDe": "Meeresfrüchte frische Frühlingsrollen",
+      "nameKo": "해산물 생춘권"
+    },
+    {
+      "src": "goi-cuon-tom-thit.jpg",
+      "dest": "goi-cuon-tom-thit.jpg",
+      "nameVi": "Gỏi Cuốn Tôm Thịt",
+      "nameEn": "Fresh Shrimp & Pork Spring Rolls",
+      "nameDe": "Garnelen-Schweinefleisch frische Frühlingsrollen",
+      "nameKo": "새우 돼지고기 생춘권"
+    },
+    {
+      "src": "goi-u-u-hai-san.png",
+      "dest": "goi-u-u-hai-san.png",
+      "nameVi": "Gỏi Đu Đủ Hải Sản",
+      "nameEn": "Seafood Papaya Salad",
+      "nameDe": "Meeresfrüchte-Papaya-Salat",
+      "nameKo": "해산물 파파야 샐러드"
+    },
+    {
+      "src": "goi-u-u-tom-thi.jpg",
+      "dest": "goi-u-u-tom-thi.jpg",
+      "nameVi": "Gỏi Đu Đủ Tôm Thịt",
+      "nameEn": "Shrimp & Pork Papaya Salad",
+      "nameDe": "Garnelen-Schweinefleisch-Papaya-Salat",
+      "nameKo": "새우 돼지고기 파파야 샐러드"
+    },
+    {
+      "src": "hamchese-sandwich.png",
+      "dest": "hamchese-sandwich.png",
+      "nameVi": "Ham & Cheese Sandwich",
+      "nameEn": "Ham & Cheese Sandwich",
+      "nameDe": "Schinken-Käse-Sandwich",
+      "nameKo": "햄 치즈 샌드위치"
+    },
+    {
+      "src": "hau-nuong-mo-hanh.jpg",
+      "dest": "hau-nuong-mo-hanh.jpg",
+      "nameVi": "Hàu Nướng Mỡ Hành",
+      "nameEn": "Grilled Oysters with Scallion Oil",
+      "nameDe": "Gegrillte Austern mit Frühlingszwiebelöl",
+      "nameKo": "파기름 구이 굴 요리"
+    },
+    {
+      "src": "hau-nuong-pho-mai.png",
+      "dest": "hau-nuong-pho-mai.png",
+      "nameVi": "Hàu Nướng Phô Mai",
+      "nameEn": "Cheese Grilled Oysters",
+      "nameDe": "Käse-Grill-Austern",
+      "nameKo": "치즈 구이 굴"
+    },
+    {
+      "src": "heo-chua-ngotj.png",
+      "dest": "heo-chua-ngotj.png",
+      "nameVi": "Heo Chua Ngọt",
+      "nameEn": "Sweet & Sour Pork",
+      "nameDe": "Süß-saures Schweinefleisch",
+      "nameKo": "새콤달콤 돼지고기"
+    },
+    {
+      "src": "met-casa-mika.png",
+      "dest": "met-casa-mika.png",
+      "nameVi": "Mẹt Casa Mika",
+      "nameEn": "Casa Mika Vietnamese Tray",
+      "nameDe": "Casa Mika Vietnamesisches Tablett",
+      "nameKo": "까사 미카 베트남 트레이"
+    },
+    {
+      "src": "mi-xao-bo.png",
+      "dest": "mi-xao-bo.png",
+      "nameVi": "Mì Xào Bò",
+      "nameEn": "Stir-fried Noodles with Beef",
+      "nameDe": "Wok-Nudeln mit Rindfleisch",
+      "nameKo": "소고기 볶음면"
+    },
+    {
+      "src": "mi-xao-ga.png",
+      "dest": "mi-xao-ga.png",
+      "nameVi": "Mì Xào Gà",
+      "nameEn": "Stir-fried Noodles with Chicken",
+      "nameDe": "Wok-Nudeln mit Hähnchen",
+      "nameKo": "닭고기 볶음면"
+    },
+    {
+      "src": "mi-xao-hai-san.png",
+      "dest": "mi-xao-hai-san.png",
+      "nameVi": "Mì Xào Hải Sản",
+      "nameEn": "Stir-fried Seafood Noodles",
+      "nameDe": "Wok-Meeresfrüchte-Nudeln",
+      "nameKo": "해산물 볶음면"
+    },
+    {
+      "src": "mika-casa-breakfast.png",
       "dest": "mika-casa-breakfast.png",
       "nameVi": "Bữa Sáng Casa Mika",
       "nameEn": "Casa Mika Signature Breakfast",
@@ -90,7 +519,64 @@
       "price": "185.000₫"
     },
     {
-      "src": "Pho bo.png",
+      "src": "muc-xao-hanh-can.png",
+      "dest": "muc-xao-hanh-can.png",
+      "nameVi": "Mực Xào Hành Cần",
+      "nameEn": "Stir-fried Squid with Celery",
+      "nameDe": "Wok-Tintenfisch mit Sellerie",
+      "nameKo": "셀러리 볶음 오징어"
+    },
+    {
+      "src": "nam-kho-to.png",
+      "dest": "nam-kho-to.png",
+      "nameVi": "Nấm Kho Tộ",
+      "nameEn": "Braised Mushroom in Clay Pot",
+      "nameDe": "Geschmorte Pilze im Tontopf",
+      "nameKo": "토냄비 버섯 조림"
+    },
+    {
+      "src": "ngo-sen-hai-san.png",
+      "dest": "ngo-sen-hai-san.png",
+      "nameVi": "Gỏi Ngó Sen Hải Sản",
+      "nameEn": "Seafood Lotus Stem Salad",
+      "nameDe": "Meeresfrüchte-Lotussalat",
+      "nameKo": "해산물 연근 샐러드",
+      "price": "195.000₫"
+    },
+    {
+      "src": "ngo-sen-hoa-chuoi.jpg",
+      "dest": "ngo-sen-hoa-chuoi.jpg",
+      "nameVi": "Gỏi Ngó Sen Hoa Chuối",
+      "nameEn": "Banana Blossom & Lotus Stem Salad",
+      "nameDe": "Bananenblüten-Lotus-Salat",
+      "nameKo": "바나나 꽃 연근 샐러드"
+    },
+    {
+      "src": "panna-cotta-pinapple.jpg",
+      "dest": "panna-cotta-pinapple.jpg",
+      "nameVi": "Panna Cotta Dứa",
+      "nameEn": "Pineapple Panna Cotta",
+      "nameDe": "Ananas-Panna Cotta",
+      "nameKo": "파인애플 판나 코타"
+    },
+    {
+      "src": "pannacotta.png",
+      "dest": "pannacotta.png",
+      "nameVi": "Panna Cotta",
+      "nameEn": "Classic Panna Cotta",
+      "nameDe": "Klassische Panna Cotta",
+      "nameKo": "클래식 판나 코타"
+    },
+    {
+      "src": "panno-cotta-mango.jpg",
+      "dest": "panno-cotta-mango.jpg",
+      "nameVi": "Panna Cotta Xoài",
+      "nameEn": "Mango Panna Cotta",
+      "nameDe": "Mango-Panna Cotta",
+      "nameKo": "망고 판나 코타"
+    },
+    {
+      "src": "pho-bo.png",
       "dest": "pho-bo.png",
       "nameVi": "Phở Bò Thượng Hạng",
       "nameEn": "Signature Beef Phở",
@@ -99,54 +585,227 @@
       "price": "145.000₫"
     },
     {
-      "src": "Tiramisu.png",
+      "src": "pho-ga.png",
+      "dest": "pho-ga.png",
+      "nameVi": "Phở Gà",
+      "nameEn": "Chicken Phở",
+      "nameDe": "Hähnchen-Phở",
+      "nameKo": "닭고기 쌀국수"
+    },
+    {
+      "src": "rau-muong-xao-toi.jpg",
+      "dest": "rau-muong-xao-toi.jpg",
+      "nameVi": "Rau Muống Xào Tỏi",
+      "nameEn": "Garlic Stir-fried Water Spinach",
+      "nameDe": "Knoblauch Wok-Wasserspinat",
+      "nameKo": "마늘 볶음 공심채"
+    },
+    {
+      "src": "rau-ngu-qua-kho-quet.jpg",
+      "dest": "rau-ngu-qua-kho-quet.jpg",
+      "nameVi": "Rau Ngũ Quả Kho Quẹt",
+      "nameEn": "Mixed Vegetables with Dipping Sauce",
+      "nameDe": "Gemischtes Gemüse mit Dipsauce",
+      "nameKo": "다섯 가지 채소 딥소스"
+    },
+    {
+      "src": "rau-ngu-qua-theo-mua.jpg",
+      "dest": "rau-ngu-qua-theo-mua.jpg",
+      "nameVi": "Rau Ngũ Quả Theo Mùa",
+      "nameEn": "Seasonal Mixed Vegetables",
+      "nameDe": "Saisonales Gemüse",
+      "nameKo": "제철 채소 모둠"
+    },
+    {
+      "src": "seafood-salad.png",
+      "dest": "seafood-salad.png",
+      "nameVi": "Gỏi Hải Sản",
+      "nameEn": "Seafood Salad",
+      "nameDe": "Meeresfrüchte-Salat",
+      "nameKo": "해산물 샐러드"
+    },
+    {
+      "src": "seasonfruit.png",
+      "dest": "seasonfruit.png",
+      "nameVi": "Hoa Quả Theo Mùa",
+      "nameEn": "Seasonal Fresh Fruit Platter",
+      "nameDe": "Saisonaler Obstkorb",
+      "nameKo": "제철 과일 플래터"
+    },
+    {
+      "src": "so-iep-hap-xa.png",
+      "dest": "so-iep-hap-xa.png",
+      "nameVi": "Sò Điệp Hấp Xả",
+      "nameEn": "Steamed Scallops with Lemongrass",
+      "nameDe": "Gedämpfte Jakobsmuscheln mit Zitronengras",
+      "nameKo": "레몬그라스 관자 찜"
+    },
+    {
+      "src": "so-iep-xao-thai.jpg",
+      "dest": "so-iep-xao-thai.jpg",
+      "nameVi": "Sò Điệp Xào Thái",
+      "nameEn": "Thai Stir-fried Scallops",
+      "nameDe": "Thai Wok-Jakobsmuscheln",
+      "nameKo": "타이식 볶음 관자"
+    },
+    {
+      "src": "thit-kho-to.png",
+      "dest": "thit-kho-to.png",
+      "nameVi": "Thịt Kho Tộ",
+      "nameEn": "Braised Pork in Clay Pot",
+      "nameDe": "Geschmortes Schweinefleisch im Tontopf",
+      "nameKo": "토냄비 삼겹살 조림"
+    },
+    {
+      "src": "thit-kho-trung-cut-nuoc-dua.png",
+      "dest": "thit-kho-trung-cut-nuoc-dua.png",
+      "nameVi": "Thịt Kho Trứng Cút Nước Dừa",
+      "nameEn": "Braised Pork & Quail Eggs in Coconut Water",
+      "nameDe": "Schweinefleisch & Wachteleier in Kokoswasser",
+      "nameKo": "코코넛 워터 삼겹살 메추리알 조림"
+    },
+    {
+      "src": "tiramisu.png",
       "dest": "tiramisu.png",
       "nameVi": "Bánh Tiramisu Casa Mika",
       "nameEn": "Classic Casa Mika Tiramisu",
       "nameDe": "Klassisches Tiramisu",
       "nameKo": "수제 티라미수",
       "price": "120.000₫"
+    },
+    {
+      "src": "tom-hum-sot-me.jpg",
+      "dest": "tom-hum-sot-me.jpg",
+      "nameVi": "Tôm Hùm Sốt Me",
+      "nameEn": "Lobster in Tamarind Sauce",
+      "nameDe": "Hummer in Tamarindensauce",
+      "nameKo": "타마린드 소스 랍스터"
+    },
+    {
+      "src": "tom-hum-sot-toi.jpg",
+      "dest": "tom-hum-sot-toi.jpg",
+      "nameVi": "Tôm Hùm Sốt Tỏi",
+      "nameEn": "Lobster in Garlic Sauce",
+      "nameDe": "Hummer in Knoblauchsauce",
+      "nameKo": "마늘 소스 랍스터"
+    },
+    {
+      "src": "tom-hum-sot-trung-muoi.png",
+      "dest": "tom-hum-sot-trung-muoi.png",
+      "nameVi": "Tôm Hùm Sốt Trứng Muối",
+      "nameEn": "Lobster with Salted Egg Sauce",
+      "nameDe": "Hummer in Salzeisauce",
+      "nameKo": "솔티드 에그 소스 랍스터"
+    },
+    {
+      "src": "tom-su-sot-me.png",
+      "dest": "tom-su-sot-me.png",
+      "nameVi": "Tôm Sú Sốt Me",
+      "nameEn": "Tiger Prawns in Tamarind Sauce",
+      "nameDe": "Tigergarnelen in Tamarindensauce",
+      "nameKo": "타마린드 소스 왕새우"
+    },
+    {
+      "src": "tom-su-sot-toi.png",
+      "dest": "tom-su-sot-toi.png",
+      "nameVi": "Tôm Sú Sốt Tỏi",
+      "nameEn": "Tiger Prawns in Garlic Sauce",
+      "nameDe": "Tigergarnelen in Knoblauchsauce",
+      "nameKo": "마늘 소스 왕새우"
+    },
+    {
+      "src": "tom-su.png",
+      "dest": "tom-su.png",
+      "nameVi": "Tôm Sú",
+      "nameEn": "Tiger Prawns",
+      "nameDe": "Tigergarnelen",
+      "nameKo": "왕새우"
+    },
+    {
+      "src": "tom-thit-rim.png",
+      "dest": "tom-thit-rim.png",
+      "nameVi": "Tôm Thịt Rim",
+      "nameEn": "Caramelized Shrimp & Pork",
+      "nameDe": "Karamellisierte Garnelen mit Schweinefleisch",
+      "nameKo": "카라멜화 새우 돼지고기"
+    },
+    {
+      "src": "vegan-sandwich.png",
+      "dest": "vegan-sandwich.png",
+      "nameVi": "Bánh Mì Chay",
+      "nameEn": "Vegan Sandwich",
+      "nameDe": "Veganer Sandwich",
+      "nameKo": "채식 샌드위치"
+    },
+    {
+      "src": "vegan-toast.png",
+      "dest": "vegan-toast.png",
+      "nameVi": "Vegan Toast",
+      "nameEn": "Vegan Toast",
+      "nameDe": "Veganer Toast",
+      "nameKo": "비건 토스트"
+    },
+    {
+      "src": "vem-mika-casa-sot-vang.png",
+      "dest": "vem-mika-casa-sot-vang.png",
+      "nameVi": "Vẹm Casa Mika Sốt Vang",
+      "nameEn": "Casa Mika Mussels in White Wine",
+      "nameDe": "Miesmuscheln in Weißweinsauce",
+      "nameKo": "화이트와인 홍합 요리"
+    },
+    {
+      "src": "vem-mika-sot-toi-ca-chua.jpg",
+      "dest": "vem-mika-sot-toi-ca-chua.jpg",
+      "nameVi": "Vẹm Mika Sốt Tỏi Cà Chua",
+      "nameEn": "Mika Mussels in Garlic Tomato Sauce",
+      "nameDe": "Miesmuscheln in Knoblauch-Tomaten-Sauce",
+      "nameKo": "마늘 토마토 소스 홍합"
+    },
+    {
+      "src": "vem-mika-sot-vang.png",
+      "dest": "vem-mika-sot-vang.png",
+      "nameVi": "Vẹm Casa Mika Sốt Vang",
+      "nameEn": "Casa Mika Mussels in White Wine",
+      "nameDe": "Miesmuscheln in Weißweinsauce",
+      "nameKo": "화이트와인 홍합 요리",
+      "price": "240.000₫"
+    },
+    {
+      "src": "waffle-chocolate.jpg",
+      "dest": "waffle-chocolate.jpg",
+      "nameVi": "Waffle Socola",
+      "nameEn": "Chocolate Waffle",
+      "nameDe": "Schokoladenwaffel",
+      "nameKo": "초콜릿 와플"
+    },
+    {
+      "src": "waffle-fruit.png",
+      "dest": "waffle-fruit.png",
+      "nameVi": "Waffle Trái Cây",
+      "nameEn": "Fresh Fruit Waffle",
+      "nameDe": "Obstwaffel",
+      "nameKo": "과일 와플"
+    },
+    {
+      "src": "waffle-honey.png",
+      "dest": "waffle-honey.png",
+      "nameVi": "Waffle Mật Ong",
+      "nameEn": "Honey Waffle",
+      "nameDe": "Honigwaffel",
+      "nameKo": "꿀 와플"
+    },
+    {
+      "src": "waflle-sugar.png",
+      "dest": "waflle-sugar.png",
+      "nameVi": "Waffle Đường",
+      "nameEn": "Sugar Waffle",
+      "nameDe": "Zuckerwaffel",
+      "nameKo": "설탕 와플"
     }
   ],
   "drink": [
     {
-      "src": "Cà phê muối.jpg",
-      "dest": "ca-phe-muoi.jpg",
-      "nameVi": "Cà Phê Muối Đà Nẵng",
-      "nameEn": "Da Nang Salted Cream Coffee",
-      "nameDe": "Da Nang Salz-Kaffee",
-      "nameKo": "다낭 솔트 커피",
-      "price": "65.000₫"
-    },
-    {
-      "src": "Cà phê dừa.jpg",
-      "dest": "ca-phe-dua.jpg",
-      "nameVi": "Cà Phê Dừa Tuyết",
-      "nameEn": "Frozen Coconut Coffee",
-      "nameDe": "Kokos-Kaffee frappiert",
-      "nameKo": "코코넛 커피 스무디",
-      "price": "75.000₫"
-    },
-    {
-      "src": "Bạc xỉu.jpg",
-      "dest": "bac-xiu.jpg",
-      "nameVi": "Bạc Xỉu Sữa Mềm",
-      "nameEn": "Vietnamese White Coffee",
-      "nameDe": "Süßer Milchkaffee Bạc Xỉu",
-      "nameKo": "베트남 화이트 커피",
-      "price": "60.000₫"
-    },
-    {
-      "src": "Cappuchino.jpg",
-      "dest": "cappuccino.jpg",
-      "nameVi": "Cappuccino Thượng Hạng",
-      "nameEn": "Artisan Cappuccino",
-      "nameDe": "Klassischer Cappuccino",
-      "nameKo": "아티잔 카푸치노",
-      "price": "75.000₫"
-    },
-    {
-      "src": "Americano.jpg",
+      "src": "americano.jpg",
       "dest": "americano.jpg",
       "nameVi": "Cà Phê Americano",
       "nameEn": "Classic Americano",
@@ -155,7 +814,83 @@
       "price": "60.000₫"
     },
     {
-      "src": "caramel latte.jpg",
+      "src": "bac-xiu.jpg",
+      "dest": "bac-xiu.jpg",
+      "nameVi": "Bạc Xỉu Sữa Mềm",
+      "nameEn": "Vietnamese White Coffee",
+      "nameDe": "Süßer Milchkaffee Bạc Xỉu",
+      "nameKo": "베트남 화이트 커피",
+      "price": "60.000₫"
+    },
+    {
+      "src": "bo-dua.jpg",
+      "dest": "bo-dua.jpg",
+      "nameVi": "Cà Phê Bơ Dừa",
+      "nameEn": "Coconut Butter Coffee",
+      "nameDe": "Kokos-Butter-Kaffee",
+      "nameKo": "코코넛 버터 커피"
+    },
+    {
+      "src": "ca-phe-bap.jpg",
+      "dest": "ca-phe-bap.jpg",
+      "nameVi": "Cà Phê Bắp",
+      "nameEn": "Corn Coffee",
+      "nameDe": "Maiskaffee",
+      "nameKo": "옥수수 커피"
+    },
+    {
+      "src": "ca-phe-dua.jpg",
+      "dest": "ca-phe-dua.jpg",
+      "nameVi": "Cà Phê Dừa Tuyết",
+      "nameEn": "Frozen Coconut Coffee",
+      "nameDe": "Kokos-Kaffee frappiert",
+      "nameKo": "코코넛 커피 스무디",
+      "price": "75.000₫"
+    },
+    {
+      "src": "ca-phe-en.jpg",
+      "dest": "ca-phe-en.jpg",
+      "nameVi": "Cà Phê Đen",
+      "nameEn": "Black Coffee",
+      "nameDe": "Schwarzer Kaffee",
+      "nameKo": "블랙 커피"
+    },
+    {
+      "src": "ca-phe-muoi.jpg",
+      "dest": "ca-phe-muoi.jpg",
+      "nameVi": "Cà Phê Muối Đà Nẵng",
+      "nameEn": "Da Nang Salted Cream Coffee",
+      "nameDe": "Da Nang Salz-Kaffee",
+      "nameKo": "다낭 솔트 커피",
+      "price": "65.000₫"
+    },
+    {
+      "src": "ca-phe-sua-sai-gon.jpg",
+      "dest": "ca-phe-sua-sai-gon.jpg",
+      "nameVi": "Cà Phê Sữa Sài Gòn",
+      "nameEn": "Saigon Milk Coffee",
+      "nameDe": "Saigon Milchkaffee",
+      "nameKo": "사이공 밀크 커피"
+    },
+    {
+      "src": "ca-phe-sua.jpg",
+      "dest": "ca-phe-sua.jpg",
+      "nameVi": "Cà Phê Sữa",
+      "nameEn": "Vietnamese Milk Coffee",
+      "nameDe": "Vietnamesischer Milchkaffee",
+      "nameKo": "베트남 밀크 커피"
+    },
+    {
+      "src": "cappuccino.jpg",
+      "dest": "cappuccino.jpg",
+      "nameVi": "Cappuccino Thượng Hạng",
+      "nameEn": "Artisan Cappuccino",
+      "nameDe": "Klassischer Cappuccino",
+      "nameKo": "아티잔 카푸치노",
+      "price": "75.000₫"
+    },
+    {
+      "src": "caramel-latte.jpg",
       "dest": "caramel-latte.jpg",
       "nameVi": "Caramel Macchiato Latte",
       "nameEn": "Caramel Macchiato Latte",
@@ -164,34 +899,87 @@
       "price": "80.000₫"
     },
     {
-      "src": "Trà hạt sen.jpg",
-      "dest": "tra-hat-sen.jpg",
-      "nameVi": "Trà Sen Tinh Khiết",
-      "nameEn": "Pure Lotus Seed Tea",
-      "nameDe": "Reiner Lotussamen-Tee",
-      "nameKo": "연꽃씨 차",
-      "price": "70.000₫"
+      "src": "dua-xiem.jpg",
+      "dest": "dua-xiem.jpg",
+      "nameVi": "Dừa Xiêm Tươi",
+      "nameEn": "Fresh Young Coconut",
+      "nameDe": "Frische Kokosnuss",
+      "nameKo": "생코코넛"
     },
     {
-      "src": "Trà dâu ổi hồng.jpg",
-      "dest": "tra-dau-oi-hong.jpg",
-      "nameVi": "Trà Dâu Ổi Hồng",
-      "nameEn": "Strawberry Pink Guava Tea",
-      "nameDe": "Erdbeer-Guaven-Eistee",
-      "nameKo": "딸기 핑크 구아바 티",
-      "price": "75.000₫"
+      "src": "espressolada.jpg",
+      "dest": "espressolada.jpg",
+      "nameVi": "Espresso LADA",
+      "nameEn": "Espresso LADA",
+      "nameDe": "Espresso LADA",
+      "nameKo": "에스프레소 LADA"
     },
     {
-      "src": "Trà xoài chanh dây.jpg",
-      "dest": "tra-xoai-chanh-day.jpg",
-      "nameVi": "Trà Xoài Chanh Dây",
-      "nameEn": "Mango Passionfruit Tea",
-      "nameDe": "Mango-Maracuja-Tee",
-      "nameKo": "망고 패션프루트 티",
-      "price": "75.000₫"
+      "src": "expresso.jpg",
+      "dest": "expresso.jpg",
+      "nameVi": "Espresso",
+      "nameEn": "Espresso",
+      "nameDe": "Espresso",
+      "nameKo": "에스프레소"
     },
     {
-      "src": "Nước ép dưa hấu.jpg",
+      "src": "latte-ice.jpg",
+      "dest": "latte-ice.jpg",
+      "nameVi": "Latte Ice",
+      "nameEn": "Iced Latte",
+      "nameDe": "Eislatte",
+      "nameKo": "아이스 라떼"
+    },
+    {
+      "src": "latte-nong.jpg",
+      "dest": "latte-nong.jpg",
+      "nameVi": "Latte Nóng",
+      "nameEn": "Hot Latte",
+      "nameDe": "Heißer Latte",
+      "nameKo": "따뜻한 라떼"
+    },
+    {
+      "src": "lattee-machino.jpg",
+      "dest": "lattee-machino.jpg",
+      "nameVi": "Latte Macchiato",
+      "nameEn": "Latte Macchiato",
+      "nameDe": "Latte Macchiato",
+      "nameKo": "라떼 마키아토"
+    },
+    {
+      "src": "matcha-lattee.png",
+      "dest": "matcha-lattee.png",
+      "nameVi": "Matcha Latte",
+      "nameEn": "Matcha Latte",
+      "nameDe": "Matcha Latte",
+      "nameKo": "말차 라떼"
+    },
+    {
+      "src": "nuoc-ep-cam.jpg",
+      "dest": "nuoc-ep-cam.jpg",
+      "nameVi": "Nước Ép Cam Tươi",
+      "nameEn": "Fresh Orange Juice",
+      "nameDe": "Frischer Orangensaft",
+      "nameKo": "생오렌지 주스"
+    },
+    {
+      "src": "nuoc-ep-chanh-day.jpg",
+      "dest": "nuoc-ep-chanh-day.jpg",
+      "nameVi": "Nước Ép Chanh Dây",
+      "nameEn": "Passionfruit Juice",
+      "nameDe": "Maracujasaft",
+      "nameKo": "패션프루트 주스"
+    },
+    {
+      "src": "nuoc-ep-chanh.jpg",
+      "dest": "nuoc-ep-chanh.jpg",
+      "nameVi": "Nước Ép Chanh",
+      "nameEn": "Lemonade",
+      "nameDe": "Zitronenlimonade",
+      "nameKo": "레몬 에이드"
+    },
+    {
+      "src": "nuoc-ep-dua-hau.jpg",
       "dest": "nuoc-ep-dua-hau.jpg",
       "nameVi": "Nước Ép Dưa Hấu Tươi",
       "nameEn": "Fresh Watermelon Juice",
@@ -200,7 +988,88 @@
       "price": "65.000₫"
     },
     {
-      "src": "Sinh tố việt quất.jpg",
+      "src": "nuoc-ep-dua.jpg",
+      "dest": "nuoc-ep-dua.jpg",
+      "nameVi": "Nước Ép Dứa",
+      "nameEn": "Fresh Pineapple Juice",
+      "nameDe": "Frischer Ananassaft",
+      "nameKo": "생파인애플 주스"
+    },
+    {
+      "src": "nuoc-ep-le.jpg",
+      "dest": "nuoc-ep-le.jpg",
+      "nameVi": "Nước Ép Lê",
+      "nameEn": "Pear Juice",
+      "nameDe": "Birnensaft",
+      "nameKo": "배 주스"
+    },
+    {
+      "src": "nuoc-ep-tao.jpg",
+      "dest": "nuoc-ep-tao.jpg",
+      "nameVi": "Nước Ép Táo",
+      "nameEn": "Apple Juice",
+      "nameDe": "Apfelsaft",
+      "nameKo": "사과 주스"
+    },
+    {
+      "src": "pink-mika-lattee.jpg",
+      "dest": "pink-mika-lattee.jpg",
+      "nameVi": "Pink Mika Latte",
+      "nameEn": "Pink Mika Latte",
+      "nameDe": "Pink Mika Latte",
+      "nameKo": "핑크 미카 라떼"
+    },
+    {
+      "src": "sinh-to-bo.jpg",
+      "dest": "sinh-to-bo.jpg",
+      "nameVi": "Sinh Tố Bơ Đắk Lắk",
+      "nameEn": "Dak Lak Avocado Smoothie",
+      "nameDe": "Cremiger Avocado-Smoothie",
+      "nameKo": "아보카도 스무디",
+      "price": "85.000₫"
+    },
+    {
+      "src": "sinh-to-dau.jpg",
+      "dest": "sinh-to-dau.jpg",
+      "nameVi": "Sinh Tố Dâu",
+      "nameEn": "Strawberry Smoothie",
+      "nameDe": "Erdbeer-Smoothie",
+      "nameKo": "딸기 스무디"
+    },
+    {
+      "src": "sinh-to-dua.jpg",
+      "dest": "sinh-to-dua.jpg",
+      "nameVi": "Sinh Tố Dừa",
+      "nameEn": "Coconut Smoothie",
+      "nameDe": "Kokos-Smoothie",
+      "nameKo": "코코넛 스무디"
+    },
+    {
+      "src": "sinh-to-matcha-dua.jpg",
+      "dest": "sinh-to-matcha-dua.jpg",
+      "nameVi": "Sinh Tố Matcha Dừa",
+      "nameEn": "Coconut Matcha Smoothie",
+      "nameDe": "Kokos-Matcha-Smoothie",
+      "nameKo": "코코넛 말차 스무디"
+    },
+    {
+      "src": "sinh-to-matcha-hoa-nhai.jpg",
+      "dest": "sinh-to-matcha-hoa-nhai.jpg",
+      "nameVi": "Sinh Tố Matcha Hoa Nhài",
+      "nameEn": "Jasmine Matcha Smoothie",
+      "nameDe": "Jasmin-Matcha-Smoothie",
+      "nameKo": "재스민 말차 스무디"
+    },
+    {
+      "src": "sinh-to-socola.jpg",
+      "dest": "sinh-to-socola.jpg",
+      "nameVi": "Sinh Tố Socola",
+      "nameEn": "Chocolate Smoothie",
+      "nameDe": "Schokoladen-Smoothie",
+      "nameKo": "초콜릿 스무디"
+    },
+    {
+      "src": "sinh-to-viet-quat.jpg",
       "dest": "sinh-to-viet-quat.jpg",
       "nameVi": "Sinh Tố Việt Quất",
       "nameEn": "Wild Blueberry Smoothie",
@@ -209,36 +1078,60 @@
       "price": "85.000₫"
     },
     {
-      "src": "Sinh tố bơ.jpg",
-      "dest": "sinh-to-bo.jpg",
-      "nameVi": "Sinh Tố Bơ Đắk Lắk",
-      "nameEn": "Dak Lak Avocado Smoothie",
-      "nameDe": "Cremiger Avocado-Smoothie",
-      "nameKo": "아보카도 스무디",
-      "price": "85.000₫"
+      "src": "sinh-to-xoai.jpg",
+      "dest": "sinh-to-xoai.jpg",
+      "nameVi": "Sinh Tố Xoài",
+      "nameEn": "Mango Smoothie",
+      "nameDe": "Mango-Smoothie",
+      "nameKo": "망고 스무디"
+    },
+    {
+      "src": "sony-tonuc.jpg",
+      "dest": "sony-tonuc.jpg",
+      "nameVi": "Sony Tonic",
+      "nameEn": "Sony Tonic",
+      "nameDe": "Sony Tonic",
+      "nameKo": "소니 토닉"
+    },
+    {
+      "src": "tra-ao.jpg",
+      "dest": "tra-ao.jpg",
+      "nameVi": "Trà Đào",
+      "nameEn": "Peach Tea",
+      "nameDe": "Pfirsichtee",
+      "nameKo": "복숭아 차"
+    },
+    {
+      "src": "tra-dau-oi-hong.jpg",
+      "dest": "tra-dau-oi-hong.jpg",
+      "nameVi": "Trà Dâu Ổi Hồng",
+      "nameEn": "Strawberry Pink Guava Tea",
+      "nameDe": "Erdbeer-Guaven-Eistee",
+      "nameKo": "딸기 핑크 구아바 티",
+      "price": "75.000₫"
+    },
+    {
+      "src": "tra-hat-sen.jpg",
+      "dest": "tra-hat-sen.jpg",
+      "nameVi": "Trà Sen Tinh Khiết",
+      "nameEn": "Pure Lotus Seed Tea",
+      "nameDe": "Reiner Lotussamen-Tee",
+      "nameKo": "연꽃씨 차",
+      "price": "70.000₫"
+    },
+    {
+      "src": "tra-xoai-chanh-day.jpg",
+      "dest": "tra-xoai-chanh-day.jpg",
+      "nameVi": "Trà Xoài Chanh Dây",
+      "nameEn": "Mango Passionfruit Tea",
+      "nameDe": "Mango-Maracuja-Tee",
+      "nameKo": "망고 패션프루트 티",
+      "price": "75.000₫"
     }
   ],
   "mocktail": [
     {
-      "src": "Sunset.jpg",
-      "dest": "sunset.jpg",
-      "nameVi": "Sunset Over My Khe",
-      "nameEn": "Sunset Over My Khe",
-      "nameDe": "Sunset Over My Khe",
-      "nameKo": "선셋 오버 미케",
-      "price": "95.000₫"
-    },
-    {
-      "src": "Midnight.jpg",
-      "dest": "midnight.jpg",
-      "nameVi": "Midnight Garden",
-      "nameEn": "Midnight Garden",
-      "nameDe": "Midnight Garden",
-      "nameKo": "미드나잇 가든",
-      "price": "95.000₫"
-    },
-    {
-      "src": "Dragon Vietnamese.jpg",
+      "src": "dragon-vietnamese.jpg",
       "dest": "dragon-vietnamese.jpg",
       "nameVi": "Dragon Bridge Spirit",
       "nameEn": "Dragon Bridge Spirit",
@@ -247,7 +1140,7 @@
       "price": "105.000₫"
     },
     {
-      "src": "Glowhot.jpg",
+      "src": "glowhot.jpg",
       "dest": "glowhot.jpg",
       "nameVi": "Glow Hot Tropical",
       "nameEn": "Glow Hot Tropical",
@@ -256,7 +1149,7 @@
       "price": "95.000₫"
     },
     {
-      "src": "Green soul.jpg",
+      "src": "green-soul.jpg",
       "dest": "green-soul.jpg",
       "nameVi": "Green Soul Botanical",
       "nameEn": "Green Soul Botanical",
@@ -265,7 +1158,16 @@
       "price": "95.000₫"
     },
     {
-      "src": "Passion matcha.jpg",
+      "src": "midnight.jpg",
+      "dest": "midnight.jpg",
+      "nameVi": "Midnight Garden",
+      "nameEn": "Midnight Garden",
+      "nameDe": "Midnight Garden",
+      "nameKo": "미드나잇 가든",
+      "price": "95.000₫"
+    },
+    {
+      "src": "passion-matcha.jpg",
       "dest": "passion-matcha.jpg",
       "nameVi": "Passion Matcha Fusion",
       "nameEn": "Passion Matcha Fusion",
@@ -274,7 +1176,7 @@
       "price": "95.000₫"
     },
     {
-      "src": "Pear pink.jpg",
+      "src": "pear-pink.jpg",
       "dest": "pear-pink.jpg",
       "nameVi": "Pink Pear Bliss",
       "nameEn": "Pink Pear Bliss",
@@ -283,7 +1185,7 @@
       "price": "95.000₫"
     },
     {
-      "src": "Ruby sotic.jpg",
+      "src": "ruby-sotic.jpg",
       "dest": "ruby-sotic.jpg",
       "nameVi": "Ruby Exotic Cooler",
       "nameEn": "Ruby Exotic Cooler",
@@ -292,12 +1194,21 @@
       "price": "105.000₫"
     },
     {
-      "src": "Sony tonuc.jpg",
+      "src": "sony-tonic.jpg",
       "dest": "sony-tonic.jpg",
       "nameVi": "Casa Mika Signature Tonic",
       "nameEn": "Casa Mika Signature Tonic",
       "nameDe": "Casa Mika Signature Tonic",
       "nameKo": "까사 미카 시그니처 토닉",
+      "price": "95.000₫"
+    },
+    {
+      "src": "sunset.jpg",
+      "dest": "sunset.jpg",
+      "nameVi": "Sunset Over My Khe",
+      "nameEn": "Sunset Over My Khe",
+      "nameDe": "Sunset Over My Khe",
+      "nameKo": "선셋 오버 미케",
       "price": "95.000₫"
     }
   ]

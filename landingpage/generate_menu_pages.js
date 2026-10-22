@@ -11,68 +11,88 @@ function getGoogleReserveUrl(lang) {
 const menuData = JSON.parse(fs.readFileSync(path.join(__dirname, 'image', 'menu-items', 'menu-data.json'), 'utf8'));
 const menuManifest = JSON.parse(fs.readFileSync(path.join(__dirname, 'image', 'menu-pages', 'menu-manifest.json'), 'utf8'));
 
-function generateShowcaseHTML(lang) {
-  let allItems = [];
-  
-  menuData.food.forEach(item => {
-    allItems.push({
-      ...item,
-      category: 'food',
-      badgeVi: 'Ẩm thực', badgeEn: 'Culinary', badgeDe: 'Küche', badgeKo: '요리',
-      imgSrc: `/image/menu-items/food/${item.dest}`
-    });
-  });
-  
-  menuData.drink.forEach(item => {
-    allItems.push({
-      ...item,
-      category: 'drink',
-      badgeVi: 'Đồ uống', badgeEn: 'Drink', badgeDe: 'Getränke', badgeKo: '음료',
-      imgSrc: `/image/menu-items/drink/${item.dest}`
-    });
+const featuredFoodNames = ['Bò Lúc Lắc', 'Tôm Hùm Sốt Trứng Muối', 'Đĩa Nướng Tổng Hợp', 'Gỏi Bơ'];
+const otherFoodNames = ['Bánh Mì Nướng Bơ', 'Bạch Tuộc Lớn Nướng Sa Tế', 'Bò Sốt Tiêu Xanh', 'Bánh Xèo Giòn Nhân Bò', 'Cá Điêu Hồng Chiên Mắm Xoài', 'Phở Bò Thượng Hạng', 'Mẹt Casa Mika', 'Casera Salad'];
+
+const featuredDrinkNames = ['Cà Phê Muối Đà Nẵng', 'Pink Mika Latte', 'Trà Sen Tinh Khiết', 'Cà Phê Bơ Dừa'];
+const otherDrinkNames = ['Cà Phê Dừa Tuyết', 'Bạc Xỉu Sữa Mềm', 'Cà Phê Sữa Sài Gòn', 'Cappuccino Thượng Hạng', 'Caramel Macchiato Latte', 'Trà Dâu Ổi Hồng', 'Sinh Tố Bơ Đắk Lắk', 'Nước Ép Cam Tươi'];
+
+const featuredMocktailNames = ['Sunset Over My Khe', 'Dragon Bridge Spirit', 'Casa Mika Signature Tonic', 'Midnight Garden'];
+const otherMocktailNames = ['Glow Hot Tropical', 'Green Soul Botanical', 'Passion Matcha Fusion', 'Pink Pear Bliss', 'Ruby Exotic Cooler'];
+
+function getCuratedShowcaseItems() {
+  const mapItem = (item, cat, badgeVi, badgeEn, badgeDe, badgeKo, isFeatured) => ({
+    ...item,
+    category: cat,
+    badgeVi, badgeEn, badgeDe, badgeKo,
+    imgSrc: `/image/menu-items/${cat}/${item.dest}`,
+    isFeatured
   });
 
-  menuData.mocktail.forEach(item => {
-    allItems.push({
-      ...item,
-      category: 'mocktail',
-      badgeVi: 'Mocktail', badgeEn: 'Mocktail', badgeDe: 'Mocktail', badgeKo: '목테일',
-      imgSrc: `/image/menu-items/mocktail/${item.dest}`
-    });
-  });
+  const featuredFood = featuredFoodNames.map(n => mapItem(menuData.food.find(x => x.nameVi === n), 'food', 'Ẩm thực', 'Culinary', 'Küche', '요리', true));
+  const otherFood = otherFoodNames.map(n => mapItem(menuData.food.find(x => x.nameVi === n), 'food', 'Ẩm thực', 'Culinary', 'Küche', '요리', false));
+
+  const featuredDrink = featuredDrinkNames.map(n => mapItem(menuData.drink.find(x => x.nameVi === n), 'drink', 'Đồ uống', 'Drink', 'Getränke', '음료', true));
+  const otherDrink = otherDrinkNames.map(n => mapItem(menuData.drink.find(x => x.nameVi === n), 'drink', 'Đồ uống', 'Drink', 'Getränke', '음료', false));
+
+  const featuredMocktail = featuredMocktailNames.map(n => mapItem(menuData.mocktail.find(x => x.nameVi === n), 'mocktail', 'Mocktail', 'Mocktail', 'Mocktail', '목테일', true));
+  const otherMocktail = otherMocktailNames.map(n => mapItem(menuData.mocktail.find(x => x.nameVi === n), 'mocktail', 'Mocktail', 'Mocktail', 'Mocktail', '목테일', false));
+
+  // The 12 featured items come first: 4 Food, 4 Drink, 4 Mocktail (clean 3x4 grid)
+  return [
+    ...featuredFood,
+    ...featuredDrink,
+    ...featuredMocktail,
+    ...otherFood,
+    ...otherDrink,
+    ...otherMocktail
+  ];
+}
+
+function generateShowcaseHTML(lang) {
+  const allItems = getCuratedShowcaseItems();
 
   const titles = {
     vi: {
       eyebrow: '— Tuyển Chọn Món Đặc Sắc',
       title: 'Hương vị Casa Mika,<br><em>chọn lọc cho bạn.</em>',
-      sub: 'Từ nguồn nguyên liệu tươi ngon buổi sáng đến những ly pha chế công phu lúc hoàng hôn.',
-      tabAll: 'Món Nổi Bật', tabFood: 'Món Ăn', tabDrink: 'Cà Phê & Đồ Uống', tabMocktail: 'Mocktail & Cocktail'
+      sub: 'Khám phá các hương vị tuyển chọn đặc trưng trước khi đến với các cuốn thực đơn đầy đủ bên dưới.',
+      tabAll: 'Món Nổi Bật', tabFood: 'Món Ăn', tabDrink: 'Cà Phê & Đồ Uống', tabMocktail: 'Mocktail & Cocktail',
+      viewMenuBook: 'Xem Toàn Bộ Cuốn Thực Đơn (Menu Âu • Việt • Rượu)',
+      viewMenuBookHint: 'Xem toàn bộ từng món ăn, đồ uống và mức giá chi tiết tại các cuốn menu bên dưới.'
     },
     en: {
       eyebrow: '— Handpicked Selection',
       title: 'Casa Mika Flavours,<br><em>curated for your table.</em>',
-      sub: 'From fresh morning market catch to artisanal libations at dusk.',
-      tabAll: 'Featured', tabFood: 'Culinary', tabDrink: 'Coffee & Drinks', tabMocktail: 'Mocktails & Cocktails'
+      sub: 'Explore handpicked signature flavours before diving into the complete menu books below.',
+      tabAll: 'Featured', tabFood: 'Culinary', tabDrink: 'Coffee & Drinks', tabMocktail: 'Mocktails & Cocktails',
+      viewMenuBook: 'Browse Full Menu Books (Western • Vietnamese • Wine)',
+      viewMenuBookHint: 'Explore all dishes, beverages, and pricing in our interactive menu viewer below.'
     },
     de: {
       eyebrow: '— Ausgewählte Köstlichkeiten',
       title: 'Casa Mika Aromen,<br><em>für Ihren Tisch kreiert.</em>',
-      sub: 'Von frischen Marktzutaten am Morgen bis zu kunstvollen Drinks bei Sonnenuntergang.',
-      tabAll: 'Highlights', tabFood: 'Speisen', tabDrink: 'Kaffee & Getränke', tabMocktail: 'Mocktails & Cocktails'
+      sub: 'Entdecken Sie ausgewählte Spezialitäten, bevor Sie die vollständigen Menükarten unten durchblättern.',
+      tabAll: 'Highlights', tabFood: 'Speisen', tabDrink: 'Kaffee & Getränke', tabMocktail: 'Mocktails & Cocktails',
+      viewMenuBook: 'Vollständige Menükarten ansehen (Western • Vietnamesisch • Wein)',
+      viewMenuBookHint: 'Entdecken Sie alle Speisen, Getränke und Preise im interaktiven Menü-Viewer unten.'
     },
     ko: {
       eyebrow: '— 추천 메뉴 컬렉션',
       title: '까사 미카의 풍미,<br><em>식탁을 위한 엄선.</em>',
-      sub: '아침 시장의 신선한 해산물부터 황혼의 예술적인 칵테일까지.',
-      tabAll: '대표 메뉴', tabFood: '요리', tabDrink: '커피 & 음료', tabMocktail: '목테일 & 칵테일'
+      sub: '아래 전체 메뉴북을 감상하시기 전, 엄선된 대표 시그니처 메뉴들을 먼저 만나보세요.',
+      tabAll: '대표 메뉴', tabFood: '요리', tabDrink: '커피 & 음료', tabMocktail: '목테일 & 칵테일',
+      viewMenuBook: '전체 메뉴북 보기 (웨스턴 • 베트남 • 와인)',
+      viewMenuBookHint: '아래 인터랙티브 뷰어에서 모든 요리, 음료 및 상세 가격을 확인하세요.'
     }
   }[lang];
 
   let cardsHtml = allItems.map(item => {
     const name = lang === 'vi' ? item.nameVi : lang === 'de' ? item.nameDe : lang === 'ko' ? item.nameKo : item.nameEn;
     const badge = lang === 'vi' ? item.badgeVi : lang === 'de' ? item.badgeDe : lang === 'ko' ? item.badgeKo : item.badgeEn;
+    const isHiddenInitially = !item.isFeatured;
     return `
-            <article class="ms-dish-card fade-up" data-category="${item.category}">
+            <article class="ms-dish-card fade-up${item.isFeatured ? ' visible' : ''}" data-category="${item.category}" data-featured="${item.isFeatured ? 'true' : 'false'}"${isHiddenInitially ? ' style="display: none;"' : ''}>
                 <div class="ms-dish-img-wrap">
                     <img src="${item.imgSrc}" alt="${name}" class="ms-dish-img" loading="lazy">
                 </div>
@@ -100,6 +120,13 @@ function generateShowcaseHTML(lang) {
             </div>
             <div class="ms-showcase-grid">
                 ${cardsHtml}
+            </div>
+            <div class="ms-showcase-cta fade-up delay-1" style="margin-top: 3rem; text-align: center;">
+                <a href="#menu-pdf" class="ms-btn ms-btn-primary ms-btn-lg" style="display: inline-flex; align-items: center; gap: 0.6rem;">
+                    <span>${titles.viewMenuBook}</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                </a>
+                <p style="margin-top: 0.85rem; font-size: 0.875rem; color: var(--color-text-muted);">${titles.viewMenuBookHint}</p>
             </div>
         </div>
     </section>`;
@@ -394,7 +421,7 @@ function buildMenuPage(lang) {
             <!-- Book selector tabs -->
             <div class="ms-menu-book-tabs fade-up delay-1" role="tablist">
                 <button type="button" class="ms-menu-book-tab is-active" data-book="au" role="tab" aria-selected="true">
-                    <span class="tab-badge">8 ${meta.pageCountSuffix}</span>
+                    <span class="tab-badge">7 ${meta.pageCountSuffix}</span>
                     <span class="tab-name">${meta.btnAu}</span>
                 </button>
                 <button type="button" class="ms-menu-book-tab" data-book="viet" role="tab" aria-selected="false">
@@ -402,7 +429,7 @@ function buildMenuPage(lang) {
                     <span class="tab-name">${meta.btnViet}</span>
                 </button>
                 <button type="button" class="ms-menu-book-tab" data-book="ruou" role="tab" aria-selected="false">
-                    <span class="tab-badge">11 ${meta.pageCountSuffix}</span>
+                    <span class="tab-badge">12 ${meta.pageCountSuffix}</span>
                     <span class="tab-name">${meta.btnRuou}</span>
                 </button>
             </div>
@@ -425,7 +452,7 @@ function buildMenuPage(lang) {
                         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                         <span>${meta.btnFullscreen}</span>
                     </button>
-                    <a href="/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20%C3%82u.pdf" target="_blank" rel="noopener" class="ms-action-btn" id="msDownloadPdfLink">
+                    <a href="/menu/Menu%20%C3%82u%20CasaMika%2021_10.pdf" target="_blank" rel="noopener" class="ms-action-btn" id="msDownloadPdfLink">
                         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         <span>${meta.btnDownloadPdf}</span>
                     </a>
@@ -457,7 +484,7 @@ function buildMenuPage(lang) {
 
                 <!-- Page indicator pill -->
                 <div class="ms-viewer-page-pill" id="msViewerPagePill">
-                    <span id="msCurrentPageNum">1</span> / <span id="msTotalPagesNum">8</span>
+                    <span id="msCurrentPageNum">1</span> / <span id="msTotalPagesNum">7</span>
                 </div>
 
                 <!-- CONTINUOUS SCROLL VIEW (hidden by default) -->
@@ -492,7 +519,7 @@ function buildMenuPage(lang) {
                 </button>
             </div>
             <div class="ms-lightbox-footer">
-                <span class="ms-lightbox-counter" id="msLightboxCounter">1 / 8</span>
+                <span class="ms-lightbox-counter" id="msLightboxCounter">1 / 7</span>
             </div>
         </div>
     </div>
