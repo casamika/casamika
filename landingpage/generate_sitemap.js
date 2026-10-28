@@ -17,8 +17,8 @@ const SECTIONS = [
 const SINGLE_PAGES = [
   ['/career/', 'monthly', '0.6'],
   ['/doi-tac.html', 'monthly', '0.7'],
-  ['/soft-opening/', 'monthly', '0.5'],
 ];
+// Không đưa '/' (trang redirect JS) và '/soft-opening/' (đã hết hạn, gate.js redirect về '/') vào sitemap.
 
 const alternates = (section) => [
   ...LANG_CODES.map((l) => `    <xhtml:link rel="alternate" hreflang="${LANGS[l].hreflang}" href="${BASE}/${l}/${section}"/>`),
@@ -34,7 +34,6 @@ ${alt ? alt + '\n' : ''}    <lastmod>${lastmod}</lastmod>
 
 const entries = [];
 for (const [section, freq, pMain, pOther] of SECTIONS) {
-  if (section === '') entries.push(urlEntry(`${BASE}/`, freq, pMain, alternates('')));
   for (const l of LANG_CODES) {
     entries.push(urlEntry(`${BASE}/${l}/${section}`, freq, l === 'vi' || l === 'en' ? pMain : pOther, alternates(section)));
   }

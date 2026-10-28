@@ -748,6 +748,32 @@ const initCasaMika = () => {
     }
 };
 
+// ===== Contact-click tracking → GTM dataLayer (GA4 / Google Ads conversions) =====
+// GTM: Custom Event trigger "cm_contact_click", filter theo contact_type (reserve/call/zalo/directions/map/facebook/email)
+document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    let type = null;
+    if (href.startsWith('tel:')) type = 'call';
+    else if (href.startsWith('mailto:')) type = 'email';
+    else if (href.includes('zalo.me')) type = 'zalo';
+    else if (href.includes('/maps/reserve')) type = 'reserve';
+    else if (href.includes('/maps/dir')) type = 'directions';
+    else if (href.includes('google.com/maps') || href.includes('maps.app.goo.gl')) type = 'map';
+    else if (href.includes('facebook.com')) type = 'facebook';
+    if (!type) return;
+    const section = a.closest('section[id], nav, footer');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: 'cm_contact_click',
+        contact_type: type,
+        link_url: a.href,
+        page_lang: document.documentElement.lang,
+        click_location: section ? (section.id || section.tagName.toLowerCase()) : 'other'
+    });
+}, true);
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initCasaMika);
 } else {

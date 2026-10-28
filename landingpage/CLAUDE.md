@@ -199,11 +199,11 @@ Email:     info@casamika.com  → mailto:
 Facebook:  https://www.facebook.com/official.casamika
 Instagram: https://www.instagram.com/casamika.official/
 Maps:      https://maps.app.goo.gl/qsTUVr82UATkvFJv5
-Address:   37 Trần Bạch Đằng, Ngũ Hành Sơn, Da Nang (My Khe Beach area, Phước Mỹ ward)
-Hours:     Daily, 06:00 – 23:30
+Address:   37 Trần Bạch Đằng, Ngũ Hành Sơn, Đà Nẵng 50000 (NAP chuẩn — mọi nơi phải ghi y hệt)
+Hours:     Mon–Fri 07:30 – 00:00 · Sat–Sun 07:30 – 00:30
 ```
 
-Google Maps embed trong `index.html` dùng URL `https://maps.google.com/maps?q=37%20Tr%E1%BA%A7n%20B%E1%BA%A1ch%20%C4%90%E1%BA%B1ng%2C%20Ng%C5%A9%20H%C3%A0nh%20S%C6%A1n%2C%20Da%20Nang&output=embed` (search-by-address embed) vì share link rút gọn `maps.app.goo.gl/...` không thể nhúng iframe trực tiếp.
+**Local SEO / Google Maps:** NAP, toạ độ pin thật, CID, URL embed + chỉ đường nằm trong `BUSINESS` (`lang-config.js`) — sửa 1 chỗ rồi `npm run generate`. Section `#reserve` trên homepage có nút Gọi / Chỉ đường + iframe `https://www.google.com/maps?cid=…&output=embed` (hiện đúng thẻ doanh nghiệp). JSON-LD có `hasMap`, `geo`, `ReserveAction`. `script.js` đẩy event `cm_contact_click` (contact_type: reserve/call/zalo/directions/map/facebook/email) vào dataLayer cho GTM → GA4 / Google Ads conversion.
 
 ---
 

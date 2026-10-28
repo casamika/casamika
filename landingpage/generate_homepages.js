@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { LANGS, LANG_CODES, BADGES, getGoogleReserveUrl, localizedName, hreflangLinks, langSwitcher } = require('./lang-config');
+const { LANGS, LANG_CODES, BADGES, BUSINESS, getGoogleReserveUrl, localizedName, hreflangLinks, langSwitcher } = require('./lang-config');
 
 const menuData = JSON.parse(fs.readFileSync(path.join(__dirname, 'image', 'menu-items', 'menu-data.json'), 'utf8'));
 
@@ -43,9 +43,21 @@ function getCuratedShowcaseItems() {
 
 const showcaseItems = getCuratedShowcaseItems();
 
+// Nhãn khối bản đồ / chỉ đường ở section #reserve (Local SEO + Google Maps Ads)
+const VISIT_LABELS = {
+  vi: { directions: 'Chỉ Đường', call: 'Gọi 0708 888 007', mapTitle: 'Bản đồ Casa Mika trên Google Maps' },
+  en: { directions: 'Get Directions', call: 'Call +84 708 888 007', mapTitle: 'Casa Mika on Google Maps' },
+  de: { directions: 'Route planen', call: 'Anrufen +84 708 888 007', mapTitle: 'Casa Mika auf Google Maps' },
+  ko: { directions: '길찾기', call: '전화 +84 708 888 007', mapTitle: '구글 지도의 Casa Mika' },
+  zh: { directions: '导航路线', call: '致电 +84 708 888 007', mapTitle: 'Casa Mika 谷歌地图' },
+  th: { directions: 'นำทาง', call: 'โทร +84 708 888 007', mapTitle: 'Casa Mika บน Google Maps' },
+  ru: { directions: 'Маршрут', call: 'Позвонить +84 708 888 007', mapTitle: 'Casa Mika на Google Maps' },
+};
+
 
 function buildHomepage(lang) {
   const reserveUrl = getGoogleReserveUrl(lang);
+  const v = VISIT_LABELS[lang] || VISIT_LABELS.en;
   const t = {
     vi: {
       lang: 'vi',
@@ -683,15 +695,17 @@ function buildHomepage(lang) {
       "@context": "https://schema.org",
       "@type": ["Restaurant", "BarOrPub"],
       "@id": "https://casamika.com/#restaurant",
-      "name": "Casa Mika",
+      "name": "${BUSINESS.name}",
       "alternateName": ["Casa Mika Da Nang", "Casa Mika Garden Dining & Lounge", "Nhà hàng Casa Mika"],
       "image": [
         "https://casamika.com/image/imagenhahang.jpg",
         "https://casamika.com/image/logo/logo-new.png"
       ],
+      "logo": "https://casamika.com/image/logo/logo-new.png",
       "url": "https://casamika.com/${t.lang}/",
-      "telephone": "+84708888007",
-      "email": "info@casamika.com",
+      "telephone": "${BUSINESS.telephone}",
+      "email": "${BUSINESS.email}",
+      "hasMap": "${BUSINESS.mapsUrl}",
       "priceRange": "$$ - $$$",
       "servesCuisine": [
         "Vietnamese",
@@ -703,16 +717,16 @@ function buildHomepage(lang) {
       ],
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "37 Trần Bạch Đằng, Phường Mỹ An",
-        "addressLocality": "Ngũ Hành Sơn",
-        "addressRegion": "Đà Nẵng",
-        "postalCode": "550000",
-        "addressCountry": "VN"
+        "streetAddress": "${BUSINESS.streetAddress}",
+        "addressLocality": "${BUSINESS.addressLocality}",
+        "addressRegion": "${BUSINESS.addressRegion}",
+        "postalCode": "${BUSINESS.postalCode}",
+        "addressCountry": "${BUSINESS.addressCountry}"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 16.0497664,
-        "longitude": 108.24709075
+        "latitude": ${BUSINESS.lat},
+        "longitude": ${BUSINESS.lng}
       },
       "openingHoursSpecification": [
         {
@@ -728,9 +742,20 @@ function buildHomepage(lang) {
           "closes": "00:30"
         }
       ],
-      "acceptsReservations": "True",
+      "acceptsReservations": true,
       "hasMenu": "https://casamika.com/${t.lang}/menu/",
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "${reserveUrl}",
+          "inLanguage": "${LANGS[lang].htmlLang}",
+          "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+        },
+        "result": { "@type": "FoodEstablishmentReservation", "name": "${t.btnReserve}" }
+      },
       "sameAs": [
+        "${BUSINESS.mapsUrl}",
         "https://www.facebook.com/official.casamika",
         "https://www.instagram.com/casamika.official/",
         "https://zalo.me/0708888007"
@@ -1011,6 +1036,14 @@ function buildHomepage(lang) {
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" /></svg>
                     ${t.btnFacebook}
                 </a>
+                <a href="tel:${BUSINESS.telephone}" class="ms-btn ms-btn-outline ms-btn-lg">${v.call}</a>
+                <a href="${BUSINESS.directionsUrl}" target="_blank" rel="noopener" class="ms-btn ms-btn-outline ms-btn-lg">${v.directions}</a>
+            </div>
+            <address class="ms-visit-address fade-up delay-2">
+                <strong>${BUSINESS.name}</strong> · 37 Trần Bạch Đằng, ${BUSINESS.addressLocality}, ${BUSINESS.addressRegion} · <a href="tel:${BUSINESS.telephone}">+84 708 888 007</a>
+            </address>
+            <div class="ms-map-wrap ms-visit-map fade-up delay-3">
+                <iframe src="${BUSINESS.mapsEmbedUrl}&hl=${LANGS[lang].hl}" title="${v.mapTitle}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
             </div>
         </div>
     </section>
