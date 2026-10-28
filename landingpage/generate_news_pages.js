@@ -1,12 +1,7 @@
-﻿const fs = require('fs');
+const fs = require('fs');
 const path = require('path');
+const { LANGS, LANG_CODES, BADGES, getGoogleReserveUrl, localizedName, hreflangLinks, langSwitcher } = require('./lang-config');
 
-const GOOGLE_RESERVE_URL = 'https://www.google.com/maps/reserve/v/dine/c/tx1PNeAwXj8?source=pa&opi=79508299&hl=vi&gei=xsq8ap2nGfek2roPv8oj&ahbb=1&sourceurl=https://www.google.com/maps/preview/place?authuser%3D0%26hl%3Dvi%26pb%3D!1m14!1s0x31421737deda4ad1:0xf6fb5ca72c7d33f!3m12!1m3!1d26061.27722053428!2d108.24709075!3d16.0497664!2m3!1f0!2f0!3f0!3m2!1i2560!2i1305!4f13.1!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m5!1swsq8aszpL_7d2roPy8Od-As:49!2s1i:0,t:150714,p:wsq8aszpL_7d2roPy8Od-As:49!7e81!12e3!17swsq8aszpL_7d2roPy8Od-As:53!15m108!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b1!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i1305!1m6!1m2!1i2510!2i0!2m2!1i2560!2i1305!1m6!1m2!1i0!2i0!2m2!1i2560!2i20!1m6!1m2!1i0!2i1285!2m2!1i2560!2i1305!22m1!1e81!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i797!39zQ2FzYSBNaWthIOKAkyBDb2ZmZWUgJiBSZXN0YXVyYW50IOKAkyBXb3Jrc3BhY2UsIMSQxrDhu51uZyBUcuG6p24gQuG6oWNoIMSQ4bqxbmcsIEFuIEjhuqNpLCBOZ8WpIEjDoG5oIFPGoW4sIMSQw6AgTuG6tW5n%26q%3DCasa%2BMika%2B%25E2%2580%2593%2BCoffee%2B%2526%2BRestaurant%2B%25E2%2580%2593%2BWorkspace,%2B%25C4%2590%25C6%25B0%25E1%25BB%259Dng%2BTr%25E1%25BA%25A7n%2BB%25E1%25BA%25A1ch%2B%25C4%2590%25E1%25BA%25B1ng,%2BAn%2BH%25E1%25BA%25A3i,%2BNg%25C5%25A9%2BH%25C3%25A0nh%2BS%25C6%25A1n,%2B%25C4%2590%25C3%25A0%2BN%25E1%25BA%25B5ng';
-
-function getGoogleReserveUrl(lang) {
-  const hl = lang === 'vi' ? 'vi' : lang === 'de' ? 'de' : lang === 'ko' ? 'ko' : 'en';
-  return GOOGLE_RESERVE_URL.replace(/hl=vi/g, `hl=${hl}`).replace(/hl%3Dvi/g, `hl%3D${hl}`);
-}
 
 const newsData = {
   vi: {
@@ -160,7 +155,132 @@ const newsData = {
         img: '/image/venue/wine-wall.jpg'
       }
     ]
+  },
+  zh: {
+    lang: 'zh',
+    title: '动态与活动 — Casa Mika 岘港',
+    desc: '岘港美溪海滩 Casa Mika 花园餐厅的最新动态、美食活动与精彩故事。',
+    navAbout: '关于我们',
+    navMenu: '菜单',
+    navNews: '动态',
+    navCareer: '招聘',
+    navReserve: '预订',
+    eyebrow: '— 动态与故事',
+    heroTitle: '新鲜故事，<br><em>围绕花园餐桌。</em>',
+    heroSub: '关于每晚钢琴演奏、时令菜单与 Casa Mika 私密聚会的最新消息。',
+    followInsta: '关注 Instagram',
+    backHome: '返回首页',
+    articles: [
+      {
+        tag: '音乐与氛围',
+        title: '酒墙旁，每晚流淌的钢琴旋律',
+        desc: '每晚 19:00 起，原声钢琴的音符飘过白色大理石吧台与高耸的酒墙，为私密的晚餐畅谈增添韵味。',
+        date: '2026 年 10 月',
+        img: '/image/venue/bar-piano.jpg'
+      },
+      {
+        tag: '美食精选',
+        title: '全新推出：炭烤葱油生蚝',
+        desc: '现开鲜蚝佐以芬芳葱油炭火烤制，与酒窖精选白葡萄酒相得益彰。',
+        date: '2026 年秋',
+        img: '/image/menu-items/food/hau-nuong-mo-hanh.jpg'
+      },
+      {
+        tag: '私人聚会',
+        title: '在 1,400m² 花园庄园中，举办温馨庆典',
+        desc: '玻璃花房与绿意庭院现已开放，承办婚礼、纪念日庆典与定制私人晚宴。',
+        date: '2026 年全年',
+        img: '/image/venue/wine-wall.jpg'
+      }
+    ]
+  },
+  th: {
+    lang: 'th',
+    title: 'ข่าวสาร & กิจกรรม — Casa Mika ดานัง',
+    desc: 'ข่าวสารล่าสุด กิจกรรมด้านอาหาร และเรื่องราวจาก Casa Mika ร้านอาหารในสวนริมหาดหมีเคว ดานัง',
+    navAbout: 'เกี่ยวกับเรา',
+    navMenu: 'เมนู',
+    navNews: 'ข่าวสาร',
+    navCareer: 'ร่วมงานกับเรา',
+    navReserve: 'จองโต๊ะ',
+    eyebrow: '— ข่าวสาร & เรื่องราว',
+    heroTitle: 'เรื่องราวใหม่ล่าสุด<br><em>รอบโต๊ะในสวน</em>',
+    heroSub: 'อัปเดตการแสดงเปียโนทุกค่ำคืน เมนูตามฤดูกาล และงานสังสรรค์ส่วนตัวอันอบอุ่นที่ Casa Mika',
+    followInsta: 'ติดตามบน Instagram',
+    backHome: 'กลับหน้าแรก',
+    articles: [
+      {
+        tag: 'ดนตรี & บรรยากาศ',
+        title: 'ท่วงทำนองเปียโนทุกค่ำคืนข้างผนังไวน์',
+        desc: 'ทุกเย็นตั้งแต่ 19:00 น. เสียงเปียโนอะคูสติกจะล่องลอยผ่านบาร์หินอ่อนสีขาวและตู้ไวน์สูงตระหง่าน เติมเต็มบทสนทนาบนโต๊ะอาหารอย่างอบอุ่น',
+        date: 'ตุลาคม 2026',
+        img: '/image/venue/bar-piano.jpg'
+      },
+      {
+        tag: 'เมนูคัดสรร',
+        title: 'ขอแนะนำ หอยนางรมย่างเตาถ่านราดน้ำมันต้นหอม',
+        desc: 'หอยนางรมสดแกะใหม่ ย่างพร้อมน้ำมันต้นหอมหอมกรุ่น จับคู่อย่างลงตัวกับไวน์ขาวคัดสรรจากห้องเก็บไวน์ของเรา',
+        date: 'ฤดูใบไม้ร่วง 2026',
+        img: '/image/menu-items/food/hau-nuong-mo-hanh.jpg'
+      },
+      {
+        tag: 'งานสังสรรค์ส่วนตัว',
+        title: 'งานเฉลิมฉลองแสนอบอุ่นในสวนกว้าง 1,400 ตร.ม.',
+        desc: 'กลาสเฮาส์และลานสวนเขียวขจีพร้อมเปิดต้อนรับงานแต่งงาน วันครบรอบสำคัญ และดินเนอร์ส่วนตัวที่ออกแบบเฉพาะสำหรับคุณ',
+        date: 'ปี 2026',
+        img: '/image/venue/wine-wall.jpg'
+      }
+    ]
+  },
+  ru: {
+    lang: 'ru',
+    title: 'Новости и события — Casa Mika, Дананг',
+    desc: 'Свежие новости, гастрономические события и истории ресторана-сада Casa Mika у пляжа Ми Кхе в Дананге.',
+    navAbout: 'О нас',
+    navMenu: 'Меню',
+    navNews: 'Новости',
+    navCareer: 'Вакансии',
+    navReserve: 'Бронь',
+    eyebrow: '— Новости и истории',
+    heroTitle: 'Свежие истории<br><em>за столом в саду.</em>',
+    heroSub: 'Вечерние фортепианные сеты, сезонные меню и камерные частные встречи в Casa Mika.',
+    followInsta: 'Мы в Instagram',
+    backHome: 'На главную',
+    articles: [
+      {
+        tag: 'Музыка и атмосфера',
+        title: 'Вечерние мелодии рояля у винной стены',
+        desc: 'Каждый вечер с 19:00 звуки фортепиано плывут мимо бара из белого мрамора и высокой винной витрины, сопровождая неспешные беседы за ужином.',
+        date: 'Октябрь 2026',
+        img: '/image/venue/bar-piano.jpg'
+      },
+      {
+        tag: 'Гастрономия',
+        title: 'Новинка: устрицы на углях с зелёным луковым маслом',
+        desc: 'Свежие устрицы, запечённые с ароматным луковым маслом, в гармоничном сочетании с белыми винами из нашего погреба.',
+        date: 'Осень 2026',
+        img: '/image/menu-items/food/hau-nuong-mo-hanh.jpg'
+      },
+      {
+        tag: 'Частные мероприятия',
+        title: 'Камерные торжества в саду площадью 1400 м²',
+        desc: 'Оранжерея и зелёный двор открыты для свадеб, юбилеев и частных ужинов по индивидуальному сценарию.',
+        date: '2026 год',
+        img: '/image/venue/wine-wall.jpg'
+      }
+    ]
   }
+};
+
+// Câu thương hiệu ở footer — đồng bộ với footerBrand của generate_menu_pages.js
+const footerBrand = {
+  vi: 'Một bàn vườn tại khu Mỹ Khê.',
+  en: 'A garden table by My Khe Beach.',
+  de: 'Ein Gartentisch am My Khe Strand.',
+  ko: '미케 비치 옆 정원 식탁.',
+  zh: '美溪海滩畔的花园餐桌。',
+  th: 'โต๊ะอาหารในสวน ริมหาดหมีเคว',
+  ru: 'Стол в саду у пляжа Ми Кхе.'
 };
 
 function generateNewsPage(lang) {
@@ -184,9 +304,8 @@ function generateNewsPage(lang) {
         </article>
   `).join('\n');
 
-  const localeMap = { vi: 'vi_VN', en: 'en_US', de: 'de_DE', ko: 'ko_KR' };
   const html = `<!DOCTYPE html>
-<html lang="${d.lang}">
+<html lang="${LANGS[lang].htmlLang}">
 <head>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -207,7 +326,7 @@ function generateNewsPage(lang) {
     <!-- Open Graph / Facebook / Zalo -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Casa Mika">
-    <meta property="og:locale" content="${localeMap[d.lang] || 'en_US'}">
+    <meta property="og:locale" content="${LANGS[lang].locale}">
     <meta property="og:url" content="https://casamika.com/${d.lang}/news/">
     <meta property="og:title" content="${d.title}">
     <meta property="og:description" content="${d.desc}">
@@ -227,11 +346,7 @@ function generateNewsPage(lang) {
     <link rel="icon" type="image/png" href="/image/logo/logo-new.png">
     <link rel="apple-touch-icon" href="/image/logo/logo-new.png">
     <link rel="canonical" href="https://casamika.com/${d.lang}/news/">
-    <link rel="alternate" hreflang="en" href="https://casamika.com/en/news/">
-    <link rel="alternate" hreflang="vi" href="https://casamika.com/vi/news/">
-    <link rel="alternate" hreflang="de" href="https://casamika.com/de/news/">
-    <link rel="alternate" hreflang="ko" href="https://casamika.com/ko/news/">
-    <link rel="alternate" hreflang="x-default" href="https://casamika.com/en/news/">
+    ${hreflangLinks('news/')}
 
     <!-- Schema.org JSON-LD: BreadcrumbList -->
     <script type="application/ld+json">
@@ -278,15 +393,7 @@ function generateNewsPage(lang) {
                 <a href="/${d.lang}/career/" class="ms-nav-link">${d.navCareer}</a>
                 <a href="${getGoogleReserveUrl(d.lang)}" target="_blank" rel="noopener" class="ms-btn ms-btn-outline ms-btn-sm">${d.navReserve}</a>
             </div>
-            <span class="ms-lang-switch" role="group" aria-label="Language">
-                <a href="/vi/news/" class="ms-lang ${d.lang === 'vi' ? 'is-active' : ''}" data-lang="vi">VI</a>
-                <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/en/news/" class="ms-lang ${d.lang === 'en' ? 'is-active' : ''}" data-lang="en">EN</a>
-                <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/de/news/" class="ms-lang ${d.lang === 'de' ? 'is-active' : ''}" data-lang="de">DE</a>
-                <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/ko/news/" class="ms-lang ${d.lang === 'ko' ? 'is-active' : ''}" data-lang="ko">KO</a>
-            </span>
+            ${langSwitcher(lang, 'news/')}
             <button class="ms-nav-toggle" id="msNavToggle" aria-label="Menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
@@ -321,7 +428,7 @@ function generateNewsPage(lang) {
         <div class="container ms-footer-inner">
             <div class="ms-footer-brand">
                 <img src="/image/logo/logo-new.png" alt="Casa Mika" onerror="this.outerHTML='<span class=&quot;ms-footer-logo-text&quot;>CASA MIKA</span>';">
-                <p>A garden table by My Khe Beach.</p>
+                <p>${footerBrand[lang]}</p>
             </div>
             <div class="ms-footer-col">
                 <h4>Visit</h4>
@@ -360,4 +467,4 @@ function generateNewsPage(lang) {
   console.log(`Generated ${lang}/news/index.html`);
 }
 
-['vi', 'en', 'de', 'ko'].forEach(generateNewsPage);
+LANG_CODES.forEach(generateNewsPage);

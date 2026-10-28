@@ -89,46 +89,30 @@ DE:  Über uns   Speisekarte   News   Karriere   [Reservieren]      →   (same 
 
 ---
 
-## i18n (3 ngôn ngữ: EN / VI / DE)
+## i18n (7 ngôn ngữ: VI · EN · KO chính + DE · ZH · TH · RU)
 
-### Quy tắc dịch (đã chốt với user)
+### Nguồn sự thật & quy trình
 
-- **Tagline** dịch sang cả 3 ngôn ngữ:
-  - EN: "Where My Khe Lives Slowly"
-  - VI: "Nơi Mỹ Khê sống thật chậm"
-  - DE: "Wo My Khe langsam lebt"
-- **Tên món signature giữ tiếng Anh** trên cả 3 phiên bản: _Asian Seafood Platter_, _Fuji Beef on Stone_, _An Thượng Night_.
-- **Brand "Casa Mika"**, địa danh "Mỹ Khê / My Khe Beach", số điện thoại, giờ mở cửa: giữ nguyên format gốc.
+- **`lang-config.js`** — danh sách ngôn ngữ (label, html lang, hreflang, og:locale, Google Reserve `hl`, core/extra), badge danh mục món, `langSwitcher()`, `hreflangLinks()`, `localizedName()`. Generator nào cũng require file này.
+- Trang home / menu / news của mọi ngôn ngữ **được sinh** từ `generate_homepages.js`, `generate_menu_pages.js`, `generate_news_pages.js` (mỗi file có dictionary nội tuyến theo mã ngôn ngữ). **Không sửa tay** `{lang}/index.html`, `{lang}/menu/`, `{lang}/news/` — sửa generator rồi chạy lại.
+- `npm run generate` = sinh lại toàn bộ home/menu/news + `sitemap.xml` (`generate_sitemap.js`, hreflang chéo đủ 7 ngôn ngữ).
+- Tên món: `image/menu-items/menu-data.json` có `nameVi/nameEn/nameDe/nameKo/nameZh/nameTh/nameRu` (thiếu thì fallback `nameEn`).
+- Trang **viết tay**: `{lang}/about/index.html` (7 bản), `career/`, `vi/career/`. Khi thêm ngôn ngữ phải cập nhật hreflang + dropdown trong các file này.
+- Thêm ngôn ngữ mới: (1) thêm vào `LANGS` + `BADGES` trong `lang-config.js`, (2) thêm dictionary vào 3 generator, (3) thêm `nameXx` vào menu-data.json, (4) tạo `{lang}/about/`, (5) thêm vào `SUPPORTED` trong `index.html`, regex trong `gate.js`, input trong `vite.config.js`, map `pageWord` trong `script.js`, (6) `npm run generate`.
 
-### Language switcher
+### Language switcher (dropdown 🌐)
 
-- HTML markup: `<span class="ms-lang-switch">` chứa 3 link `<a class="ms-lang" data-lang="en|vi|de">`. Link đang active có thêm `is-active` + `aria-current="page"`.
-- CSS: `.ms-lang-switch`, `.ms-lang`, `.ms-lang-sep` ở `style.css` (gần block `.ms-nav-link`). Trên mobile drawer tự stack qua media query.
-- JS persist: `script.js` có listener trên mọi `[data-lang]` — click sẽ `localStorage.setItem('mika-lang', this.dataset.lang)`.
+- Markup sinh bởi `langSwitcher()`: `<div class="ms-lang-switch" data-lang-dd>` → nút `.ms-lang-toggle` + `.ms-lang-menu` (VI/EN/KO, vạch ngăn, DE/ZH/TH/RU).
+- JS (`script.js`, block "Language dropdown"): mở/đóng, click ra ngoài, Esc, phím mũi tên; click ngôn ngữ ghi `localStorage.mika-lang`.
+- Typography chữ Hán/Thái/Nga: block "MULTI-SCRIPT TYPOGRAPHY" cuối `style.css` (font hệ thống, không nghiêng giả cho zh/th).
 
 ### Auto-redirect (chỉ trên `/`)
 
-- Inline script ở đầu `<head>` trong `index.html` (root EN), **không có trong `vi/` và `de/`**:
-  - Nếu path không phải `/` hoặc `/index.html` → bỏ qua (chạy phòng hờ cache CDN).
-  - Đọc `localStorage.mika-lang` → nếu có dùng nó; nếu không dùng `navigator.language.slice(0,2)`.
-  - Nếu = `vi` → `location.replace('/vi/')`. Nếu = `de` → `location.replace('/de/')`. Còn lại (`en` hoặc không xác định) → ở `/`.
-- User chọn thủ công qua switcher sẽ ghi localStorage → quyết định stick lâu dài.
+- `index.html` gốc: `?lang=xx` (chỉ nhận mã hợp lệ) → `localStorage.mika-lang` → `navigator.languages` (lấy 2 ký tự đầu, zh-TW/zh-HK cũng vào /zh/) → mặc định `/en/`.
 
-### SEO hreflang
+### Quy tắc dịch
 
-Cả 3 trang B2C đều có:
-
-```html
-<link rel="canonical" href="https://casamika.com/{lang}/" />
-<link rel="alternate" hreflang="en" href="https://casamika.com/" />
-<link rel="alternate" hreflang="vi" href="https://casamika.com/vi/" />
-<link rel="alternate" hreflang="de" href="https://casamika.com/de/" />
-<link rel="alternate" hreflang="x-default" href="https://casamika.com/" />
-```
-
-### Khi đổi nội dung
-
-Phải sửa **3 file** (`index.html`, `vi/index.html`, `de/index.html`). Đây là trade-off của Cách A (multi-file). Nếu sau này nội dung đổi liên tục, cân nhắc lên SSG (Astro/11ty).
+- Brand "Casa Mika", số điện thoại, giờ mở cửa giữ nguyên. Tên cocktail tiếng Anh: RU giữ Latin, TH phiên âm, ZH dịch nghĩa (chờ chủ quán chốt).
 
 ---
 

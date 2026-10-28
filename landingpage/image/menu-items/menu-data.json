@@ -6,7 +6,10 @@
       "nameVi": "Gỏi Bơ",
       "nameEn": "Avocado Salad",
       "nameDe": "Avocado-Salat",
-      "nameKo": "아보카도 샐러드"
+      "nameKo": "아보카도 샐러드",
+      "nameZh": "牛油果沙拉",
+      "nameTh": "สลัดอะโวคาโด",
+      "nameRu": "Салат с авокадо"
     },
     {
       "src": "avocado-toast.png",
@@ -14,7 +17,10 @@
       "nameVi": "Bánh Mì Nướng Bơ",
       "nameEn": "Avocado Toast",
       "nameDe": "Avocado Toast",
-      "nameKo": "아보카도 토스트"
+      "nameKo": "아보카도 토스트",
+      "nameZh": "牛油果吐司",
+      "nameTh": "อะโวคาโดโทสต์",
+      "nameRu": "Тост с авокадо"
     },
     {
       "src": "bach-tuoc-lon-nuong-muoi-ot.png",
@@ -22,7 +28,10 @@
       "nameVi": "Bạch Tuộc Lớn Nướng Muối Ớt",
       "nameEn": "Large Octopus Grilled with Chili Salt",
       "nameDe": "Großer Oktopus Chilisalz gegrillt",
-      "nameKo": "대형 문어 칠리 소금 구이"
+      "nameKo": "대형 문어 칠리 소금 구이",
+      "nameZh": "椒盐烤大章鱼",
+      "nameTh": "ปลาหมึกยักษ์ตัวใหญ่ย่างเกลือพริก",
+      "nameRu": "Большой осьминог на гриле с солью и чили"
     },
     {
       "src": "bach-tuoc-lon-nuong-sa-te.jpg",
@@ -30,7 +39,10 @@
       "nameVi": "Bạch Tuộc Lớn Nướng Sa Tế",
       "nameEn": "Large Octopus Grilled with Satay",
       "nameDe": "Großer Oktopus Satay gegrillt",
-      "nameKo": "대형 문어 사테 구이"
+      "nameKo": "대형 문어 사테 구이",
+      "nameZh": "沙爹烤大章鱼",
+      "nameTh": "ปลาหมึกยักษ์ตัวใหญ่ย่างซอสซาเต๊ะ",
+      "nameRu": "Большой осьминог на гриле с сате"
     },
     {
       "src": "bach-tuoc-nho-nuong-muoi-ot.png",
@@ -38,7 +50,10 @@
       "nameVi": "Bạch Tuộc Nhỏ Nướng Muối Ớt",
       "nameEn": "Small Octopus Grilled with Chili Salt",
       "nameDe": "Kleiner Oktopus Chilisalz gegrillt",
-      "nameKo": "소형 문어 칠리 소금 구이"
+      "nameKo": "소형 문어 칠리 소금 구이",
+      "nameZh": "椒盐烤小章鱼",
+      "nameTh": "ปลาหมึกยักษ์ตัวเล็กย่างเกลือพริก",
+      "nameRu": "Маленький осьминог на гриле с солью и чили"
     },
     {
       "src": "bach-tuoc-nho-nuong-sa-te.jpg",
@@ -46,7 +61,10 @@
       "nameVi": "Bạch Tuộc Nhỏ Nướng Sa Tế",
       "nameEn": "Small Octopus Grilled with Satay",
       "nameDe": "Kleiner Oktopus Satay gegrillt",
-      "nameKo": "소형 문어 사테 구이"
+      "nameKo": "소형 문어 사테 구이",
+      "nameZh": "沙爹烤小章鱼",
+      "nameTh": "ปลาหมึกยักษ์ตัวเล็กย่างซอสซาเต๊ะ",
+      "nameRu": "Маленький осьминог на гриле с сате"
     },
     {
       "src": "bach-tuoc-nuong.png",
@@ -55,7 +73,10 @@
       "nameEn": "Grilled Octopus with Chili Salt",
       "nameDe": "Gegrillter Oktopus mit Chilisalz",
       "nameKo": "칠리 소금 구이 문어",
-      "price": "235.000₫"
+      "price": "235.000₫",
+      "nameZh": "椒盐烤章鱼",
+      "nameTh": "ปลาหมึกยักษ์ย่างเกลือพริก",
+      "nameRu": "Осьминог на гриле с солью и чили"
     },
     {
       "src": "banh-canh-bo.png",
@@ -63,7 +84,10 @@
       "nameVi": "Bánh Canh Bò",
       "nameEn": "Beef Thick Noodle Soup",
       "nameDe": "Rinder-Bánhcạnh-Suppe",
-      "nameKo": "소고기 반깐"
+      "nameKo": "소고기 반깐",
+      "nameZh": "越式牛肉粗米面汤",
+      "nameTh": "ก๋วยจั๊บญวนเนื้อ",
+      "nameRu": "Бань кань с говядиной"
     },
     {
       "src": "banh-canh-hai-san.png",
@@ -71,7 +95,10 @@
       "nameVi": "Bánh Canh Hải Sản",
       "nameEn": "Seafood Thick Noodle Soup",
       "nameDe": "Meeresfrüchte-Bánhcạnh-Suppe",
-      "nameKo": "해산물 반깐"
+      "nameKo": "해산물 반깐",
+      "nameZh": "越式海鲜粗米面汤",
+      "nameTh": "ก๋วยจั๊บญวนซีฟู้ด",
+      "nameRu": "Бань кань с морепродуктами"
     },
     {
       "src": "banh-xeo-bo.jpg",
@@ -80,7 +107,10 @@
       "nameEn": "Crispy Vietnamese Beef Pancake",
       "nameDe": "Knuspriger Bánh Xèo mit Rindfleisch",
       "nameKo": "소고기 반세오",
-      "price": "165.000₫"
+      "price": "165.000₫",
+      "nameZh": "越式牛肉脆煎饼",
+      "nameTh": "ขนมเบื้องญวนกรอบไส้เนื้อ",
+      "nameRu": "Хрустящий бань сео с говядиной"
     },
     {
       "src": "banh-xeo-chay.jpg",
@@ -88,7 +118,10 @@
       "nameVi": "Bánh Xèo Chay",
       "nameEn": "Crispy Vegan Vietnamese Pancake",
       "nameDe": "Veganer Bánh Xèo",
-      "nameKo": "채식 반세오"
+      "nameKo": "채식 반세오",
+      "nameZh": "越式素食脆煎饼",
+      "nameTh": "ขนมเบื้องญวนกรอบมังสวิรัติ",
+      "nameRu": "Веганский бань сео"
     },
     {
       "src": "bo-luc-lac.png",
@@ -97,7 +130,10 @@
       "nameEn": "Shaken Beef Tenderloin",
       "nameDe": "Geschütteltes Rindfleisch",
       "nameKo": "소고기 룩락",
-      "price": "265.000₫"
+      "price": "265.000₫",
+      "nameZh": "越式骰子牛柳",
+      "nameTh": "เนื้อสันในลุคลัก",
+      "nameRu": "Бо лук лак — говяжья вырезка"
     },
     {
       "src": "bo-sot-tieu-xanh.png",
@@ -106,7 +142,10 @@
       "nameEn": "Beef in Green Peppercorn Sauce",
       "nameDe": "Rindfleisch in grüner Pfeffersauce",
       "nameKo": "그린 페퍼 소스 소고기",
-      "price": "285.000₫"
+      "price": "285.000₫",
+      "nameZh": "青胡椒酱牛肉",
+      "nameTh": "เนื้อซอสพริกไทยเขียว",
+      "nameRu": "Говядина в соусе из зелёного перца"
     },
     {
       "src": "bo-xao-hanh-can.png",
@@ -114,7 +153,10 @@
       "nameVi": "Bò Xào Hành Cần",
       "nameEn": "Stir-fried Beef with Celery",
       "nameDe": "Wok-Rindfleisch mit Sellerie",
-      "nameKo": "셀러리 볶음 소고기"
+      "nameKo": "셀러리 볶음 소고기",
+      "nameZh": "西芹葱爆牛肉",
+      "nameTh": "เนื้อผัดขึ้นฉ่ายต้นหอม",
+      "nameRu": "Говядина, жаренная с луком и сельдереем"
     },
     {
       "src": "bo-xao-thom-ca.png",
@@ -122,7 +164,10 @@
       "nameVi": "Bò Xào Thơm Cà",
       "nameEn": "Stir-fried Beef with Pineapple & Tomato",
       "nameDe": "Wok-Rindfleisch mit Ananas & Tomate",
-      "nameKo": "파인애플 토마토 볶음 소고기"
+      "nameKo": "파인애플 토마토 볶음 소고기",
+      "nameZh": "菠萝番茄炒牛肉",
+      "nameTh": "เนื้อผัดสับปะรดมะเขือเทศ",
+      "nameRu": "Говядина с ананасом и томатами"
     },
     {
       "src": "bun-bo-hue.png",
@@ -130,7 +175,10 @@
       "nameVi": "Bún Bò Huế",
       "nameEn": "Hue Spicy Beef Noodle Soup",
       "nameDe": "Hue Rindfleisch-Reisnudeln",
-      "nameKo": "분보후에 (후에식 매운 소고기 국수)"
+      "nameKo": "분보후에 (후에식 매운 소고기 국수)",
+      "nameZh": "顺化辣味牛肉米粉",
+      "nameTh": "บุ๋นบ่อเว้ (ก๋วยเตี๋ยวเนื้อรสจัดสไตล์เว้)",
+      "nameRu": "Бун бо Хюэ — острый суп с говядиной"
     },
     {
       "src": "ca-cam-nuong-muoi-ot.png",
@@ -138,7 +186,10 @@
       "nameVi": "Cá Cam Nướng Muối Ớt",
       "nameEn": "Grilled Amberjack with Chili Salt",
       "nameDe": "Gegrillter Heilbutt mit Chilisalz",
-      "nameKo": "부리 생선 칠리 소금 구이"
+      "nameKo": "부리 생선 칠리 소금 구이",
+      "nameZh": "椒盐烤鰤鱼",
+      "nameTh": "ปลาสำลีย่างเกลือพริก",
+      "nameRu": "Сериола на гриле с солью и чили"
     },
     {
       "src": "ca-cam-nuong-sa-te.jpg",
@@ -146,7 +197,10 @@
       "nameVi": "Cá Cam Nướng Sa Tế",
       "nameEn": "Grilled Amberjack with Satay",
       "nameDe": "Gegrillter Heilbutt mit Satay",
-      "nameKo": "부리 생선 사테 구이"
+      "nameKo": "부리 생선 사테 구이",
+      "nameZh": "沙爹烤鰤鱼",
+      "nameTh": "ปลาสำลีย่างซอสซาเต๊ะ",
+      "nameRu": "Сериола на гриле с сате"
     },
     {
       "src": "ca-chim-chien.jpg",
@@ -154,7 +208,10 @@
       "nameVi": "Cá Chim Chiên",
       "nameEn": "Fried Pomfret Fish",
       "nameDe": "Gebratener Stachelmakrele",
-      "nameKo": "병어 튀김"
+      "nameKo": "병어 튀김",
+      "nameZh": "香炸鲳鱼",
+      "nameTh": "ปลาจาระเม็ดทอด",
+      "nameRu": "Жареный помфрет"
     },
     {
       "src": "ca-chim-nuong.png",
@@ -162,7 +219,10 @@
       "nameVi": "Cá Chim Nướng",
       "nameEn": "Grilled Pomfret Fish",
       "nameDe": "Gegrillter Stachelmakrele",
-      "nameKo": "병어 구이"
+      "nameKo": "병어 구이",
+      "nameZh": "炭烤鲳鱼",
+      "nameTh": "ปลาจาระเม็ดย่าง",
+      "nameRu": "Помфрет на гриле"
     },
     {
       "src": "ca-dieu-hong-chien-mam-xoai.png",
@@ -170,7 +230,10 @@
       "nameVi": "Cá Điêu Hồng Chiên Mắm Xoài",
       "nameEn": "Fried Red Tilapia with Mango Fish Sauce",
       "nameDe": "Gebratener Roter Tilapia mit Mangofischsauce",
-      "nameKo": "레드 틸라피아 망고 소스 튀김"
+      "nameKo": "레드 틸라피아 망고 소스 튀김",
+      "nameZh": "香炸红罗非鱼配芒果鱼露",
+      "nameTh": "ปลาทับทิมทอดราดน้ำปลามะม่วง",
+      "nameRu": "Жареная красная тиляпия с манговым соусом"
     },
     {
       "src": "ca-loc-chien-xu-mam-xoai.png",
@@ -178,7 +241,10 @@
       "nameVi": "Cá Lóc Chiên Xù Mắm Xoài",
       "nameEn": "Crispy Snakehead Fish with Mango Fish Sauce",
       "nameDe": "Knuspriger Schlangenkopffisch mit Mangofischsauce",
-      "nameKo": "스네이크헤드 망고 소스 튀김"
+      "nameKo": "스네이크헤드 망고 소스 튀김",
+      "nameZh": "酥炸黑鱼配芒果鱼露",
+      "nameTh": "ปลาช่อนทอดกรอบราดน้ำปลามะม่วง",
+      "nameRu": "Хрустящий змееголов с манговым соусом"
     },
     {
       "src": "ca-loc-kho-to.png",
@@ -186,7 +252,10 @@
       "nameVi": "Cá Lóc Kho Tộ",
       "nameEn": "Braised Snakehead Fish in Clay Pot",
       "nameDe": "Geschmorter Schlangenkopffisch im Tontopf",
-      "nameKo": "스네이크헤드 토냄비 조림"
+      "nameKo": "스네이크헤드 토냄비 조림",
+      "nameZh": "瓦罐焖黑鱼",
+      "nameTh": "ปลาช่อนเคี่ยวหม้อดิน",
+      "nameRu": "Змееголов, томлённый в глиняном горшочке"
     },
     {
       "src": "ca-tim-chien-mo-hanh.jpg",
@@ -194,7 +263,10 @@
       "nameVi": "Cà Tím Chiên Mỡ Hành",
       "nameEn": "Fried Eggplant with Scallion Oil",
       "nameDe": "Gebratene Aubergine mit Frühlingszwiebelöl",
-      "nameKo": "파기름 가지 튀김"
+      "nameKo": "파기름 가지 튀김",
+      "nameZh": "葱油煎茄子",
+      "nameTh": "มะเขือม่วงทอดราดน้ำมันต้นหอม",
+      "nameRu": "Жареные баклажаны с зелёным луковым маслом"
     },
     {
       "src": "canh-cha-ca-that-lat-rau-thi-la.png",
@@ -202,7 +274,10 @@
       "nameVi": "Canh Chả Cá Thát Lát Rau Thì Là",
       "nameEn": "Featherback Fish Cake Soup with Dill",
       "nameDe": "Federrücken-Fischkuchen-Suppe mit Dill",
-      "nameKo": "비늘 생선 완자 딜 수프"
+      "nameKo": "비늘 생선 완자 딜 수프",
+      "nameZh": "莳萝鱼饼汤",
+      "nameTh": "แกงจืดลูกชิ้นปลากรายผักชีลาว",
+      "nameRu": "Суп с рыбными котлетками и укропом"
     },
     {
       "src": "canh-chua-dieu-hong-ca-loc.png",
@@ -210,7 +285,10 @@
       "nameVi": "Canh Chua Cá Điêu Hồng & Cá Lóc",
       "nameEn": "Sweet & Sour Soup with Red Tilapia & Snakehead",
       "nameDe": "Süß-saure Fischsuppe",
-      "nameKo": "새콤한 물고기 수프"
+      "nameKo": "새콤한 물고기 수프",
+      "nameZh": "越式酸鱼汤（红罗非鱼与黑鱼）",
+      "nameTh": "ต้มเปรี้ยวเวียดนามปลาทับทิมและปลาช่อน",
+      "nameRu": "Кисло-сладкий суп с тиляпией и змееголовом"
     },
     {
       "src": "canh-chua-hai-san-com-trang.png",
@@ -218,7 +296,10 @@
       "nameVi": "Canh Chua Hải Sản & Cơm Trắng",
       "nameEn": "Sweet & Sour Seafood Soup with Steamed Rice",
       "nameDe": "Süß-saure Meeresfrüchtesuppe mit Reis",
-      "nameKo": "해산물 새콤 수프와 밥"
+      "nameKo": "해산물 새콤 수프와 밥",
+      "nameZh": "越式海鲜酸汤配白米饭",
+      "nameTh": "ต้มเปรี้ยวเวียดนามซีฟู้ด เสิร์ฟพร้อมข้าวสวย",
+      "nameRu": "Кисло-сладкий суп с морепродуктами и рисом"
     },
     {
       "src": "canh-ngheu-thom.png",
@@ -226,7 +307,10 @@
       "nameVi": "Canh Nghêu Thơm",
       "nameEn": "Aromatic Clam Soup",
       "nameDe": "Aromatische Muschelsuppe",
-      "nameKo": "향기로운 조개 수프"
+      "nameKo": "향기로운 조개 수프",
+      "nameZh": "鲜香蛤蜊汤",
+      "nameTh": "ซุปหอยลายสมุนไพร",
+      "nameRu": "Ароматный суп с моллюсками"
     },
     {
       "src": "canh-ngheu-xa-la-e.png",
@@ -234,7 +318,10 @@
       "nameVi": "Canh Nghêu Xả Lá É",
       "nameEn": "Lemongrass Basil Clam Soup",
       "nameDe": "Zitronengras-Basilikum-Muschelsuppe",
-      "nameKo": "레몬그라스 바질 조개 수프"
+      "nameKo": "레몬그라스 바질 조개 수프",
+      "nameZh": "香茅罗勒蛤蜊汤",
+      "nameTh": "ซุปหอยลายตะไคร้โหระพา",
+      "nameRu": "Суп с моллюсками, лемонграссом и базиликом"
     },
     {
       "src": "casera-salad.png",
@@ -242,7 +329,10 @@
       "nameVi": "Casera Salad",
       "nameEn": "Casera Salad",
       "nameDe": "Casera Salat",
-      "nameKo": "카세라 샐러드"
+      "nameKo": "카세라 샐러드",
+      "nameZh": "卡塞拉沙拉",
+      "nameTh": "สลัดคาเซร่า",
+      "nameRu": "Салат «Касера»"
     },
     {
       "src": "cha-gio-chien-chay.png",
@@ -250,7 +340,10 @@
       "nameVi": "Chả Giò Chiên Chay",
       "nameEn": "Crispy Vegan Spring Rolls",
       "nameDe": "Vegane Frühlingsrollen",
-      "nameKo": "채식 춘권"
+      "nameKo": "채식 춘권",
+      "nameZh": "素食炸春卷",
+      "nameTh": "ปอเปี๊ยะทอดญวนมังสวิรัติ",
+      "nameRu": "Хрустящие веганские нэмы"
     },
     {
       "src": "cha-gio-hai-san.jpg",
@@ -258,7 +351,10 @@
       "nameVi": "Chả Giò Hải Sản",
       "nameEn": "Crispy Seafood Spring Rolls",
       "nameDe": "Meeresfrüchte-Frühlingsrollen",
-      "nameKo": "해산물 춘권"
+      "nameKo": "해산물 춘권",
+      "nameZh": "海鲜炸春卷",
+      "nameTh": "ปอเปี๊ยะทอดญวนซีฟู้ด",
+      "nameRu": "Хрустящие нэмы с морепродуктами"
     },
     {
       "src": "cha-gio-tom-thit.jpg",
@@ -266,7 +362,10 @@
       "nameVi": "Chả Giò Tôm Thịt",
       "nameEn": "Crispy Shrimp & Pork Spring Rolls",
       "nameDe": "Garnelen-Schweinefleisch-Frühlingsrollen",
-      "nameKo": "새우 돼지고기 춘권"
+      "nameKo": "새우 돼지고기 춘권",
+      "nameZh": "鲜虾猪肉炸春卷",
+      "nameTh": "ปอเปี๊ยะทอดญวนกุ้งหมู",
+      "nameRu": "Хрустящие нэмы с креветками и свининой"
     },
     {
       "src": "chocolate-lava.png",
@@ -274,7 +373,10 @@
       "nameVi": "Bánh Chocolate Lava",
       "nameEn": "Chocolate Lava Cake",
       "nameDe": "Schokoladenlava-Kuchen",
-      "nameKo": "초콜릿 라바 케이크"
+      "nameKo": "초콜릿 라바 케이크",
+      "nameZh": "熔岩巧克力蛋糕",
+      "nameTh": "ช็อกโกแลตลาวาเค้ก",
+      "nameRu": "Шоколадный фондан"
     },
     {
       "src": "cold-plate.png",
@@ -282,7 +384,10 @@
       "nameVi": "Đĩa Nguội Tổng Hợp",
       "nameEn": "Cold Plate Selection",
       "nameDe": "Kalte Platte",
-      "nameKo": "콜드 플레이트"
+      "nameKo": "콜드 플레이트",
+      "nameZh": "精选冷盘拼盘",
+      "nameTh": "จานรวมโคลด์คัท",
+      "nameRu": "Ассорти холодных закусок"
     },
     {
       "src": "com-chien-chay.png",
@@ -290,7 +395,10 @@
       "nameVi": "Cơm Chiên Chay",
       "nameEn": "Vegan Fried Rice",
       "nameDe": "Veganes gebratenes Reis",
-      "nameKo": "채식 볶음밥"
+      "nameKo": "채식 볶음밥",
+      "nameZh": "素食炒饭",
+      "nameTh": "ข้าวผัดมังสวิรัติ",
+      "nameRu": "Веганский жареный рис"
     },
     {
       "src": "com-chien-hai-san.png",
@@ -298,7 +406,10 @@
       "nameVi": "Cơm Chiên Hải Sản",
       "nameEn": "Seafood Fried Rice",
       "nameDe": "Meeresfrüchte gebratenes Reis",
-      "nameKo": "해산물 볶음밥"
+      "nameKo": "해산물 볶음밥",
+      "nameZh": "海鲜炒饭",
+      "nameTh": "ข้าวผัดซีฟู้ด",
+      "nameRu": "Жареный рис с морепродуктами"
     },
     {
       "src": "com-tam.png",
@@ -306,7 +417,10 @@
       "nameVi": "Cơm Tấm",
       "nameEn": "Broken Rice with Grilled Pork",
       "nameDe": "Gebrochener Reis mit gegrilltem Schweinefleisch",
-      "nameKo": "껌떰 (부서진 쌀)"
+      "nameKo": "껌떰 (부서진 쌀)",
+      "nameZh": "越式碎米饭配烤猪排",
+      "nameTh": "กอมเติ้ม (ข้าวหักหมูย่าง)",
+      "nameRu": "Ком там — рис со свининой на гриле"
     },
     {
       "src": "com-thit-heo-chien-xu.png",
@@ -314,7 +428,10 @@
       "nameVi": "Cơm Thịt Heo Chiên Xù",
       "nameEn": "Crispy Pork Cutlet Rice",
       "nameDe": "Knuspriges Schweineschnitzel mit Reis",
-      "nameKo": "돈까스 밥"
+      "nameKo": "돈까스 밥",
+      "nameZh": "香酥猪排饭",
+      "nameTh": "ข้าวหมูทอดกรอบ",
+      "nameRu": "Рис со свиной котлетой в панировке"
     },
     {
       "src": "creme-bulle.png",
@@ -322,7 +439,10 @@
       "nameVi": "Crème Brûlée",
       "nameEn": "Classic Crème Brûlée",
       "nameDe": "Klassische Crème Brûlée",
-      "nameKo": "크렘 브륄레"
+      "nameKo": "크렘 브륄레",
+      "nameZh": "经典法式焦糖布蕾",
+      "nameTh": "ครีมบรูเลคลาสสิก",
+      "nameRu": "Классический крем-брюле"
     },
     {
       "src": "croisant.png",
@@ -330,7 +450,10 @@
       "nameVi": "Bánh Croissant",
       "nameEn": "Butter Croissant",
       "nameDe": "Buttercroissant",
-      "nameKo": "버터 크루아상"
+      "nameKo": "버터 크루아상",
+      "nameZh": "黄油可颂",
+      "nameTh": "ครัวซองต์เนยสด",
+      "nameRu": "Сливочный круассан"
     },
     {
       "src": "croit-sandwich.png",
@@ -338,7 +461,10 @@
       "nameVi": "Croissant Sandwich",
       "nameEn": "Croissant Sandwich",
       "nameDe": "Croissant Sandwich",
-      "nameKo": "크루아상 샌드위치"
+      "nameKo": "크루아상 샌드위치",
+      "nameZh": "可颂三明治",
+      "nameTh": "ครัวซองต์แซนด์วิช",
+      "nameRu": "Круассан-сэндвич"
     },
     {
       "src": "dia-nuong-tong-hop.png",
@@ -347,7 +473,10 @@
       "nameEn": "Casa Mika BBQ Mixed Platter",
       "nameDe": "Gemischte Grillplatte Casa Mika",
       "nameKo": "믹스 바비큐 플래터",
-      "price": "420.000₫"
+      "price": "420.000₫",
+      "nameZh": "Casa Mika 烧烤拼盘",
+      "nameTh": "จานรวมบาร์บีคิว Casa Mika",
+      "nameRu": "Гриль-ассорти Casa Mika"
     },
     {
       "src": "egg-benedit.png",
@@ -355,7 +484,10 @@
       "nameVi": "Eggs Benedict",
       "nameEn": "Eggs Benedict",
       "nameDe": "Eggs Benedict",
-      "nameKo": "에그 베네딕트"
+      "nameKo": "에그 베네딕트",
+      "nameZh": "班尼迪克蛋",
+      "nameTh": "ไข่เบเนดิกต์",
+      "nameRu": "Яйца Бенедикт"
     },
     {
       "src": "english-breafast.png",
@@ -363,7 +495,10 @@
       "nameVi": "English Breakfast",
       "nameEn": "English Breakfast",
       "nameDe": "Englisches Frühstück",
-      "nameKo": "잉글리시 브렉퍼스트"
+      "nameKo": "잉글리시 브렉퍼스트",
+      "nameZh": "英式早餐",
+      "nameTh": "อิงลิชเบรกฟาสต์",
+      "nameRu": "Английский завтрак"
     },
     {
       "src": "ga-chien-mam.png",
@@ -371,7 +506,10 @@
       "nameVi": "Gà Chiên Mắm",
       "nameEn": "Fish Sauce Fried Chicken",
       "nameDe": "Fischsauce gebratenes Hähnchen",
-      "nameKo": "피쉬 소스 치킨"
+      "nameKo": "피쉬 소스 치킨",
+      "nameZh": "鱼露炸鸡",
+      "nameTh": "ไก่ทอดน้ำปลา",
+      "nameRu": "Курица, жаренная в рыбном соусе"
     },
     {
       "src": "ga-kho-to.png",
@@ -379,7 +517,10 @@
       "nameVi": "Gà Kho Tộ",
       "nameEn": "Braised Chicken in Clay Pot",
       "nameDe": "Geschmortes Hähnchen im Tontopf",
-      "nameKo": "토냄비 닭 조림"
+      "nameKo": "토냄비 닭 조림",
+      "nameZh": "瓦罐焖鸡",
+      "nameTh": "ไก่เคี่ยวหม้อดิน",
+      "nameRu": "Курица, томлённая в глиняном горшочке"
     },
     {
       "src": "ga-xao-casa-mika.png",
@@ -387,7 +528,10 @@
       "nameVi": "Gà Xào Casa Mika",
       "nameEn": "Casa Mika Signature Stir-fried Chicken",
       "nameDe": "Casa Mika Wok-Hähnchen",
-      "nameKo": "까사 미카 시그니처 볶음 닭"
+      "nameKo": "까사 미카 시그니처 볶음 닭",
+      "nameZh": "Casa Mika 招牌炒鸡",
+      "nameTh": "ไก่ผัดสูตรซิกเนเจอร์ Casa Mika",
+      "nameRu": "Фирменная курица в воке Casa Mika"
     },
     {
       "src": "ga-xao-chua-ngot.png",
@@ -395,7 +539,10 @@
       "nameVi": "Gà Xào Chua Ngọt",
       "nameEn": "Sweet & Sour Stir-fried Chicken",
       "nameDe": "Süß-saures Wok-Hähnchen",
-      "nameKo": "새콤달콤 볶음 닭"
+      "nameKo": "새콤달콤 볶음 닭",
+      "nameZh": "酸甜炒鸡",
+      "nameTh": "ไก่ผัดเปรี้ยวหวาน",
+      "nameRu": "Курица в кисло-сладком соусе"
     },
     {
       "src": "garden-salad.png",
@@ -403,7 +550,10 @@
       "nameVi": "Garden Salad",
       "nameEn": "Garden Salad",
       "nameDe": "Gartensalat",
-      "nameKo": "가든 샐러드"
+      "nameKo": "가든 샐러드",
+      "nameZh": "田园沙拉",
+      "nameTh": "การ์เด้นสลัด",
+      "nameRu": "Садовый салат"
     },
     {
       "src": "goi-cuon-chay.jpg",
@@ -411,7 +561,10 @@
       "nameVi": "Gỏi Cuốn Chay",
       "nameEn": "Fresh Vegan Spring Rolls",
       "nameDe": "Vegane frische Frühlingsrollen",
-      "nameKo": "채식 생춘권"
+      "nameKo": "채식 생춘권",
+      "nameZh": "素食鲜春卷",
+      "nameTh": "ปอเปี๊ยะสดญวนมังสวิรัติ",
+      "nameRu": "Веганские гой куон — свежие роллы"
     },
     {
       "src": "goi-cuon-hai-san.jpg",
@@ -419,7 +572,10 @@
       "nameVi": "Gỏi Cuốn Hải Sản",
       "nameEn": "Fresh Seafood Spring Rolls",
       "nameDe": "Meeresfrüchte frische Frühlingsrollen",
-      "nameKo": "해산물 생춘권"
+      "nameKo": "해산물 생춘권",
+      "nameZh": "海鲜鲜春卷",
+      "nameTh": "ปอเปี๊ยะสดญวนซีฟู้ด",
+      "nameRu": "Гой куон с морепродуктами"
     },
     {
       "src": "goi-cuon-tom-thit.jpg",
@@ -427,7 +583,10 @@
       "nameVi": "Gỏi Cuốn Tôm Thịt",
       "nameEn": "Fresh Shrimp & Pork Spring Rolls",
       "nameDe": "Garnelen-Schweinefleisch frische Frühlingsrollen",
-      "nameKo": "새우 돼지고기 생춘권"
+      "nameKo": "새우 돼지고기 생춘권",
+      "nameZh": "鲜虾猪肉鲜春卷",
+      "nameTh": "ปอเปี๊ยะสดญวนกุ้งหมู",
+      "nameRu": "Гой куон с креветками и свининой"
     },
     {
       "src": "goi-u-u-hai-san.png",
@@ -435,7 +594,10 @@
       "nameVi": "Gỏi Đu Đủ Hải Sản",
       "nameEn": "Seafood Papaya Salad",
       "nameDe": "Meeresfrüchte-Papaya-Salat",
-      "nameKo": "해산물 파파야 샐러드"
+      "nameKo": "해산물 파파야 샐러드",
+      "nameZh": "海鲜青木瓜沙拉",
+      "nameTh": "ยำมะละกอซีฟู้ดสไตล์เวียดนาม",
+      "nameRu": "Салат из папайи с морепродуктами"
     },
     {
       "src": "goi-u-u-tom-thi.jpg",
@@ -443,7 +605,10 @@
       "nameVi": "Gỏi Đu Đủ Tôm Thịt",
       "nameEn": "Shrimp & Pork Papaya Salad",
       "nameDe": "Garnelen-Schweinefleisch-Papaya-Salat",
-      "nameKo": "새우 돼지고기 파파야 샐러드"
+      "nameKo": "새우 돼지고기 파파야 샐러드",
+      "nameZh": "鲜虾猪肉青木瓜沙拉",
+      "nameTh": "ยำมะละกอกุ้งหมูสไตล์เวียดนาม",
+      "nameRu": "Салат из папайи с креветками и свининой"
     },
     {
       "src": "hamchese-sandwich.png",
@@ -451,7 +616,10 @@
       "nameVi": "Ham & Cheese Sandwich",
       "nameEn": "Ham & Cheese Sandwich",
       "nameDe": "Schinken-Käse-Sandwich",
-      "nameKo": "햄 치즈 샌드위치"
+      "nameKo": "햄 치즈 샌드위치",
+      "nameZh": "火腿芝士三明治",
+      "nameTh": "แซนด์วิชแฮมชีส",
+      "nameRu": "Сэндвич с ветчиной и сыром"
     },
     {
       "src": "hau-nuong-mo-hanh.jpg",
@@ -459,7 +627,10 @@
       "nameVi": "Hàu Nướng Mỡ Hành",
       "nameEn": "Grilled Oysters with Scallion Oil",
       "nameDe": "Gegrillte Austern mit Frühlingszwiebelöl",
-      "nameKo": "파기름 구이 굴 요리"
+      "nameKo": "파기름 구이 굴 요리",
+      "nameZh": "葱油烤生蚝",
+      "nameTh": "หอยนางรมย่างน้ำมันต้นหอม",
+      "nameRu": "Устрицы на гриле с зелёным луковым маслом"
     },
     {
       "src": "hau-nuong-pho-mai.png",
@@ -467,7 +638,10 @@
       "nameVi": "Hàu Nướng Phô Mai",
       "nameEn": "Cheese Grilled Oysters",
       "nameDe": "Käse-Grill-Austern",
-      "nameKo": "치즈 구이 굴"
+      "nameKo": "치즈 구이 굴",
+      "nameZh": "芝士焗生蚝",
+      "nameTh": "หอยนางรมอบชีส",
+      "nameRu": "Устрицы, запечённые с сыром"
     },
     {
       "src": "heo-chua-ngotj.png",
@@ -475,7 +649,10 @@
       "nameVi": "Heo Chua Ngọt",
       "nameEn": "Sweet & Sour Pork",
       "nameDe": "Süß-saures Schweinefleisch",
-      "nameKo": "새콤달콤 돼지고기"
+      "nameKo": "새콤달콤 돼지고기",
+      "nameZh": "酸甜咕咾肉",
+      "nameTh": "หมูผัดเปรี้ยวหวาน",
+      "nameRu": "Свинина в кисло-сладком соусе"
     },
     {
       "src": "met-casa-mika.png",
@@ -483,7 +660,10 @@
       "nameVi": "Mẹt Casa Mika",
       "nameEn": "Casa Mika Vietnamese Tray",
       "nameDe": "Casa Mika Vietnamesisches Tablett",
-      "nameKo": "까사 미카 베트남 트레이"
+      "nameKo": "까사 미카 베트남 트레이",
+      "nameZh": "Casa Mika 越式竹盘拼盘",
+      "nameTh": "ถาดรวมอาหารเวียดนาม Casa Mika",
+      "nameRu": "Вьетнамский сет Casa Mika"
     },
     {
       "src": "mi-xao-bo.png",
@@ -491,7 +671,10 @@
       "nameVi": "Mì Xào Bò",
       "nameEn": "Stir-fried Noodles with Beef",
       "nameDe": "Wok-Nudeln mit Rindfleisch",
-      "nameKo": "소고기 볶음면"
+      "nameKo": "소고기 볶음면",
+      "nameZh": "牛肉炒面",
+      "nameTh": "บะหมี่ผัดเนื้อ",
+      "nameRu": "Жареная лапша с говядиной"
     },
     {
       "src": "mi-xao-ga.png",
@@ -499,7 +682,10 @@
       "nameVi": "Mì Xào Gà",
       "nameEn": "Stir-fried Noodles with Chicken",
       "nameDe": "Wok-Nudeln mit Hähnchen",
-      "nameKo": "닭고기 볶음면"
+      "nameKo": "닭고기 볶음면",
+      "nameZh": "鸡肉炒面",
+      "nameTh": "บะหมี่ผัดไก่",
+      "nameRu": "Жареная лапша с курицей"
     },
     {
       "src": "mi-xao-hai-san.png",
@@ -507,7 +693,10 @@
       "nameVi": "Mì Xào Hải Sản",
       "nameEn": "Stir-fried Seafood Noodles",
       "nameDe": "Wok-Meeresfrüchte-Nudeln",
-      "nameKo": "해산물 볶음면"
+      "nameKo": "해산물 볶음면",
+      "nameZh": "海鲜炒面",
+      "nameTh": "บะหมี่ผัดซีฟู้ด",
+      "nameRu": "Жареная лапша с морепродуктами"
     },
     {
       "src": "mika-casa-breakfast.png",
@@ -516,7 +705,10 @@
       "nameEn": "Casa Mika Signature Breakfast",
       "nameDe": "Casa Mika Signature Frühstück",
       "nameKo": "까사 미카 시그니처 조식",
-      "price": "185.000₫"
+      "price": "185.000₫",
+      "nameZh": "Casa Mika 招牌早餐",
+      "nameTh": "อาหารเช้าซิกเนเจอร์ Casa Mika",
+      "nameRu": "Фирменный завтрак Casa Mika"
     },
     {
       "src": "muc-xao-hanh-can.png",
@@ -524,7 +716,10 @@
       "nameVi": "Mực Xào Hành Cần",
       "nameEn": "Stir-fried Squid with Celery",
       "nameDe": "Wok-Tintenfisch mit Sellerie",
-      "nameKo": "셀러리 볶음 오징어"
+      "nameKo": "셀러리 볶음 오징어",
+      "nameZh": "西芹葱爆鱿鱼",
+      "nameTh": "ปลาหมึกผัดขึ้นฉ่ายต้นหอม",
+      "nameRu": "Кальмары, жаренные с луком и сельдереем"
     },
     {
       "src": "nam-kho-to.png",
@@ -532,7 +727,10 @@
       "nameVi": "Nấm Kho Tộ",
       "nameEn": "Braised Mushroom in Clay Pot",
       "nameDe": "Geschmorte Pilze im Tontopf",
-      "nameKo": "토냄비 버섯 조림"
+      "nameKo": "토냄비 버섯 조림",
+      "nameZh": "瓦罐焖菌菇",
+      "nameTh": "เห็ดเคี่ยวหม้อดิน",
+      "nameRu": "Грибы, томлённые в глиняном горшочке"
     },
     {
       "src": "ngo-sen-hai-san.png",
@@ -541,7 +739,10 @@
       "nameEn": "Seafood Lotus Stem Salad",
       "nameDe": "Meeresfrüchte-Lotussalat",
       "nameKo": "해산물 연근 샐러드",
-      "price": "195.000₫"
+      "price": "195.000₫",
+      "nameZh": "海鲜藕带沙拉",
+      "nameTh": "ยำไหลบัวซีฟู้ด",
+      "nameRu": "Салат из стеблей лотоса с морепродуктами"
     },
     {
       "src": "ngo-sen-hoa-chuoi.jpg",
@@ -549,7 +750,10 @@
       "nameVi": "Gỏi Ngó Sen Hoa Chuối",
       "nameEn": "Banana Blossom & Lotus Stem Salad",
       "nameDe": "Bananenblüten-Lotus-Salat",
-      "nameKo": "바나나 꽃 연근 샐러드"
+      "nameKo": "바나나 꽃 연근 샐러드",
+      "nameZh": "芭蕉花藕带沙拉",
+      "nameTh": "ยำหัวปลีไหลบัว",
+      "nameRu": "Салат из стеблей лотоса и цветков банана"
     },
     {
       "src": "panna-cotta-pinapple.jpg",
@@ -557,7 +761,10 @@
       "nameVi": "Panna Cotta Dứa",
       "nameEn": "Pineapple Panna Cotta",
       "nameDe": "Ananas-Panna Cotta",
-      "nameKo": "파인애플 판나 코타"
+      "nameKo": "파인애플 판나 코타",
+      "nameZh": "菠萝意式奶冻",
+      "nameTh": "พานาคอตต้าสับปะรด",
+      "nameRu": "Ананасовая панна-котта"
     },
     {
       "src": "pannacotta.png",
@@ -565,7 +772,10 @@
       "nameVi": "Panna Cotta",
       "nameEn": "Classic Panna Cotta",
       "nameDe": "Klassische Panna Cotta",
-      "nameKo": "클래식 판나 코타"
+      "nameKo": "클래식 판나 코타",
+      "nameZh": "经典意式奶冻",
+      "nameTh": "พานาคอตต้าคลาสสิก",
+      "nameRu": "Классическая панна-котта"
     },
     {
       "src": "panno-cotta-mango.jpg",
@@ -573,7 +783,10 @@
       "nameVi": "Panna Cotta Xoài",
       "nameEn": "Mango Panna Cotta",
       "nameDe": "Mango-Panna Cotta",
-      "nameKo": "망고 판나 코타"
+      "nameKo": "망고 판나 코타",
+      "nameZh": "芒果意式奶冻",
+      "nameTh": "พานาคอตต้ามะม่วง",
+      "nameRu": "Манговая панна-котта"
     },
     {
       "src": "pho-bo.png",
@@ -582,7 +795,10 @@
       "nameEn": "Signature Beef Phở",
       "nameDe": "Traditionelle Rindfleisch-Phở",
       "nameKo": "소고기 쌀국수",
-      "price": "145.000₫"
+      "price": "145.000₫",
+      "nameZh": "招牌牛肉河粉",
+      "nameTh": "เฝอเนื้อซิกเนเจอร์",
+      "nameRu": "Фирменный фо бо"
     },
     {
       "src": "pho-ga.png",
@@ -590,7 +806,10 @@
       "nameVi": "Phở Gà",
       "nameEn": "Chicken Phở",
       "nameDe": "Hähnchen-Phở",
-      "nameKo": "닭고기 쌀국수"
+      "nameKo": "닭고기 쌀국수",
+      "nameZh": "鸡肉河粉",
+      "nameTh": "เฝอไก่",
+      "nameRu": "Фо га с курицей"
     },
     {
       "src": "rau-muong-xao-toi.jpg",
@@ -598,7 +817,10 @@
       "nameVi": "Rau Muống Xào Tỏi",
       "nameEn": "Garlic Stir-fried Water Spinach",
       "nameDe": "Knoblauch Wok-Wasserspinat",
-      "nameKo": "마늘 볶음 공심채"
+      "nameKo": "마늘 볶음 공심채",
+      "nameZh": "蒜蓉炒空心菜",
+      "nameTh": "ผักบุ้งผัดกระเทียม",
+      "nameRu": "Водяной шпинат с чесноком"
     },
     {
       "src": "rau-ngu-qua-kho-quet.jpg",
@@ -606,7 +828,10 @@
       "nameVi": "Rau Ngũ Quả Kho Quẹt",
       "nameEn": "Mixed Vegetables with Dipping Sauce",
       "nameDe": "Gemischtes Gemüse mit Dipsauce",
-      "nameKo": "다섯 가지 채소 딥소스"
+      "nameKo": "다섯 가지 채소 딥소스",
+      "nameZh": "什锦时蔬配越式焦香蘸酱",
+      "nameTh": "ผักรวมจิ้มน้ำจิ้มโขเกว็ตสูตรเวียดนาม",
+      "nameRu": "Овощное ассорти с соусом кхо куэт"
     },
     {
       "src": "rau-ngu-qua-theo-mua.jpg",
@@ -614,7 +839,10 @@
       "nameVi": "Rau Ngũ Quả Theo Mùa",
       "nameEn": "Seasonal Mixed Vegetables",
       "nameDe": "Saisonales Gemüse",
-      "nameKo": "제철 채소 모둠"
+      "nameKo": "제철 채소 모둠",
+      "nameZh": "当季什锦时蔬",
+      "nameTh": "ผักรวมตามฤดูกาล",
+      "nameRu": "Сезонные овощи"
     },
     {
       "src": "seafood-salad.png",
@@ -622,7 +850,10 @@
       "nameVi": "Gỏi Hải Sản",
       "nameEn": "Seafood Salad",
       "nameDe": "Meeresfrüchte-Salat",
-      "nameKo": "해산물 샐러드"
+      "nameKo": "해산물 샐러드",
+      "nameZh": "海鲜沙拉",
+      "nameTh": "ยำซีฟู้ดสไตล์เวียดนาม",
+      "nameRu": "Салат с морепродуктами"
     },
     {
       "src": "seasonfruit.png",
@@ -630,7 +861,10 @@
       "nameVi": "Hoa Quả Theo Mùa",
       "nameEn": "Seasonal Fresh Fruit Platter",
       "nameDe": "Saisonaler Obstkorb",
-      "nameKo": "제철 과일 플래터"
+      "nameKo": "제철 과일 플래터",
+      "nameZh": "当季鲜果拼盘",
+      "nameTh": "ผลไม้สดตามฤดูกาล",
+      "nameRu": "Сезонные фрукты"
     },
     {
       "src": "so-iep-hap-xa.png",
@@ -638,7 +872,10 @@
       "nameVi": "Sò Điệp Hấp Xả",
       "nameEn": "Steamed Scallops with Lemongrass",
       "nameDe": "Gedämpfte Jakobsmuscheln mit Zitronengras",
-      "nameKo": "레몬그라스 관자 찜"
+      "nameKo": "레몬그라스 관자 찜",
+      "nameZh": "香茅蒸扇贝",
+      "nameTh": "หอยเชลล์นึ่งตะไคร้",
+      "nameRu": "Гребешки на пару с лемонграссом"
     },
     {
       "src": "so-iep-xao-thai.jpg",
@@ -646,7 +883,10 @@
       "nameVi": "Sò Điệp Xào Thái",
       "nameEn": "Thai Stir-fried Scallops",
       "nameDe": "Thai Wok-Jakobsmuscheln",
-      "nameKo": "타이식 볶음 관자"
+      "nameKo": "타이식 볶음 관자",
+      "nameZh": "泰式炒扇贝",
+      "nameTh": "หอยเชลล์ผัดสไตล์ไทย",
+      "nameRu": "Гребешки по-тайски"
     },
     {
       "src": "thit-kho-to.png",
@@ -654,7 +894,10 @@
       "nameVi": "Thịt Kho Tộ",
       "nameEn": "Braised Pork in Clay Pot",
       "nameDe": "Geschmortes Schweinefleisch im Tontopf",
-      "nameKo": "토냄비 삼겹살 조림"
+      "nameKo": "토냄비 삼겹살 조림",
+      "nameZh": "瓦罐焖五花肉",
+      "nameTh": "หมูเคี่ยวหม้อดิน",
+      "nameRu": "Свинина, томлённая в глиняном горшочке"
     },
     {
       "src": "thit-kho-trung-cut-nuoc-dua.png",
@@ -662,7 +905,10 @@
       "nameVi": "Thịt Kho Trứng Cút Nước Dừa",
       "nameEn": "Braised Pork & Quail Eggs in Coconut Water",
       "nameDe": "Schweinefleisch & Wachteleier in Kokoswasser",
-      "nameKo": "코코넛 워터 삼겹살 메추리알 조림"
+      "nameKo": "코코넛 워터 삼겹살 메추리알 조림",
+      "nameZh": "椰汁鹌鹑蛋焖五花肉",
+      "nameTh": "หมูพะโล้ไข่นกกระทาน้ำมะพร้าว",
+      "nameRu": "Свинина с перепелиными яйцами в кокосовой воде"
     },
     {
       "src": "tiramisu.png",
@@ -671,7 +917,10 @@
       "nameEn": "Classic Casa Mika Tiramisu",
       "nameDe": "Klassisches Tiramisu",
       "nameKo": "수제 티라미수",
-      "price": "120.000₫"
+      "price": "120.000₫",
+      "nameZh": "Casa Mika 经典提拉米苏",
+      "nameTh": "ทีรามิสุคลาสสิก Casa Mika",
+      "nameRu": "Тирамису Casa Mika"
     },
     {
       "src": "tom-hum-sot-me.jpg",
@@ -679,7 +928,10 @@
       "nameVi": "Tôm Hùm Sốt Me",
       "nameEn": "Lobster in Tamarind Sauce",
       "nameDe": "Hummer in Tamarindensauce",
-      "nameKo": "타마린드 소스 랍스터"
+      "nameKo": "타마린드 소스 랍스터",
+      "nameZh": "罗望子酱龙虾",
+      "nameTh": "กุ้งมังกรซอสมะขาม",
+      "nameRu": "Лобстер в соусе из тамаринда"
     },
     {
       "src": "tom-hum-sot-toi.jpg",
@@ -687,7 +939,10 @@
       "nameVi": "Tôm Hùm Sốt Tỏi",
       "nameEn": "Lobster in Garlic Sauce",
       "nameDe": "Hummer in Knoblauchsauce",
-      "nameKo": "마늘 소스 랍스터"
+      "nameKo": "마늘 소스 랍스터",
+      "nameZh": "蒜香龙虾",
+      "nameTh": "กุ้งมังกรซอสกระเทียม",
+      "nameRu": "Лобстер в чесночном соусе"
     },
     {
       "src": "tom-hum-sot-trung-muoi.png",
@@ -695,7 +950,10 @@
       "nameVi": "Tôm Hùm Sốt Trứng Muối",
       "nameEn": "Lobster with Salted Egg Sauce",
       "nameDe": "Hummer in Salzeisauce",
-      "nameKo": "솔티드 에그 소스 랍스터"
+      "nameKo": "솔티드 에그 소스 랍스터",
+      "nameZh": "咸蛋黄龙虾",
+      "nameTh": "กุ้งมังกรซอสไข่เค็ม",
+      "nameRu": "Лобстер в соусе из солёного яйца"
     },
     {
       "src": "tom-su-sot-me.png",
@@ -703,7 +961,10 @@
       "nameVi": "Tôm Sú Sốt Me",
       "nameEn": "Tiger Prawns in Tamarind Sauce",
       "nameDe": "Tigergarnelen in Tamarindensauce",
-      "nameKo": "타마린드 소스 왕새우"
+      "nameKo": "타마린드 소스 왕새우",
+      "nameZh": "罗望子酱老虎虾",
+      "nameTh": "กุ้งกุลาดำซอสมะขาม",
+      "nameRu": "Тигровые креветки в соусе из тамаринда"
     },
     {
       "src": "tom-su-sot-toi.png",
@@ -711,7 +972,10 @@
       "nameVi": "Tôm Sú Sốt Tỏi",
       "nameEn": "Tiger Prawns in Garlic Sauce",
       "nameDe": "Tigergarnelen in Knoblauchsauce",
-      "nameKo": "마늘 소스 왕새우"
+      "nameKo": "마늘 소스 왕새우",
+      "nameZh": "蒜香老虎虾",
+      "nameTh": "กุ้งกุลาดำซอสกระเทียม",
+      "nameRu": "Тигровые креветки в чесночном соусе"
     },
     {
       "src": "tom-su.png",
@@ -719,7 +983,10 @@
       "nameVi": "Tôm Sú",
       "nameEn": "Tiger Prawns",
       "nameDe": "Tigergarnelen",
-      "nameKo": "왕새우"
+      "nameKo": "왕새우",
+      "nameZh": "老虎虾",
+      "nameTh": "กุ้งกุลาดำ",
+      "nameRu": "Тигровые креветки"
     },
     {
       "src": "tom-thit-rim.png",
@@ -727,7 +994,10 @@
       "nameVi": "Tôm Thịt Rim",
       "nameEn": "Caramelized Shrimp & Pork",
       "nameDe": "Karamellisierte Garnelen mit Schweinefleisch",
-      "nameKo": "카라멜화 새우 돼지고기"
+      "nameKo": "카라멜화 새우 돼지고기",
+      "nameZh": "越式焦糖虾仁猪肉",
+      "nameTh": "กุ้งและหมูเคี่ยวคาราเมล",
+      "nameRu": "Карамелизированные креветки со свининой"
     },
     {
       "src": "vegan-sandwich.png",
@@ -735,7 +1005,10 @@
       "nameVi": "Bánh Mì Chay",
       "nameEn": "Vegan Sandwich",
       "nameDe": "Veganer Sandwich",
-      "nameKo": "채식 샌드위치"
+      "nameKo": "채식 샌드위치",
+      "nameZh": "素食法棍三明治",
+      "nameTh": "บั๋นหมี่มังสวิรัติ",
+      "nameRu": "Веганский бань ми"
     },
     {
       "src": "vegan-toast.png",
@@ -743,7 +1016,10 @@
       "nameVi": "Vegan Toast",
       "nameEn": "Vegan Toast",
       "nameDe": "Veganer Toast",
-      "nameKo": "비건 토스트"
+      "nameKo": "비건 토스트",
+      "nameZh": "素食吐司",
+      "nameTh": "วีแกนโทสต์",
+      "nameRu": "Веганский тост"
     },
     {
       "src": "vem-mika-casa-sot-vang.png",
@@ -751,7 +1027,10 @@
       "nameVi": "Vẹm Casa Mika Sốt Vang",
       "nameEn": "Casa Mika Mussels in White Wine",
       "nameDe": "Miesmuscheln in Weißweinsauce",
-      "nameKo": "화이트와인 홍합 요리"
+      "nameKo": "화이트와인 홍합 요리",
+      "nameZh": "Casa Mika 白葡萄酒青口",
+      "nameTh": "หอยแมลงภู่ซอสไวน์ขาว Casa Mika",
+      "nameRu": "Мидии Casa Mika в белом вине"
     },
     {
       "src": "vem-mika-sot-toi-ca-chua.jpg",
@@ -759,7 +1038,10 @@
       "nameVi": "Vẹm Mika Sốt Tỏi Cà Chua",
       "nameEn": "Mika Mussels in Garlic Tomato Sauce",
       "nameDe": "Miesmuscheln in Knoblauch-Tomaten-Sauce",
-      "nameKo": "마늘 토마토 소스 홍합"
+      "nameKo": "마늘 토마토 소스 홍합",
+      "nameZh": "Mika 蒜香番茄青口",
+      "nameTh": "หอยแมลงภู่ Mika ซอสมะเขือเทศกระเทียม",
+      "nameRu": "Мидии Mika в чесночно-томатном соусе"
     },
     {
       "src": "vem-mika-sot-vang.png",
@@ -768,7 +1050,10 @@
       "nameEn": "Casa Mika Mussels in White Wine",
       "nameDe": "Miesmuscheln in Weißweinsauce",
       "nameKo": "화이트와인 홍합 요리",
-      "price": "240.000₫"
+      "price": "240.000₫",
+      "nameZh": "Casa Mika 白葡萄酒青口",
+      "nameTh": "หอยแมลงภู่ซอสไวน์ขาว Casa Mika",
+      "nameRu": "Мидии Casa Mika в белом вине"
     },
     {
       "src": "waffle-chocolate.jpg",
@@ -776,7 +1061,10 @@
       "nameVi": "Waffle Socola",
       "nameEn": "Chocolate Waffle",
       "nameDe": "Schokoladenwaffel",
-      "nameKo": "초콜릿 와플"
+      "nameKo": "초콜릿 와플",
+      "nameZh": "巧克力华夫饼",
+      "nameTh": "วาฟเฟิลช็อกโกแลต",
+      "nameRu": "Шоколадные вафли"
     },
     {
       "src": "waffle-fruit.png",
@@ -784,7 +1072,10 @@
       "nameVi": "Waffle Trái Cây",
       "nameEn": "Fresh Fruit Waffle",
       "nameDe": "Obstwaffel",
-      "nameKo": "과일 와플"
+      "nameKo": "과일 와플",
+      "nameZh": "鲜果华夫饼",
+      "nameTh": "วาฟเฟิลผลไม้สด",
+      "nameRu": "Вафли со свежими фруктами"
     },
     {
       "src": "waffle-honey.png",
@@ -792,7 +1083,10 @@
       "nameVi": "Waffle Mật Ong",
       "nameEn": "Honey Waffle",
       "nameDe": "Honigwaffel",
-      "nameKo": "꿀 와플"
+      "nameKo": "꿀 와플",
+      "nameZh": "蜂蜜华夫饼",
+      "nameTh": "วาฟเฟิลน้ำผึ้ง",
+      "nameRu": "Вафли с мёдом"
     },
     {
       "src": "waflle-sugar.png",
@@ -800,7 +1094,10 @@
       "nameVi": "Waffle Đường",
       "nameEn": "Sugar Waffle",
       "nameDe": "Zuckerwaffel",
-      "nameKo": "설탕 와플"
+      "nameKo": "설탕 와플",
+      "nameZh": "糖霜华夫饼",
+      "nameTh": "วาฟเฟิลน้ำตาล",
+      "nameRu": "Сахарные вафли"
     }
   ],
   "drink": [
@@ -811,7 +1108,10 @@
       "nameEn": "Classic Americano",
       "nameDe": "Klassischer Americano",
       "nameKo": "클래식 아메리카노",
-      "price": "60.000₫"
+      "price": "60.000₫",
+      "nameZh": "经典美式咖啡",
+      "nameTh": "อเมริกาโน่คลาสสิก",
+      "nameRu": "Классический американо"
     },
     {
       "src": "bac-xiu.jpg",
@@ -820,7 +1120,10 @@
       "nameEn": "Vietnamese White Coffee",
       "nameDe": "Süßer Milchkaffee Bạc Xỉu",
       "nameKo": "베트남 화이트 커피",
-      "price": "60.000₫"
+      "price": "60.000₫",
+      "nameZh": "越式白咖啡",
+      "nameTh": "บั๊กสิ่ว (กาแฟนมสไตล์เวียดนาม)",
+      "nameRu": "Бак сиу — вьетнамский кофе с молоком"
     },
     {
       "src": "bo-dua.jpg",
@@ -828,7 +1131,10 @@
       "nameVi": "Cà Phê Bơ Dừa",
       "nameEn": "Coconut Butter Coffee",
       "nameDe": "Kokos-Butter-Kaffee",
-      "nameKo": "코코넛 버터 커피"
+      "nameKo": "코코넛 버터 커피",
+      "nameZh": "椰香奶油咖啡",
+      "nameTh": "กาแฟเนยมะพร้าว",
+      "nameRu": "Кофе с кокосом и сливочным маслом"
     },
     {
       "src": "ca-phe-bap.jpg",
@@ -836,7 +1142,10 @@
       "nameVi": "Cà Phê Bắp",
       "nameEn": "Corn Coffee",
       "nameDe": "Maiskaffee",
-      "nameKo": "옥수수 커피"
+      "nameKo": "옥수수 커피",
+      "nameZh": "玉米咖啡",
+      "nameTh": "กาแฟข้าวโพด",
+      "nameRu": "Кукурузный кофе"
     },
     {
       "src": "ca-phe-dua.jpg",
@@ -845,7 +1154,10 @@
       "nameEn": "Frozen Coconut Coffee",
       "nameDe": "Kokos-Kaffee frappiert",
       "nameKo": "코코넛 커피 스무디",
-      "price": "75.000₫"
+      "price": "75.000₫",
+      "nameZh": "椰子冰沙咖啡",
+      "nameTh": "กาแฟมะพร้าวปั่น",
+      "nameRu": "Ледяной кокосовый кофе"
     },
     {
       "src": "ca-phe-en.jpg",
@@ -853,7 +1165,10 @@
       "nameVi": "Cà Phê Đen",
       "nameEn": "Black Coffee",
       "nameDe": "Schwarzer Kaffee",
-      "nameKo": "블랙 커피"
+      "nameKo": "블랙 커피",
+      "nameZh": "越式黑咖啡",
+      "nameTh": "กาแฟดำ",
+      "nameRu": "Чёрный кофе"
     },
     {
       "src": "ca-phe-muoi.jpg",
@@ -862,7 +1177,10 @@
       "nameEn": "Da Nang Salted Cream Coffee",
       "nameDe": "Da Nang Salz-Kaffee",
       "nameKo": "다낭 솔트 커피",
-      "price": "65.000₫"
+      "price": "65.000₫",
+      "nameZh": "岘港海盐咖啡",
+      "nameTh": "กาแฟครีมเกลือดานัง",
+      "nameRu": "Солёный кофе по-данангски"
     },
     {
       "src": "ca-phe-sua-sai-gon.jpg",
@@ -870,7 +1188,10 @@
       "nameVi": "Cà Phê Sữa Sài Gòn",
       "nameEn": "Saigon Milk Coffee",
       "nameDe": "Saigon Milchkaffee",
-      "nameKo": "사이공 밀크 커피"
+      "nameKo": "사이공 밀크 커피",
+      "nameZh": "西贡炼乳咖啡",
+      "nameTh": "กาแฟนมไซ่ง่อน",
+      "nameRu": "Кофе с молоком по-сайгонски"
     },
     {
       "src": "ca-phe-sua.jpg",
@@ -878,7 +1199,10 @@
       "nameVi": "Cà Phê Sữa",
       "nameEn": "Vietnamese Milk Coffee",
       "nameDe": "Vietnamesischer Milchkaffee",
-      "nameKo": "베트남 밀크 커피"
+      "nameKo": "베트남 밀크 커피",
+      "nameZh": "越式炼乳咖啡",
+      "nameTh": "กาแฟนมเวียดนาม",
+      "nameRu": "Вьетнамский кофе со сгущёнкой"
     },
     {
       "src": "cappuccino.jpg",
@@ -887,7 +1211,10 @@
       "nameEn": "Artisan Cappuccino",
       "nameDe": "Klassischer Cappuccino",
       "nameKo": "아티잔 카푸치노",
-      "price": "75.000₫"
+      "price": "75.000₫",
+      "nameZh": "匠心卡布奇诺",
+      "nameTh": "คาปูชิโน่อาร์ทิซาน",
+      "nameRu": "Авторский капучино"
     },
     {
       "src": "caramel-latte.jpg",
@@ -896,7 +1223,10 @@
       "nameEn": "Caramel Macchiato Latte",
       "nameDe": "Karamell Latte Macchiato",
       "nameKo": "카라멜 마키아토 라떼",
-      "price": "80.000₫"
+      "price": "80.000₫",
+      "nameZh": "焦糖玛奇朵拿铁",
+      "nameTh": "คาราเมลมัคคิอาโต้ลาเต้",
+      "nameRu": "Латте карамель макиато"
     },
     {
       "src": "dua-xiem.jpg",
@@ -904,7 +1234,10 @@
       "nameVi": "Dừa Xiêm Tươi",
       "nameEn": "Fresh Young Coconut",
       "nameDe": "Frische Kokosnuss",
-      "nameKo": "생코코넛"
+      "nameKo": "생코코넛",
+      "nameZh": "鲜椰青",
+      "nameTh": "มะพร้าวอ่อนสด",
+      "nameRu": "Свежий молодой кокос"
     },
     {
       "src": "espressolada.jpg",
@@ -912,7 +1245,10 @@
       "nameVi": "Espresso LADA",
       "nameEn": "Espresso LADA",
       "nameDe": "Espresso LADA",
-      "nameKo": "에스프레소 LADA"
+      "nameKo": "에스프레소 LADA",
+      "nameZh": "LADA 意式浓缩",
+      "nameTh": "เอสเปรสโซ LADA",
+      "nameRu": "Эспрессо LADA"
     },
     {
       "src": "expresso.jpg",
@@ -920,7 +1256,10 @@
       "nameVi": "Espresso",
       "nameEn": "Espresso",
       "nameDe": "Espresso",
-      "nameKo": "에스프레소"
+      "nameKo": "에스프레소",
+      "nameZh": "意式浓缩咖啡",
+      "nameTh": "เอสเปรสโซ",
+      "nameRu": "Эспрессо"
     },
     {
       "src": "latte-ice.jpg",
@@ -928,7 +1267,10 @@
       "nameVi": "Latte Ice",
       "nameEn": "Iced Latte",
       "nameDe": "Eislatte",
-      "nameKo": "아이스 라떼"
+      "nameKo": "아이스 라떼",
+      "nameZh": "冰拿铁",
+      "nameTh": "ลาเต้เย็น",
+      "nameRu": "Айс латте"
     },
     {
       "src": "latte-nong.jpg",
@@ -936,7 +1278,10 @@
       "nameVi": "Latte Nóng",
       "nameEn": "Hot Latte",
       "nameDe": "Heißer Latte",
-      "nameKo": "따뜻한 라떼"
+      "nameKo": "따뜻한 라떼",
+      "nameZh": "热拿铁",
+      "nameTh": "ลาเต้ร้อน",
+      "nameRu": "Горячий латте"
     },
     {
       "src": "lattee-machino.jpg",
@@ -944,7 +1289,10 @@
       "nameVi": "Latte Macchiato",
       "nameEn": "Latte Macchiato",
       "nameDe": "Latte Macchiato",
-      "nameKo": "라떼 마키아토"
+      "nameKo": "라떼 마키아토",
+      "nameZh": "拿铁玛奇朵",
+      "nameTh": "ลาเต้มัคคิอาโต้",
+      "nameRu": "Латте макиато"
     },
     {
       "src": "matcha-lattee.png",
@@ -952,7 +1300,10 @@
       "nameVi": "Matcha Latte",
       "nameEn": "Matcha Latte",
       "nameDe": "Matcha Latte",
-      "nameKo": "말차 라떼"
+      "nameKo": "말차 라떼",
+      "nameZh": "抹茶拿铁",
+      "nameTh": "มัทฉะลาเต้",
+      "nameRu": "Матча латте"
     },
     {
       "src": "nuoc-ep-cam.jpg",
@@ -960,7 +1311,10 @@
       "nameVi": "Nước Ép Cam Tươi",
       "nameEn": "Fresh Orange Juice",
       "nameDe": "Frischer Orangensaft",
-      "nameKo": "생오렌지 주스"
+      "nameKo": "생오렌지 주스",
+      "nameZh": "鲜榨橙汁",
+      "nameTh": "น้ำส้มคั้นสด",
+      "nameRu": "Свежевыжатый апельсиновый сок"
     },
     {
       "src": "nuoc-ep-chanh-day.jpg",
@@ -968,7 +1322,10 @@
       "nameVi": "Nước Ép Chanh Dây",
       "nameEn": "Passionfruit Juice",
       "nameDe": "Maracujasaft",
-      "nameKo": "패션프루트 주스"
+      "nameKo": "패션프루트 주스",
+      "nameZh": "百香果汁",
+      "nameTh": "น้ำเสาวรส",
+      "nameRu": "Сок маракуйи"
     },
     {
       "src": "nuoc-ep-chanh.jpg",
@@ -976,7 +1333,10 @@
       "nameVi": "Nước Ép Chanh",
       "nameEn": "Lemonade",
       "nameDe": "Zitronenlimonade",
-      "nameKo": "레몬 에이드"
+      "nameKo": "레몬 에이드",
+      "nameZh": "鲜柠檬水",
+      "nameTh": "น้ำมะนาว",
+      "nameRu": "Лимонад"
     },
     {
       "src": "nuoc-ep-dua-hau.jpg",
@@ -985,7 +1345,10 @@
       "nameEn": "Fresh Watermelon Juice",
       "nameDe": "Frischer Wassermelonensaft",
       "nameKo": "생수박 주스",
-      "price": "65.000₫"
+      "price": "65.000₫",
+      "nameZh": "鲜榨西瓜汁",
+      "nameTh": "น้ำแตงโมสด",
+      "nameRu": "Свежий арбузный сок"
     },
     {
       "src": "nuoc-ep-dua.jpg",
@@ -993,7 +1356,10 @@
       "nameVi": "Nước Ép Dứa",
       "nameEn": "Fresh Pineapple Juice",
       "nameDe": "Frischer Ananassaft",
-      "nameKo": "생파인애플 주스"
+      "nameKo": "생파인애플 주스",
+      "nameZh": "鲜榨菠萝汁",
+      "nameTh": "น้ำสับปะรดสด",
+      "nameRu": "Свежий ананасовый сок"
     },
     {
       "src": "nuoc-ep-le.jpg",
@@ -1001,7 +1367,10 @@
       "nameVi": "Nước Ép Lê",
       "nameEn": "Pear Juice",
       "nameDe": "Birnensaft",
-      "nameKo": "배 주스"
+      "nameKo": "배 주스",
+      "nameZh": "雪梨汁",
+      "nameTh": "น้ำสาลี่",
+      "nameRu": "Грушевый сок"
     },
     {
       "src": "nuoc-ep-tao.jpg",
@@ -1009,7 +1378,10 @@
       "nameVi": "Nước Ép Táo",
       "nameEn": "Apple Juice",
       "nameDe": "Apfelsaft",
-      "nameKo": "사과 주스"
+      "nameKo": "사과 주스",
+      "nameZh": "苹果汁",
+      "nameTh": "น้ำแอปเปิ้ล",
+      "nameRu": "Яблочный сок"
     },
     {
       "src": "pink-mika-lattee.jpg",
@@ -1017,7 +1389,10 @@
       "nameVi": "Pink Mika Latte",
       "nameEn": "Pink Mika Latte",
       "nameDe": "Pink Mika Latte",
-      "nameKo": "핑크 미카 라떼"
+      "nameKo": "핑크 미카 라떼",
+      "nameZh": "粉红 Mika 拿铁",
+      "nameTh": "พิงก์ มิกะ ลาเต้",
+      "nameRu": "Pink Mika Latte"
     },
     {
       "src": "sinh-to-bo.jpg",
@@ -1026,7 +1401,10 @@
       "nameEn": "Dak Lak Avocado Smoothie",
       "nameDe": "Cremiger Avocado-Smoothie",
       "nameKo": "아보카도 스무디",
-      "price": "85.000₫"
+      "price": "85.000₫",
+      "nameZh": "多乐牛油果冰沙",
+      "nameTh": "สมูทตี้อะโวคาโดดั๊กลัก",
+      "nameRu": "Смузи из авокадо из Даклака"
     },
     {
       "src": "sinh-to-dau.jpg",
@@ -1034,7 +1412,10 @@
       "nameVi": "Sinh Tố Dâu",
       "nameEn": "Strawberry Smoothie",
       "nameDe": "Erdbeer-Smoothie",
-      "nameKo": "딸기 스무디"
+      "nameKo": "딸기 스무디",
+      "nameZh": "草莓冰沙",
+      "nameTh": "สมูทตี้สตรอว์เบอร์รี",
+      "nameRu": "Клубничный смузи"
     },
     {
       "src": "sinh-to-dua.jpg",
@@ -1042,7 +1423,10 @@
       "nameVi": "Sinh Tố Dừa",
       "nameEn": "Coconut Smoothie",
       "nameDe": "Kokos-Smoothie",
-      "nameKo": "코코넛 스무디"
+      "nameKo": "코코넛 스무디",
+      "nameZh": "椰子冰沙",
+      "nameTh": "สมูทตี้มะพร้าว",
+      "nameRu": "Кокосовый смузи"
     },
     {
       "src": "sinh-to-matcha-dua.jpg",
@@ -1050,7 +1434,10 @@
       "nameVi": "Sinh Tố Matcha Dừa",
       "nameEn": "Coconut Matcha Smoothie",
       "nameDe": "Kokos-Matcha-Smoothie",
-      "nameKo": "코코넛 말차 스무디"
+      "nameKo": "코코넛 말차 스무디",
+      "nameZh": "椰香抹茶冰沙",
+      "nameTh": "สมูทตี้มัทฉะมะพร้าว",
+      "nameRu": "Смузи с матчей и кокосом"
     },
     {
       "src": "sinh-to-matcha-hoa-nhai.jpg",
@@ -1058,7 +1445,10 @@
       "nameVi": "Sinh Tố Matcha Hoa Nhài",
       "nameEn": "Jasmine Matcha Smoothie",
       "nameDe": "Jasmin-Matcha-Smoothie",
-      "nameKo": "재스민 말차 스무디"
+      "nameKo": "재스민 말차 스무디",
+      "nameZh": "茉莉抹茶冰沙",
+      "nameTh": "สมูทตี้มัทฉะมะลิ",
+      "nameRu": "Смузи с матчей и жасмином"
     },
     {
       "src": "sinh-to-socola.jpg",
@@ -1066,7 +1456,10 @@
       "nameVi": "Sinh Tố Socola",
       "nameEn": "Chocolate Smoothie",
       "nameDe": "Schokoladen-Smoothie",
-      "nameKo": "초콜릿 스무디"
+      "nameKo": "초콜릿 스무디",
+      "nameZh": "巧克力冰沙",
+      "nameTh": "สมูทตี้ช็อกโกแลต",
+      "nameRu": "Шоколадный смузи"
     },
     {
       "src": "sinh-to-viet-quat.jpg",
@@ -1075,7 +1468,10 @@
       "nameEn": "Wild Blueberry Smoothie",
       "nameDe": "Blaubeer-Smoothie",
       "nameKo": "블루베리 스무디",
-      "price": "85.000₫"
+      "price": "85.000₫",
+      "nameZh": "野生蓝莓冰沙",
+      "nameTh": "สมูทตี้บลูเบอร์รีป่า",
+      "nameRu": "Смузи из дикой черники"
     },
     {
       "src": "sinh-to-xoai.jpg",
@@ -1083,7 +1479,10 @@
       "nameVi": "Sinh Tố Xoài",
       "nameEn": "Mango Smoothie",
       "nameDe": "Mango-Smoothie",
-      "nameKo": "망고 스무디"
+      "nameKo": "망고 스무디",
+      "nameZh": "芒果冰沙",
+      "nameTh": "สมูทตี้มะม่วง",
+      "nameRu": "Манговый смузи"
     },
     {
       "src": "sony-tonuc.jpg",
@@ -1091,7 +1490,10 @@
       "nameVi": "Sony Tonic",
       "nameEn": "Sony Tonic",
       "nameDe": "Sony Tonic",
-      "nameKo": "소니 토닉"
+      "nameKo": "소니 토닉",
+      "nameZh": "Sony 汤力",
+      "nameTh": "โซนี่ โทนิค",
+      "nameRu": "Sony Tonic"
     },
     {
       "src": "tra-ao.jpg",
@@ -1099,7 +1501,10 @@
       "nameVi": "Trà Đào",
       "nameEn": "Peach Tea",
       "nameDe": "Pfirsichtee",
-      "nameKo": "복숭아 차"
+      "nameKo": "복숭아 차",
+      "nameZh": "蜜桃茶",
+      "nameTh": "ชาพีช",
+      "nameRu": "Персиковый чай"
     },
     {
       "src": "tra-dau-oi-hong.jpg",
@@ -1108,7 +1513,10 @@
       "nameEn": "Strawberry Pink Guava Tea",
       "nameDe": "Erdbeer-Guaven-Eistee",
       "nameKo": "딸기 핑크 구아바 티",
-      "price": "75.000₫"
+      "price": "75.000₫",
+      "nameZh": "草莓红心番石榴茶",
+      "nameTh": "ชาสตรอว์เบอร์รีฝรั่งชมพู",
+      "nameRu": "Чай с клубникой и розовой гуавой"
     },
     {
       "src": "tra-hat-sen.jpg",
@@ -1117,7 +1525,10 @@
       "nameEn": "Pure Lotus Seed Tea",
       "nameDe": "Reiner Lotussamen-Tee",
       "nameKo": "연꽃씨 차",
-      "price": "70.000₫"
+      "price": "70.000₫",
+      "nameZh": "莲子清茶",
+      "nameTh": "ชาเม็ดบัว",
+      "nameRu": "Чай из семян лотоса"
     },
     {
       "src": "tra-xoai-chanh-day.jpg",
@@ -1126,7 +1537,10 @@
       "nameEn": "Mango Passionfruit Tea",
       "nameDe": "Mango-Maracuja-Tee",
       "nameKo": "망고 패션프루트 티",
-      "price": "75.000₫"
+      "price": "75.000₫",
+      "nameZh": "芒果百香果茶",
+      "nameTh": "ชามะม่วงเสาวรส",
+      "nameRu": "Чай с манго и маракуйей"
     }
   ],
   "mocktail": [
@@ -1137,7 +1551,10 @@
       "nameEn": "Dragon Bridge Spirit",
       "nameDe": "Dragon Bridge Spirit",
       "nameKo": "드래곤 브릿지 스피릿",
-      "price": "105.000₫"
+      "price": "105.000₫",
+      "nameZh": "龙桥之魂",
+      "nameTh": "ดราก้อน บริดจ์ สปิริต",
+      "nameRu": "Dragon Bridge Spirit"
     },
     {
       "src": "glowhot.jpg",
@@ -1146,7 +1563,10 @@
       "nameEn": "Glow Hot Tropical",
       "nameDe": "Glow Hot Tropical",
       "nameKo": "글로우 핫 트로피컬",
-      "price": "95.000₫"
+      "price": "95.000₫",
+      "nameZh": "热带流光",
+      "nameTh": "โกลว์ ฮอต ทรอปิคอล",
+      "nameRu": "Glow Hot Tropical"
     },
     {
       "src": "green-soul.jpg",
@@ -1155,7 +1575,10 @@
       "nameEn": "Green Soul Botanical",
       "nameDe": "Green Soul Botanical",
       "nameKo": "그린 소울 보태니컬",
-      "price": "95.000₫"
+      "price": "95.000₫",
+      "nameZh": "绿野植萃",
+      "nameTh": "กรีน โซล โบทานิคอล",
+      "nameRu": "Green Soul Botanical"
     },
     {
       "src": "midnight.jpg",
@@ -1164,7 +1587,10 @@
       "nameEn": "Midnight Garden",
       "nameDe": "Midnight Garden",
       "nameKo": "미드나잇 가든",
-      "price": "95.000₫"
+      "price": "95.000₫",
+      "nameZh": "午夜花园",
+      "nameTh": "มิดไนต์ การ์เด้น",
+      "nameRu": "Midnight Garden"
     },
     {
       "src": "passion-matcha.jpg",
@@ -1173,7 +1599,10 @@
       "nameEn": "Passion Matcha Fusion",
       "nameDe": "Passion Matcha Fusion",
       "nameKo": "패션 말차 퓨전",
-      "price": "95.000₫"
+      "price": "95.000₫",
+      "nameZh": "百香抹茶交响",
+      "nameTh": "แพชชั่น มัทฉะ ฟิวชัน",
+      "nameRu": "Passion Matcha Fusion"
     },
     {
       "src": "pear-pink.jpg",
@@ -1182,7 +1611,10 @@
       "nameEn": "Pink Pear Bliss",
       "nameDe": "Pink Pear Bliss",
       "nameKo": "핑크 페어 블리스",
-      "price": "95.000₫"
+      "price": "95.000₫",
+      "nameZh": "粉梨悦享",
+      "nameTh": "พิงก์ แพร์ บลิส",
+      "nameRu": "Pink Pear Bliss"
     },
     {
       "src": "ruby-sotic.jpg",
@@ -1191,7 +1623,10 @@
       "nameEn": "Ruby Exotic Cooler",
       "nameDe": "Ruby Exotic Cooler",
       "nameKo": "루비 이그조틱 쿨러",
-      "price": "105.000₫"
+      "price": "105.000₫",
+      "nameZh": "红宝石异域冰饮",
+      "nameTh": "รูบี้ เอ็กโซติก คูลเลอร์",
+      "nameRu": "Ruby Exotic Cooler"
     },
     {
       "src": "sony-tonic.jpg",
@@ -1200,7 +1635,10 @@
       "nameEn": "Casa Mika Signature Tonic",
       "nameDe": "Casa Mika Signature Tonic",
       "nameKo": "까사 미카 시그니처 토닉",
-      "price": "95.000₫"
+      "price": "95.000₫",
+      "nameZh": "Casa Mika 招牌汤力",
+      "nameTh": "Casa Mika ซิกเนเจอร์ โทนิค",
+      "nameRu": "Фирменный тоник Casa Mika"
     },
     {
       "src": "sunset.jpg",
@@ -1209,7 +1647,10 @@
       "nameEn": "Sunset Over My Khe",
       "nameDe": "Sunset Over My Khe",
       "nameKo": "선셋 오버 미케",
-      "price": "95.000₫"
+      "price": "95.000₫",
+      "nameZh": "美溪日落",
+      "nameTh": "ซันเซ็ต โอเวอร์ หมีเคว",
+      "nameRu": "Sunset Over My Khe"
     }
   ]
 }

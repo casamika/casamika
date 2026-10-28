@@ -94,14 +94,23 @@
                 <a href="/career/" class="ms-nav-link is-active" aria-current="page">Career</a>
                 <a href="/#reserve" class="ms-btn ms-btn-outline ms-btn-sm">Reserve</a>
             </div>
-            <span class="ms-lang-switch" role="group" aria-label="Language">
-                <!-- Career page language links -->
-                <a href="/vi/career/" class="ms-lang" data-lang="vi" hreflang="vi">VI</a>
-                <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/career/" class="ms-lang is-active" data-lang="en" aria-current="page">EN</a>
-                <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/de/" class="ms-lang" data-lang="de" hreflang="de">DE</a>
-            </span>
+            <div class="ms-lang-switch" data-lang-dd>
+                <button type="button" class="ms-lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Language">
+                    <svg class="ms-lang-globe" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg>
+                    <span class="ms-lang-current">EN</span>
+                    <svg class="ms-lang-caret" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 3.5l3 3 3-3"/></svg>
+                </button>
+                <div class="ms-lang-menu" role="menu" aria-label="Language">
+                    <a href="/vi/career/" class="ms-lang " data-lang="vi" hreflang="vi" lang="vi" role="menuitem"><span class="ms-lang-code">VI</span><span class="ms-lang-name">Tiếng Việt</span></a>
+                    <a href="/career/" class="ms-lang is-active" data-lang="en" hreflang="en" lang="en" role="menuitem" aria-current="page"><span class="ms-lang-code">EN</span><span class="ms-lang-name">English</span></a>
+                    <a href="/ko/" class="ms-lang " data-lang="ko" hreflang="ko" lang="ko" role="menuitem"><span class="ms-lang-code">KO</span><span class="ms-lang-name">한국어</span></a>
+                    <span class="ms-lang-divider" role="separator"></span>
+                    <a href="/de/" class="ms-lang " data-lang="de" hreflang="de" lang="de" role="menuitem"><span class="ms-lang-code">DE</span><span class="ms-lang-name">Deutsch</span></a>
+                    <a href="/zh/" class="ms-lang " data-lang="zh" hreflang="zh-Hans" lang="zh-Hans" role="menuitem"><span class="ms-lang-code">ZH</span><span class="ms-lang-name">中文</span></a>
+                    <a href="/th/" class="ms-lang " data-lang="th" hreflang="th" lang="th" role="menuitem"><span class="ms-lang-code">TH</span><span class="ms-lang-name">ไทย</span></a>
+                    <a href="/ru/" class="ms-lang " data-lang="ru" hreflang="ru" lang="ru" role="menuitem"><span class="ms-lang-code">RU</span><span class="ms-lang-name">Русский</span></a>
+                </div>
+            </div>
             <button class="ms-nav-toggle" id="msNavToggle" aria-label="Open menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>

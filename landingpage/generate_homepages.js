@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { LANGS, LANG_CODES, BADGES, getGoogleReserveUrl, localizedName, hreflangLinks, langSwitcher } = require('./lang-config');
 
 const menuData = JSON.parse(fs.readFileSync(path.join(__dirname, 'image', 'menu-items', 'menu-data.json'), 'utf8'));
 
@@ -13,22 +14,22 @@ const featuredMocktailNames = ['Sunset Over My Khe', 'Dragon Bridge Spirit', 'Ca
 const otherMocktailNames = ['Glow Hot Tropical', 'Green Soul Botanical', 'Passion Matcha Fusion', 'Pink Pear Bliss', 'Ruby Exotic Cooler'];
 
 function getCuratedShowcaseItems() {
-  const mapItem = (item, cat, badgeVi, badgeEn, badgeDe, badgeKo, isFeatured) => ({
+  const mapItem = (item, cat, isFeatured) => ({
     ...item,
     cat,
-    badgeVi, badgeEn, badgeDe, badgeKo,
+    badges: BADGES[cat],
     img: `/image/menu-items/${cat}/${item.dest}`,
     isFeatured
   });
 
-  const featuredFood = featuredFoodNames.map(n => mapItem(menuData.food.find(x => x.nameVi === n), 'food', 'Ẩm thực', 'Culinary', 'Küche', '요리', true));
-  const otherFood = otherFoodNames.map(n => mapItem(menuData.food.find(x => x.nameVi === n), 'food', 'Ẩm thực', 'Culinary', 'Küche', '요리', false));
+  const featuredFood = featuredFoodNames.map(n => mapItem(menuData.food.find(x => x.nameVi === n), 'food', true));
+  const otherFood = otherFoodNames.map(n => mapItem(menuData.food.find(x => x.nameVi === n), 'food', false));
 
-  const featuredDrink = featuredDrinkNames.map(n => mapItem(menuData.drink.find(x => x.nameVi === n), 'drink', 'Đồ uống', 'Drink', 'Getränke', '음료', true));
-  const otherDrink = otherDrinkNames.map(n => mapItem(menuData.drink.find(x => x.nameVi === n), 'drink', 'Đồ uống', 'Drink', 'Getränke', '음료', false));
+  const featuredDrink = featuredDrinkNames.map(n => mapItem(menuData.drink.find(x => x.nameVi === n), 'drink', true));
+  const otherDrink = otherDrinkNames.map(n => mapItem(menuData.drink.find(x => x.nameVi === n), 'drink', false));
 
-  const featuredMocktail = featuredMocktailNames.map(n => mapItem(menuData.mocktail.find(x => x.nameVi === n), 'mocktail', 'Mocktail', 'Mocktail', 'Mocktail', '목테일', true));
-  const otherMocktail = otherMocktailNames.map(n => mapItem(menuData.mocktail.find(x => x.nameVi === n), 'mocktail', 'Mocktail', 'Mocktail', 'Mocktail', '목테일', false));
+  const featuredMocktail = featuredMocktailNames.map(n => mapItem(menuData.mocktail.find(x => x.nameVi === n), 'mocktail', true));
+  const otherMocktail = otherMocktailNames.map(n => mapItem(menuData.mocktail.find(x => x.nameVi === n), 'mocktail', false));
 
   return [
     ...featuredFood,
@@ -42,12 +43,6 @@ function getCuratedShowcaseItems() {
 
 const showcaseItems = getCuratedShowcaseItems();
 
-const GOOGLE_RESERVE_URL = 'https://www.google.com/maps/reserve/v/dine/c/tx1PNeAwXj8?source=pa&opi=79508299&hl=vi&gei=xsq8ap2nGfek2roPv8oj&ahbb=1&sourceurl=https://www.google.com/maps/preview/place?authuser%3D0%26hl%3Dvi%26pb%3D!1m14!1s0x31421737deda4ad1:0xf6fb5ca72c7d33f!3m12!1m3!1d26061.27722053428!2d108.24709075!3d16.0497664!2m3!1f0!2f0!3f0!3m2!1i2560!2i1305!4f13.1!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m5!1swsq8aszpL_7d2roPy8Od-As:49!2s1i:0,t:150714,p:wsq8aszpL_7d2roPy8Od-As:49!7e81!12e3!17swsq8aszpL_7d2roPy8Od-As:53!15m108!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b1!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i1305!1m6!1m2!1i2510!2i0!2m2!1i2560!2i1305!1m6!1m2!1i0!2i0!2m2!1i2560!2i20!1m6!1m2!1i0!2i1285!2m2!1i2560!2i1305!22m1!1e81!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i797!39zQ2FzYSBNaWthIOKAkyBDb2ZmZWUgJiBSZXN0YXVyYW50IOKAkyBXb3Jrc3BhY2UsIMSQxrDhu51uZyBUcuG6p24gQuG6oWNoIMSQ4bqxbmcsIEFuIEjhuqNpLCBOZ8WpIEjDoG5oIFPGoW4sIMSQw6AgTuG6tW5n%26q%3DCasa%2BMika%2B%25E2%2580%2593%2BCoffee%2B%2526%2BRestaurant%2B%25E2%2580%2593%2BWorkspace,%2B%25C4%2590%25C6%25B0%25E1%25BB%259Dng%2BTr%25E1%25BA%25A7n%2BB%25E1%25BA%25A1ch%2B%25C4%2590%25E1%25BA%25B1ng,%2BAn%2BH%25E1%25BA%25A3i,%2BNg%25C5%25A9%2BH%25C3%25A0nh%2BS%25C6%25A1n,%2B%25C4%2590%25C3%25A0%2BN%25E1%25BA%25B5ng';
-
-function getGoogleReserveUrl(lang) {
-  const hl = lang === 'vi' ? 'vi' : lang === 'de' ? 'de' : lang === 'ko' ? 'ko' : 'en';
-  return GOOGLE_RESERVE_URL.replace(/hl=vi/g, `hl=${hl}`).replace(/hl%3Dvi/g, `hl%3D${hl}`);
-}
 
 function buildHomepage(lang) {
   const reserveUrl = getGoogleReserveUrl(lang);
@@ -343,12 +338,285 @@ function buildHomepage(lang) {
       footerVisit: '방문 안내',
       footerContact: '연락처',
       footerFollow: 'SNS'
+    },
+    zh: {
+      lang: 'zh',
+      title: 'Casa Mika — 岘港美溪海滩花园餐厅 · 葡萄酒吧 · 原声音乐酒廊',
+      metaDesc: '岘港美溪海滩旁 1,400m² 花园餐厅 Casa Mika：融汇东西方的当代料理、精选葡萄酒珍藏，每晚现场三角钢琴与吉他演奏。',
+      navAbout: '关于我们',
+      navMenu: '菜单',
+      navNews: '动态',
+      navCareer: '招聘',
+      navReserve: '预订',
+      heroEyebrow: '— Casa Mika 岘港',
+      heroTitle: '美溪海滩畔<br>一方绿意栖居，<br><em>让时光<br>为心动停留。</em>',
+      heroSub: '坐落于岘港的 1,400m² 花园餐厅 — 汇聚东西交融的当代风味、精选葡萄酒珍藏，以及暮色中悠扬的原声乐章。',
+      heroBtnReserve: '预订餐位',
+      heroBtnMenu: '浏览菜单',
+      storyEyebrow: '— 品牌故事',
+      storyTitle: '热带花园深处，<br><em>一个温暖的家。</em>',
+      storyLede: 'Casa Mika 源于创始人阮氏明庆（Nguyễn Thị Minh Khánh）对美溪海滩的深厚情感与对烹饪艺术的毕生热爱。她心中描绘的是一个真正的家 — 让挚友、家人与懂得品味的旅人围坐一桌，共享真诚的味道与难忘的畅谈。',
+      storyBody1: 'Casa Mika 位于陈白藤街 37 号（37 Trần Bạch Đằng），距美溪金色沙滩仅几步之遥，占地 1,400m² 的绿意天地。每一处都经过用心雕琢：洒满阳光的玻璃花房、微风轻拂的花园露台、正对通顶酒墙的现代吧台，以及静立于主厅的优雅三角钢琴。一切只为呈现一段从容、雅致而动人的用餐体验。',
+      storyBody2: '在西班牙语中，<em>Casa</em> 意为“家”，而 <em>Mika</em> 是挚友们对明庆的亲昵称呼。Casa Mika — “Mika 的家” — 诚邀您放慢脚步，分享欢笑，细品生活的艺术。',
+      metaStat1Title: '美溪海滩地标',
+      metaStat1Sub: '岘港陈白藤街 37 号',
+      metaStat2Title: '1,400m² 庄园',
+      metaStat2Sub: '花园、玻璃花房、酒吧与主厅',
+      metaStat3Title: '每日营业',
+      metaStat3Sub: '迎客时间 07:30 – 00:00',
+      quote1: '我们不只是端上一道道菜肴。<br>我们营造一处温馨的港湾，<br><em>见证人生中每一次美好相聚。</em>',
+      quote2: '暂别城市的匆忙。<br>在 Casa Mika，话语悠长，<br><em>时光值得细细品味。</em>',
+      reelsEyebrow: '— Casa Mika 精彩瞬间',
+      reelsTitle: '花园中的生活，<br><em>定格于 9:16 画幅。</em>',
+      reelsSub: '两段生动的竖屏影像，展现 Casa Mika 的鲜活氛围与生活韵律。',
+      reelsBadge1: '花园与氛围',
+      reelsBadge2: '美食与生活',
+      valuesEyebrow: '— 我们的理念',
+      valuesTitle: '四大美食信条，<br><em>日日坚守。</em>',
+      valuesSub: 'Casa Mika 的每一道菜、每一杯饮品，都凝聚着用心的投入、严苛的标准与对美食的真挚热爱。',
+      v1Num: '01 / 节奏',
+      v1Title: '从容用餐，<em>随您心意。</em>',
+      v1Desc: '上菜节奏顺应餐桌的自然韵律。您每一刻的停留、分享与交流，都值得被珍视。',
+      v2Num: '02 / 食材',
+      v2Title: '源头鲜选，<em>致敬时令。</em>',
+      v2Desc: '从岘港近海每日捕捞的海产，到自家花园芬芳的香草，优质的时令食材是我们料理的灵魂。',
+      v3Num: '03 / 厨房',
+      v3Title: '东西交融，<em>当代和鸣。</em>',
+      v3Desc: '主厨们以经典欧式烹饪技法，融合越南菜鲜活的香料传统，打造既富新意又温暖人心的菜肴。',
+      v4Num: '04 / 匠心',
+      v4Title: '匠心之手，<em>尽在细节。</em>',
+      v4Desc: '从调酒师精准的摇壶，到招牌烧烤拼盘滋滋作响的香气与精致的点缀，每一道菜都出自潜心技艺的双手。',
+      dayEyebrow: '— Casa Mika 的一天',
+      dayTitle: '一天中的每个时刻，<br><em>都有独特的心境。</em>',
+      daySub: '从穿过绿叶的晨光，到温暖的夜晚烛光，Casa Mika 为每一个时刻备好一方宁静天地。',
+      dayMornName: '清晨',
+      dayMornDesc: '柔和的阳光穿透树荫。以一杯手工咖啡、一碗香浓的招牌牛肉河粉，或一份丰盛的 Casa Mika 早餐，开启美好清晨。',
+      dayNoonName: '正午',
+      dayNoonDesc: '在树荫下或玻璃花房中享用清爽午餐。与同事好友共品鲜嫩的越式骰子牛柳，或爽脆的海鲜藕带沙拉。',
+      dayAftName: '午后',
+      dayAftDesc: '静心独处或闲适畅谈的惬意时光。当海风拂过露台，来一杯冰爽的「美溪日落」（Sunset Over My Khe）无酒精鸡尾酒。',
+      dayEveName: '夜晚',
+      dayEveDesc: '烛光渐次亮起。品味招牌烧烤拼盘、奢享咸蛋黄龙虾与佳酿美酒，伴着现场三角钢琴与吉他的悠扬旋律。',
+      showcaseEyebrow: '— 精选推荐',
+      showcaseTitle: '招牌风味，<br><em>为您的餐桌精心甄选。</em>',
+      showcaseSub: '从清晨市场的鲜活海产，到暮色中的匠心调饮，每一道作品都诉说着热爱。',
+      tabAll: '精选',
+      tabFood: '美食',
+      tabDrink: '咖啡与饮品',
+      tabMocktail: '特调饮品',
+      viewFullMenuBtn: '浏览完整互动菜单',
+      atmosEyebrow: '— 空间与体验',
+      atmosTitle: '两大标志性亮点，<br><em>令人心驰神往。</em>',
+      atmosSub: '雅致的建筑与温暖的原声艺术浑然交织，只为您的舒适惬意。',
+      atmosCard1Tag: '位于主厅',
+      atmosCard1Title: '通顶酒墙与鸡尾酒吧',
+      atmosCard1Desc: '玻璃与金属打造的酒墙直抵天花，陈列着数百款珍藏佳酿。中央吧台是调酒师们的舞台，以创意鸡尾酒礼赞岘港的海滨风情。',
+      atmosCard2Tag: '门厅与吧台',
+      atmosCard2Title: '每晚三角钢琴与原声吉他',
+      atmosCard2Desc: '每晚 19:00 起，温暖的三角钢琴与原声吉他旋律在厅内流淌 — 它不是喧宾夺主的舞台表演，而是轻柔地为您的餐桌对话增添韵味。',
+      eventsEyebrow: '— 私人活动',
+      eventsTitle: '1,400m² 花园庄园，<em>为您的夜晚倾情编排。</em>',
+      eventsDesc: '花园婚礼、生日庆典、企业晚宴与品牌发布会。玻璃花房可容纳 60 位宾客，露台 120 位，整座花园庄园最多 300 位。提供定制菜单、侍酒师配酒推荐与周到而低调的服务。',
+      eventsZalo: '通过 Zalo 策划',
+      eventsTel: '或致电 +84 708 888 007',
+      visitEyebrow: '— 欢迎光临',
+      visitTitle: '大门为您敞开。<br><em>来享一餐美味，留下一段难忘的夜晚。</em>',
+      visitSub: '花园餐厅位于岘港美溪海滩陈白藤街 37 号。每日营业 07:30 至 00:00。',
+      btnReserve: '预订餐位',
+      btnZalo: 'Zalo 咨询',
+      btnFacebook: '访问 Facebook',
+      footerBrand: '美溪海滩畔的花园餐厅与原声音乐酒廊。',
+      footerVisit: '地址',
+      footerContact: '联系方式',
+      footerFollow: '关注我们'
+    },
+    th: {
+      lang: 'th',
+      title: 'Casa Mika (คาซ่า มิกะ) — การ์เด้นไดนิ่ง ไวน์ & อะคูสติกเลานจ์ ริมหาดหมีเคว | ดานัง',
+      metaDesc: 'Casa Mika ดานัง ร้านอาหารในสวนพื้นที่ 1,400 ตร.ม. ใกล้หาดหมีเคว อาหารร่วมสมัยผสานตะวันออกและตะวันตก ไวน์คัดสรร และดนตรีสดแกรนด์เปียโนและกีตาร์ทุกค่ำคืน',
+      navAbout: 'เกี่ยวกับเรา',
+      navMenu: 'เมนู',
+      navNews: 'ข่าวสาร',
+      navCareer: 'ร่วมงานกับเรา',
+      navReserve: 'จองโต๊ะ',
+      heroEyebrow: '— Casa Mika ดานัง',
+      heroTitle: 'โอเอซิสสีเขียว<br>ริมหาดหมีเคว<br><em>ที่ซึ่งเวลา<br>หลีกทางให้ความรู้สึก</em>',
+      heroSub: 'การ์เด้นไดนิ่งกว้างขวางกว่า 1,400 ตร.ม. ใจกลางดานัง — ผสานรสชาติร่วมสมัยแห่งตะวันออกและตะวันตก คอลเลกชันไวน์คัดสรร และท่วงทำนองอะคูสติกยามพลบค่ำ',
+      heroBtnReserve: 'จองโต๊ะ',
+      heroBtnMenu: 'ดูเมนู',
+      storyEyebrow: '— เรื่องราวของเรา',
+      storyTitle: 'บ้านที่อบอุ่นต้อนรับ<br><em>ท่ามกลางสวนเขตร้อน</em>',
+      storyLede: 'Casa Mika ถือกำเนิดจากความรักอันลึกซึ้งที่มีต่อหาดหมีเคว และความหลงใหลในศิลปะการทำอาหารตลอดชีวิตของผู้ก่อตั้ง คุณเหงียน ถิ มิญ คั้ญ (Nguyễn Thị Minh Khánh) เธอใฝ่ฝันถึง “บ้าน” ที่แท้จริง — พื้นที่อบอุ่นที่เพื่อนฝูง ครอบครัว และนักเดินทางผู้พิถีพิถันได้มาล้อมวงร่วมกัน ด้วยรสชาติจริงใจและบทสนทนาที่น่าจดจำ',
+      storyBody1: 'ตั้งอยู่ที่ 37 ถนนเจิ่นบั๊กดั่ง (Tran Bach Dang) เดินเพียงไม่กี่ก้าวก็ถึงหาดทรายสีทองของหมีเคว Casa Mika ทอดตัวบนพื้นที่สีเขียวกว้างขวางกว่า 1,400 ตร.ม. ทุกมุมได้รับการรังสรรค์อย่างใส่ใจ ทั้งกลาสเฮาส์ที่อาบแสงแดด เทอร์เรซกลางสวนที่มีลมพัดเย็นสบาย บาร์ร่วมสมัยหันหน้าสู่ผนังไวน์สูงจรดเพดาน และแกรนด์เปียโนอันสง่างามในโถงหลัก ทุกสิ่งถูกออกแบบมาเพื่อประสบการณ์การรับประทานอาหารที่ผ่อนคลาย ประณีต และอิ่มเอมใจ',
+      storyBody2: 'ในภาษาสเปน <em>Casa</em> แปลว่าบ้าน ส่วน <em>Mika</em> คือชื่อเล่นแสนอบอุ่นที่เพื่อนสนิทตั้งให้คุณมิญ คั้ญ Casa Mika — บ้านของมิกะ — จึงพร้อมต้อนรับคุณให้ได้ชะลอจังหวะชีวิต แบ่งปันเสียงหัวเราะ และดื่มด่ำกับศิลปะแห่งการใช้ชีวิต',
+      metaStat1Title: 'จุดหมายริมหาดหมีเคว',
+      metaStat1Sub: '37 Tran Bach Dang, ดานัง',
+      metaStat2Title: 'พื้นที่ 1,400 ตร.ม.',
+      metaStat2Sub: 'สวน กลาสเฮาส์ บาร์ & โถงหลัก',
+      metaStat3Title: 'เปิดทุกวัน',
+      metaStat3Sub: 'ยินดีต้อนรับ 07:30 – 00:00 น.',
+      quote1: 'เราไม่ได้เพียงเสิร์ฟอาหาร<br>แต่เราสร้างพื้นที่อันอบอุ่น<br><em>เพื่อเฉลิมฉลองทุกการพบกันอันล้ำค่า</em>',
+      quote2: 'ปลีกตัวจากความวุ่นวายของเมือง<br>ที่ Casa Mika บทสนทนาจะยาวนานขึ้น<br><em>และทุกนาทีมีค่าให้ลิ้มรส</em>',
+      reelsEyebrow: '— ช่วงเวลาแห่ง Casa Mika',
+      reelsTitle: 'ชีวิตในสวน<br><em>ถ่ายทอดผ่านเฟรม 9:16</em>',
+      reelsSub: 'สองมุมมองแบบภาพยนตร์ที่ถ่ายทอดบรรยากาศอันมีชีวิตชีวาและจังหวะชีวิตของ Casa Mika',
+      reelsBadge1: 'สวน & บรรยากาศ',
+      reelsBadge2: 'อาหาร & ไลฟ์สไตล์',
+      valuesEyebrow: '— ปรัชญาของเรา',
+      valuesTitle: 'สี่หลักแห่งการรังสรรค์อาหาร<br><em>ที่เรายึดมั่นทุกวัน</em>',
+      valuesSub: 'ทุกจานและทุกแก้วที่ Casa Mika คือเครื่องยืนยันถึงความทุ่มเท มาตรฐานที่เข้มงวด และความรักในศาสตร์แห่งอาหารอย่างแท้จริง',
+      v1Num: '01 / จังหวะ',
+      v1Title: 'ดื่มด่ำอย่างไม่เร่งรีบ <em>ในจังหวะของคุณเอง</em>',
+      v1Desc: 'การบริการของเราดำเนินไปอย่างกลมกลืนกับจังหวะธรรมชาติของโต๊ะคุณ เราใส่ใจทุกช่วงเวลาที่คุณได้นั่งพักผ่อน แบ่งปัน และเชื่อมสัมพันธ์',
+      v2Num: '02 / วัตถุดิบ',
+      v2Title: 'สดใหม่จากแหล่ง <em>เฉลิมฉลองทุกฤดูกาล</em>',
+      v2Desc: 'ตั้งแต่อาหารทะเลสดใหม่จากชายฝั่งดานังในทุกเช้า ไปจนถึงสมุนไพรหอมกรุ่นจากสวนของเราเอง วัตถุดิบตามฤดูกาลชั้นเยี่ยมคือหัวใจแห่งการรังสรรค์อาหารของเรา',
+      v3Num: '03 / ครัว',
+      v3Title: 'ตะวันออกพบตะวันตก <em>ความลงตัวแบบร่วมสมัย</em>',
+      v3Desc: 'เชฟของเราผสานเทคนิคการปรุงแบบยุโรปคลาสสิกเข้ากับมรดกแห่งรสชาติและกลิ่นหอมอันโดดเด่นของอาหารเวียดนาม รังสรรค์เมนูที่แปลกใหม่แต่อบอุ่นคุ้นเคย',
+      v4Num: '04 / ความประณีต',
+      v4Title: 'สัมผัสแห่งงานฝีมือ <em>ในทุกรายละเอียด</em>',
+      v4Desc: 'ตั้งแต่การเขย่าอย่างแม่นยำของบาร์เทนเดอร์ เสียงฉ่าอันหอมกรุ่นของจานบาร์บีคิวซิกเนเจอร์ ไปจนถึงการตกแต่งจานอย่างละเมียด ทุกจานล้วนผ่านมือของผู้ที่ทุ่มเทให้กับงานฝีมือ',
+      dayEyebrow: '— หนึ่งวันที่ Casa Mika',
+      dayTitle: 'ทุกชั่วโมงของวัน<br><em>มีอารมณ์ที่แตกต่าง</em>',
+      daySub: 'ตั้งแต่แสงแดดยามเช้าที่ลอดผ่านใบไม้เขียวขจี จนถึงแสงเทียนอันอบอุ่นยามค่ำ Casa Mika มอบพื้นที่อันเงียบสงบสำหรับทุกช่วงเวลา',
+      dayMornName: 'ยามเช้า',
+      dayMornDesc: 'แสงอ่อนละมุนลอดผ่านร่มไม้ เริ่มต้นวันใหม่ด้วยกาแฟอาร์ทิซาน เฝอเนื้อซิกเนเจอร์หอมกรุ่น หรืออาหารเช้า Casa Mika แสนอิ่มอร่อย',
+      dayNoonName: 'ยามกลางวัน',
+      dayNoonDesc: 'อิ่มอร่อยกับมื้อกลางวันใต้ร่มไม้เย็นสบายหรือในกลาสเฮาส์ ลิ้มลองเนื้อสันในลุคลักแสนนุ่ม หรือยำไหลบัวซีฟู้ดกรุบกรอบร่วมกับเพื่อนร่วมงานและคนสนิท',
+      dayAftName: 'ยามบ่าย',
+      dayAftDesc: 'ช่วงเวลาแสนงามสำหรับการพักใจหรือพูดคุยอย่างผ่อนคลาย จิบม็อกเทล “ซันเซ็ต โอเวอร์ หมีเคว” เย็นชื่นใจ ขณะที่สายลมทะเลพัดผ่านเทอร์เรซ',
+      dayEveName: 'ยามค่ำ',
+      dayEveDesc: 'แสงเทียนเริ่มส่องประกาย ดื่มด่ำกับจานรวมบาร์บีคิวซิกเนเจอร์ กุ้งมังกรซอสไข่เค็มรสเข้มข้น และไวน์ชั้นเลิศ คลอเคล้าด้วยเสียงแกรนด์เปียโนและกีตาร์สด',
+      showcaseEyebrow: '— เมนูคัดสรร',
+      showcaseTitle: 'รสชาติซิกเนเจอร์<br><em>คัดสรรมาเพื่อโต๊ะของคุณ</em>',
+      showcaseSub: 'ตั้งแต่อาหารทะเลสดจากตลาดยามเช้า ไปจนถึงเครื่องดื่มรังสรรค์ยามพลบค่ำ ทุกเมนูบอกเล่าเรื่องราวแห่งความหลงใหล',
+      tabAll: 'แนะนำ',
+      tabFood: 'อาหาร',
+      tabDrink: 'กาแฟ & เครื่องดื่ม',
+      tabMocktail: 'ม็อกเทล & ค็อกเทล',
+      viewFullMenuBtn: 'ดูเมนูทั้งหมดแบบอินเทอร์แอคทีฟ',
+      atmosEyebrow: '— พื้นที่ & ประสบการณ์',
+      atmosTitle: 'สองไฮไลต์ซิกเนเจอร์<br><em>ที่ตราตรึงทุกประสาทสัมผัส</em>',
+      atmosSub: 'สถาปัตยกรรมอันประณีตและศิลปะดนตรีอะคูสติกอันอบอุ่น ผสานกันอย่างลงตัวเพื่อความรื่นรมย์ของคุณ',
+      atmosCard1Tag: 'ในโถงหลัก',
+      atmosCard1Title: 'ผนังไวน์สูงจรดเพดาน & ค็อกเทลบาร์',
+      atmosCard1Desc: 'ตู้ไวน์กระจกและโลหะสูงตระหง่านจรดเพดาน จัดแสดงไวน์ชั้นเลิศนับร้อยขวด บาร์กลางห้องคือที่ที่มิกโซโลจิสต์ของเรารังสรรค์ค็อกเทลที่ได้แรงบันดาลใจจากเสน่ห์ริมทะเลของดานัง',
+      atmosCard2Tag: 'จากโถงต้อนรับ & บาร์',
+      atmosCard2Title: 'ทุกค่ำคืน แกรนด์เปียโน & กีตาร์อะคูสติก',
+      atmosCard2Desc: 'ตั้งแต่ 19:00 น. ทุกคืน ท่วงทำนองแกรนด์เปียโนและกีตาร์อะคูสติกอันอบอุ่นจะล่องลอยไปทั่วโถง — ไม่ใช่การแสดงบนเวทีที่กลบทุกสิ่ง แต่เพื่อเติมเต็มบทสนทนาบนโต๊ะของคุณอย่างนุ่มนวล',
+      eventsEyebrow: '— งานส่วนตัว',
+      eventsTitle: 'สวนกว้าง 1,400 ตร.ม. <em>รังสรรค์เพื่อค่ำคืนของคุณ</em>',
+      eventsDesc: 'งานแต่งงานในสวน วันเกิดสำคัญ งานเลี้ยงองค์กร และงานเปิดตัวแบรนด์ กลาสเฮาส์รองรับ 60 ท่าน เทอร์เรซ 120 ท่าน และพื้นที่สวนทั้งหมดได้สูงสุด 300 ท่าน พร้อมเมนูออกแบบเฉพาะ คำแนะนำจากซอมเมอลิเยร์ และการบริการที่ใส่ใจทุกรายละเอียด',
+      eventsZalo: 'วางแผนผ่าน Zalo',
+      eventsTel: 'หรือโทร +84 708 888 007',
+      visitEyebrow: '— มาเยือนเรา',
+      visitTitle: 'ประตูเปิดรอคุณเสมอ<br><em>แวะมาทานมื้อพิเศษ แล้วอยู่ต่อเพื่อค่ำคืนที่น่าจดจำ</em>',
+      visitSub: 'การ์เด้นไดนิ่งที่ 37 Tran Bach Dang หาดหมีเคว ดานัง เปิดทุกวัน 07:30 – 00:00 น.',
+      btnReserve: 'จองโต๊ะ',
+      btnZalo: 'ทักผ่าน Zalo',
+      btnFacebook: 'เยี่ยมชม Facebook',
+      footerBrand: 'การ์เด้นไดนิ่ง & อะคูสติกเลานจ์ ริมหาดหมีเคว',
+      footerVisit: 'ที่ตั้ง',
+      footerContact: 'ติดต่อ',
+      footerFollow: 'ติดตาม'
+    },
+    ru: {
+      lang: 'ru',
+      title: 'Casa Mika — ресторан в саду, винный бар и акустический лаунж | Дананг',
+      metaDesc: 'Ресторан-сад площадью 1400 м² у пляжа Ми Кхе в Дананге. Современная кухня на стыке Востока и Запада, авторская винная карта и живая музыка — рояль и гитара каждый вечер.',
+      navAbout: 'О нас',
+      navMenu: 'Меню',
+      navNews: 'Новости',
+      navCareer: 'Вакансии',
+      navReserve: 'Бронь',
+      heroEyebrow: '— Casa Mika Дананг',
+      heroTitle: 'Зелёный оазис<br>у пляжа Ми Кхе,<br><em>где время уступает<br>место чувствам.</em>',
+      heroSub: 'Ресторан-сад площадью 1400 м² в Дананге: современная кухня на стыке Востока и Запада, тщательно подобранная винная коллекция и акустические мелодии на закате.',
+      heroBtnReserve: 'Забронировать стол',
+      heroBtnMenu: 'Смотреть меню',
+      storyEyebrow: '— Наша история',
+      storyTitle: 'Гостеприимный дом<br><em>в тропическом саду.</em>',
+      storyLede: 'Casa Mika родилась из глубокой любви основательницы Нгуен Тхи Минь Кхань (Nguyễn Thị Minh Khánh) к пляжу Ми Кхе и её давней страсти к кулинарному искусству. Она мечтала о настоящем доме — уютном месте, где друзья, семьи и взыскательные путешественники собираются за честной едой и незабываемыми разговорами.',
+      storyBody1: 'Всего в нескольких шагах от золотого песка Ми Кхе, на улице Чан Бать Данг, 37, раскинулся зелёный уголок Casa Mika площадью 1400 м². Каждая деталь продумана с любовью: залитая солнцем оранжерея, обдуваемая бризом садовая терраса, современный бар напротив винной стены от пола до потолка и изящный рояль в главном зале. Всё здесь создано для неспешных, утончённых и душевных трапез.',
+      storyBody2: 'По-испански <em>Casa</em> означает «дом», а <em>Mika</em> — ласковое прозвище, которое Минь Кхань дали близкие друзья. Casa Mika — «Дом Мики» — тепло приглашает вас замедлиться, разделить смех и насладиться искусством жить.',
+      metaStat1Title: 'У пляжа Ми Кхе',
+      metaStat1Sub: 'ул. Чан Бать Данг, 37, Дананг',
+      metaStat2Title: 'Пространство 1400 м²',
+      metaStat2Sub: 'Сад, оранжерея, бар и главный зал',
+      metaStat3Title: 'Открыто ежедневно',
+      metaStat3Sub: 'Ждём гостей с 07:30 до 00:00',
+      quote1: 'Мы не просто подаём блюда.<br>Мы создаём гостеприимное пространство,<br><em>где празднуют самые тёплые встречи.</em>',
+      quote2: 'Оставьте городскую суету позади.<br>В Casa Mika беседы длятся дольше,<br><em>а время хочется смаковать.</em>',
+      reelsEyebrow: '— Моменты Casa Mika',
+      reelsTitle: 'Жизнь в саду<br><em>в формате 9:16.</em>',
+      reelsSub: 'Два ярких кинематографичных взгляда на атмосферу и живой ритм Casa Mika.',
+      reelsBadge1: 'Сад и атмосфера',
+      reelsBadge2: 'Кухня и стиль жизни',
+      valuesEyebrow: '— Наша философия',
+      valuesTitle: 'Четыре кулинарных принципа,<br><em>которым мы верны каждый день.</em>',
+      valuesSub: 'Каждое блюдо и каждый напиток в Casa Mika — это вдумчивая работа, строгие стандарты и искренняя любовь к гастрономии.',
+      v1Num: '01 / Ритм',
+      v1Title: 'Ужин без спешки, <em>в вашем темпе.</em>',
+      v1Desc: 'Сервис подстраивается под естественный ритм вашего стола. Мы ценим каждое мгновение, которое вы проводите в неспешной беседе с близкими.',
+      v2Num: '02 / Продукты',
+      v2Title: 'Свежесть из первых рук, <em>в ритме сезонов.</em>',
+      v2Desc: 'От утреннего улова у берегов Дананга до ароматных трав из нашего сада — отборные сезонные продукты лежат в основе нашей кухни.',
+      v3Num: '03 / Кухня',
+      v3Title: 'Восток встречает Запад, <em>в современной гармонии.</em>',
+      v3Desc: 'Наши шеф-повара сочетают классические европейские техники с яркой ароматной традицией вьетнамской кухни, создавая блюда новаторские и при этом по-домашнему уютные.',
+      v4Num: '04 / Мастерство',
+      v4Title: 'Ручная работа <em>в каждой детали.</em>',
+      v4Desc: 'От точного движения шейкера в руках бармена до шипения фирменного гриль-сета и тонкой подачи — каждую тарелку создают руки, преданные своему делу.',
+      dayEyebrow: '— День в Casa Mika',
+      dayTitle: 'Каждый час дня —<br><em>особое настроение.</em>',
+      daySub: 'От утреннего солнца сквозь листву до тёплого вечернего света свечей — Casa Mika дарит умиротворённое пространство для любого момента.',
+      dayMornName: 'Утро',
+      dayMornDesc: 'Мягкие лучи пробиваются сквозь кроны деревьев. Начните утро с авторского кофе, ароматного фирменного фо бо или сытного завтрака Casa Mika.',
+      dayNoonName: 'Полдень',
+      dayNoonDesc: 'Насладитесь обедом в тени деревьев или в оранжерее: нежная говяжья вырезка бо лук лак или хрустящий салат из стеблей лотоса с морепродуктами — в компании коллег и друзей.',
+      dayAftName: 'После обеда',
+      dayAftDesc: 'Идеальное время для тихих размышлений или неспешной беседы. Освежитесь охлаждённым моктейлем Sunset Over My Khe, пока морской бриз гуляет по террасе.',
+      dayEveName: 'Вечер',
+      dayEveDesc: 'Зажигаются свечи. Побалуйте себя фирменным гриль-ассорти, изысканным лобстером в соусе из солёного яйца и благородными винами под живые мелодии рояля и гитары.',
+      showcaseEyebrow: '— Избранное',
+      showcaseTitle: 'Фирменные вкусы,<br><em>подобранные для вашего стола.</em>',
+      showcaseSub: 'От морепродуктов с утреннего рынка до авторских напитков на закате — за каждым творением стоит история и страсть.',
+      tabAll: 'Избранное',
+      tabFood: 'Кухня',
+      tabDrink: 'Кофе и напитки',
+      tabMocktail: 'Моктейли и коктейли',
+      viewFullMenuBtn: 'Открыть полное интерактивное меню',
+      atmosEyebrow: '— Пространство и впечатления',
+      atmosTitle: 'Две особенности,<br><em>которые пленяют чувства.</em>',
+      atmosSub: 'Изысканная архитектура и тёплая акустическая музыка, гармонично сплетённые ради вашего комфорта.',
+      atmosCard1Tag: 'В главном зале',
+      atmosCard1Title: 'Винная стена до потолка и коктейль-бар',
+      atmosCard1Desc: 'Эффектная винная витрина из стекла и металла поднимается до самого потолка и хранит сотни благородных вин. За центральной барной стойкой наши миксологи создают коктейли, вдохновлённые прибрежным Данангом.',
+      atmosCard2Tag: 'Из фойе и бара',
+      atmosCard2Title: 'Каждый вечер — рояль и акустическая гитара',
+      atmosCard2Desc: 'Ежедневно с 19:00 по залу льются тёплые мелодии рояля и акустической гитары — не громкое сценическое шоу, а деликатное сопровождение, которое делает беседу за вашим столом ещё приятнее.',
+      eventsEyebrow: '— Частные мероприятия',
+      eventsTitle: '1400 м² сада, <em>созданные для вашего вечера.</em>',
+      eventsDesc: 'Свадьбы в саду, юбилеи, корпоративные ужины и презентации брендов. Оранжерея — до 60 гостей, терраса — до 120, весь сад — до 300 гостей. Индивидуальное меню, рекомендации сомелье и деликатный сервис.',
+      eventsZalo: 'Обсудить в Zalo',
+      eventsTel: 'или звоните +84 708 888 007',
+      visitEyebrow: '— Ждём вас',
+      visitTitle: 'Двери открыты.<br><em>Приходите поужинать — и останьтесь на незабываемый вечер.</em>',
+      visitSub: 'Ресторан-сад на ул. Чан Бать Данг, 37, у пляжа Ми Кхе, Дананг. Открыто ежедневно с 07:30 до 00:00.',
+      btnReserve: 'Забронировать стол',
+      btnZalo: 'Написать в Zalo',
+      btnFacebook: 'Мы в Facebook',
+      footerBrand: 'Ресторан-сад и акустический лаунж у пляжа Ми Кхе.',
+      footerVisit: 'Адрес',
+      footerContact: 'Контакты',
+      footerFollow: 'Соцсети'
     }
   }[lang];
 
   let showcaseCardsHtml = showcaseItems.map(item => {
-    const name = lang === 'vi' ? item.nameVi : lang === 'de' ? item.nameDe : lang === 'ko' ? item.nameKo : item.nameEn;
-    const badge = lang === 'vi' ? item.badgeVi : lang === 'de' ? item.badgeDe : lang === 'ko' ? item.badgeKo : item.badgeEn;
+    const name = localizedName(item, lang);
+    const badge = item.badges[lang] || item.badges.en;
     const isHiddenInitially = !item.isFeatured;
     return `
             <article class="ms-dish-card fade-up${item.isFeatured ? ' visible' : ''}" data-category="${item.cat}" data-featured="${item.isFeatured ? 'true' : 'false'}"${isHiddenInitially ? ' style="display: none;"' : ''}>
@@ -364,9 +632,8 @@ function buildHomepage(lang) {
             </article>`;
   }).join('\n');
 
-  const localeMap = { vi: 'vi_VN', en: 'en_US', de: 'de_DE', ko: 'ko_KR' };
   const html = `<!DOCTYPE html>
-<html lang="${t.lang}">
+<html lang="${LANGS[lang].htmlLang}">
 
 <head>
     <!-- Google Tag Manager -->
@@ -388,7 +655,7 @@ function buildHomepage(lang) {
     <!-- Open Graph / Facebook / Zalo -->
     <meta property="og:type" content="restaurant">
     <meta property="og:site_name" content="Casa Mika">
-    <meta property="og:locale" content="${localeMap[t.lang] || 'en_US'}">
+    <meta property="og:locale" content="${LANGS[lang].locale}">
     <meta property="og:url" content="https://casamika.com/${t.lang}/">
     <meta property="og:title" content="${t.title}">
     <meta property="og:description" content="${t.metaDesc}">
@@ -408,11 +675,7 @@ function buildHomepage(lang) {
     <link rel="icon" type="image/png" href="/image/logo/logo-new.png">
     <link rel="apple-touch-icon" href="/image/logo/logo-new.png">
     <link rel="canonical" href="https://casamika.com/${t.lang}/">
-    <link rel="alternate" hreflang="en" href="https://casamika.com/en/">
-    <link rel="alternate" hreflang="vi" href="https://casamika.com/vi/">
-    <link rel="alternate" hreflang="de" href="https://casamika.com/de/">
-    <link rel="alternate" hreflang="ko" href="https://casamika.com/ko/">
-    <link rel="alternate" hreflang="x-default" href="https://casamika.com/en/">
+    ${hreflangLinks('')}
 
     <!-- Schema.org JSON-LD: Restaurant & LocalBusiness -->
     <script type="application/ld+json">
@@ -501,15 +764,7 @@ function buildHomepage(lang) {
                 <a href="/${t.lang}/career/" class="ms-nav-link">${t.navCareer}</a>
                 <a href="${reserveUrl}" target="_blank" rel="noopener" class="ms-btn ms-btn-outline ms-btn-sm">${t.navReserve}</a>
             </div>
-            <span class="ms-lang-switch" role="group" aria-label="Language">
-                <a href="/vi/" class="ms-lang ${t.lang === 'vi' ? 'is-active' : ''}" data-lang="vi">VI</a>
-                <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/en/" class="ms-lang ${t.lang === 'en' ? 'is-active' : ''}" data-lang="en">EN</a>
-                <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/de/" class="ms-lang ${t.lang === 'de' ? 'is-active' : ''}" data-lang="de">DE</a>
-                <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/ko/" class="ms-lang ${t.lang === 'ko' ? 'is-active' : ''}" data-lang="ko">KO</a>
-            </span>
+            ${langSwitcher(lang, '')}
             <button class="ms-nav-toggle" id="msNavToggle" aria-label="Menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
@@ -802,8 +1057,9 @@ function buildHomepage(lang) {
 
 </html>`;
 
+  fs.mkdirSync(path.join(__dirname, lang), { recursive: true });
   fs.writeFileSync(path.join(__dirname, lang, 'index.html'), html, 'utf8');
   console.log(`Generated homepage for ${lang}/index.html successfully!`);
 }
 
-['vi', 'en', 'de', 'ko'].forEach(buildHomepage);
+LANG_CODES.forEach(buildHomepage);

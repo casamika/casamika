@@ -1,12 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const { LANGS, LANG_CODES, BADGES, getGoogleReserveUrl, localizedName, hreflangLinks, langSwitcher } = require('./lang-config');
 
-const GOOGLE_RESERVE_URL = 'https://www.google.com/maps/reserve/v/dine/c/tx1PNeAwXj8?source=pa&opi=79508299&hl=vi&gei=xsq8ap2nGfek2roPv8oj&ahbb=1&sourceurl=https://www.google.com/maps/preview/place?authuser%3D0%26hl%3Dvi%26pb%3D!1m14!1s0x31421737deda4ad1:0xf6fb5ca72c7d33f!3m12!1m3!1d26061.27722053428!2d108.24709075!3d16.0497664!2m3!1f0!2f0!3f0!3m2!1i2560!2i1305!4f13.1!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m5!1swsq8aszpL_7d2roPy8Od-As:49!2s1i:0,t:150714,p:wsq8aszpL_7d2roPy8Od-As:49!7e81!12e3!17swsq8aszpL_7d2roPy8Od-As:53!15m108!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b1!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i1305!1m6!1m2!1i2510!2i0!2m2!1i2560!2i1305!1m6!1m2!1i0!2i0!2m2!1i2560!2i20!1m6!1m2!1i0!2i1285!2m2!1i2560!2i1305!22m1!1e81!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i797!39zQ2FzYSBNaWthIOKAkyBDb2ZmZWUgJiBSZXN0YXVyYW50IOKAkyBXb3Jrc3BhY2UsIMSQxrDhu51uZyBUcuG6p24gQuG6oWNoIMSQ4bqxbmcsIEFuIEjhuqNpLCBOZ8WpIEjDoG5oIFPGoW4sIMSQw6AgTuG6tW5n%26q%3DCasa%2BMika%2B%25E2%2580%2593%2BCoffee%2B%2526%2BRestaurant%2B%25E2%2580%2593%2BWorkspace,%2B%25C4%2590%25C6%25B0%25E1%25BB%259Dng%2BTr%25E1%25BA%25A7n%2BB%25E1%25BA%25A1ch%2B%25C4%2590%25E1%25BA%25B1ng,%2BAn%2BH%25E1%25BA%25A3i,%2BNg%25C5%25A9%2BH%25C3%25A0nh%2BS%25C6%25A1n,%2B%25C4%2590%25C3%25A0%2BN%25E1%25BA%25B5ng';
-
-function getGoogleReserveUrl(lang) {
-  const hl = lang === 'vi' ? 'vi' : lang === 'de' ? 'de' : lang === 'ko' ? 'ko' : 'en';
-  return GOOGLE_RESERVE_URL.replace(/hl=vi/g, `hl=${hl}`).replace(/hl%3Dvi/g, `hl%3D${hl}`);
-}
 
 const menuData = JSON.parse(fs.readFileSync(path.join(__dirname, 'image', 'menu-items', 'menu-data.json'), 'utf8'));
 const menuManifest = JSON.parse(fs.readFileSync(path.join(__dirname, 'image', 'menu-pages', 'menu-manifest.json'), 'utf8'));
@@ -21,22 +16,22 @@ const featuredMocktailNames = ['Sunset Over My Khe', 'Dragon Bridge Spirit', 'Ca
 const otherMocktailNames = ['Glow Hot Tropical', 'Green Soul Botanical', 'Passion Matcha Fusion', 'Pink Pear Bliss', 'Ruby Exotic Cooler'];
 
 function getCuratedShowcaseItems() {
-  const mapItem = (item, cat, badgeVi, badgeEn, badgeDe, badgeKo, isFeatured) => ({
+  const mapItem = (item, cat, isFeatured) => ({
     ...item,
     category: cat,
-    badgeVi, badgeEn, badgeDe, badgeKo,
+    badges: BADGES[cat],
     imgSrc: `/image/menu-items/${cat}/${item.dest}`,
     isFeatured
   });
 
-  const featuredFood = featuredFoodNames.map(n => mapItem(menuData.food.find(x => x.nameVi === n), 'food', 'Ẩm thực', 'Culinary', 'Küche', '요리', true));
-  const otherFood = otherFoodNames.map(n => mapItem(menuData.food.find(x => x.nameVi === n), 'food', 'Ẩm thực', 'Culinary', 'Küche', '요리', false));
+  const featuredFood = featuredFoodNames.map(n => mapItem(menuData.food.find(x => x.nameVi === n), 'food', true));
+  const otherFood = otherFoodNames.map(n => mapItem(menuData.food.find(x => x.nameVi === n), 'food', false));
 
-  const featuredDrink = featuredDrinkNames.map(n => mapItem(menuData.drink.find(x => x.nameVi === n), 'drink', 'Đồ uống', 'Drink', 'Getränke', '음료', true));
-  const otherDrink = otherDrinkNames.map(n => mapItem(menuData.drink.find(x => x.nameVi === n), 'drink', 'Đồ uống', 'Drink', 'Getränke', '음료', false));
+  const featuredDrink = featuredDrinkNames.map(n => mapItem(menuData.drink.find(x => x.nameVi === n), 'drink', true));
+  const otherDrink = otherDrinkNames.map(n => mapItem(menuData.drink.find(x => x.nameVi === n), 'drink', false));
 
-  const featuredMocktail = featuredMocktailNames.map(n => mapItem(menuData.mocktail.find(x => x.nameVi === n), 'mocktail', 'Mocktail', 'Mocktail', 'Mocktail', '목테일', true));
-  const otherMocktail = otherMocktailNames.map(n => mapItem(menuData.mocktail.find(x => x.nameVi === n), 'mocktail', 'Mocktail', 'Mocktail', 'Mocktail', '목테일', false));
+  const featuredMocktail = featuredMocktailNames.map(n => mapItem(menuData.mocktail.find(x => x.nameVi === n), 'mocktail', true));
+  const otherMocktail = otherMocktailNames.map(n => mapItem(menuData.mocktail.find(x => x.nameVi === n), 'mocktail', false));
 
   // The 12 featured items come first: 4 Food, 4 Drink, 4 Mocktail (clean 3x4 grid)
   return [
@@ -84,12 +79,45 @@ function generateShowcaseHTML(lang) {
       tabAll: '대표 메뉴', tabFood: '요리', tabDrink: '커피 & 음료', tabMocktail: '목테일 & 칵테일',
       viewMenuBook: '전체 메뉴북 보기 (웨스턴 • 베트남 • 와인)',
       viewMenuBookHint: '아래 인터랙티브 뷰어에서 모든 요리, 음료 및 상세 가격을 확인하세요.'
+    },
+    zh: {
+      eyebrow: '— 精选推荐',
+      title: 'Casa Mika 风味，<br><em>为您的餐桌精心甄选。</em>',
+      sub: '在翻阅下方完整菜单之前，先来品鉴我们精选的招牌风味。',
+      tabAll: '精选',
+      tabFood: '美食',
+      tabDrink: '咖啡与饮品',
+      tabMocktail: '特调饮品',
+      viewMenuBook: '浏览完整菜单（西餐 • 越南菜 • 葡萄酒）',
+      viewMenuBookHint: '在下方互动菜单中查看全部菜品、饮品及价格。'
+    },
+    th: {
+      eyebrow: '— เมนูคัดสรร',
+      title: 'รสชาติแห่ง Casa Mika<br><em>คัดสรรมาเพื่อโต๊ะของคุณ</em>',
+      sub: 'ลิ้มลองรสชาติซิกเนเจอร์ที่เราคัดสรรมา ก่อนเปิดชมเมนูฉบับเต็มด้านล่าง',
+      tabAll: 'แนะนำ',
+      tabFood: 'อาหาร',
+      tabDrink: 'กาแฟ & เครื่องดื่ม',
+      tabMocktail: 'ม็อกเทล & ค็อกเทล',
+      viewMenuBook: 'ดูเมนูฉบับเต็ม (ตะวันตก • เวียดนาม • ไวน์)',
+      viewMenuBookHint: 'ชมอาหาร เครื่องดื่ม และราคาทั้งหมดได้ในเมนูแบบอินเทอร์แอคทีฟด้านล่าง'
+    },
+    ru: {
+      eyebrow: '— Избранное',
+      title: 'Вкусы Casa Mika,<br><em>подобранные для вашего стола.</em>',
+      sub: 'Познакомьтесь с нашими фирменными блюдами, прежде чем открыть полные книги меню ниже.',
+      tabAll: 'Избранное',
+      tabFood: 'Кухня',
+      tabDrink: 'Кофе и напитки',
+      tabMocktail: 'Моктейли и коктейли',
+      viewMenuBook: 'Полные книги меню (европейское • вьетнамское • вина)',
+      viewMenuBookHint: 'Все блюда, напитки и цены — в интерактивном просмотре меню ниже.'
     }
   }[lang];
 
   let cardsHtml = allItems.map(item => {
-    const name = lang === 'vi' ? item.nameVi : lang === 'de' ? item.nameDe : lang === 'ko' ? item.nameKo : item.nameEn;
-    const badge = lang === 'vi' ? item.badgeVi : lang === 'de' ? item.badgeDe : lang === 'ko' ? item.badgeKo : item.badgeEn;
+    const name = localizedName(item, lang);
+    const badge = item.badges[lang] || item.badges.en;
     const isHiddenInitially = !item.isFeatured;
     return `
             <article class="ms-dish-card fade-up${item.isFeatured ? ' visible' : ''}" data-category="${item.category}" data-featured="${item.isFeatured ? 'true' : 'false'}"${isHiddenInitially ? ' style="display: none;"' : ''}>
@@ -278,14 +306,121 @@ function buildMenuPage(lang) {
       footerVisitTitle: '방문 안내',
       footerContactTitle: '연락처',
       footerFollowTitle: 'SNS'
+    },
+    zh: {
+      lang: 'zh',
+      title: '菜单 — Casa Mika 岘港',
+      desc: 'Casa Mika 岘港完整菜单 — 亚欧融合料理、手工咖啡、招牌鸡尾酒与精选葡萄酒窖藏。',
+      heroEyebrow: '— 菜单',
+      heroTitle: '完整菜单，<br><em>为花园餐桌而备。</em>',
+      heroSub: '亚欧融合的厨房、酒吧与酒单，为此时此刻、为眼前的您用心呈现。',
+      pdfEyebrow: '— 完整菜单',
+      pdfTitle: '无需跳转，<br><em>在此直接翻阅菜单。</em>',
+      pdfSub: '手机上轻松滑动翻页，或在西餐菜单、越南菜单与精选酒单之间切换。',
+      btnAu: '西餐菜单',
+      btnViet: '越南菜单',
+      btnRuou: '酒单',
+      modeSwipe: '翻页浏览',
+      modeScroll: '连续滚动',
+      btnFullscreen: '全屏',
+      btnDownloadPdf: '下载 PDF',
+      hintTapZoom: '点击全屏查看',
+      pageCountSuffix: '页',
+      btnPrev: '上一页',
+      btnNext: '下一页',
+      navAbout: '关于我们',
+      navMenu: '菜单',
+      navNews: '动态',
+      navCareer: '招聘',
+      navReserve: '预订',
+      reserveTitle: '为您在花园餐桌<br><em>留一个位置。</em>',
+      reserveSub: '每日早上 07:30 营业至午夜。通过 Zalo 联系是预订最快捷的方式。',
+      reserveBtn: '预订餐位',
+      reserveZalo: 'Zalo 咨询',
+      reserveFacebook: '访问 Facebook',
+      footerBrand: '美溪海滩畔的花园餐桌。',
+      footerVisitTitle: '地址',
+      footerContactTitle: '联系方式',
+      footerFollowTitle: '关注我们'
+    },
+    th: {
+      lang: 'th',
+      title: 'เมนู — Casa Mika ดานัง',
+      desc: 'เมนูทั้งหมดของ Casa Mika ดานัง — อาหารเอเชียผสานตะวันตก กาแฟอาร์ทิซาน ค็อกเทลซิกเนเจอร์ และห้องเก็บไวน์คัดสรร',
+      heroEyebrow: '— เมนู',
+      heroTitle: 'เมนูฉบับเต็ม<br><em>สำหรับโต๊ะในสวน</em>',
+      heroSub: 'ครัวเอเชีย-ตะวันตก บาร์ และรายการไวน์ ที่รังสรรค์ให้เข้ากับทุกช่วงเวลาและแขกทุกท่าน',
+      pdfEyebrow: '— เมนูฉบับสมบูรณ์',
+      pdfTitle: 'เปิดชมเมนู<br><em>ได้ทันทีที่นี่</em>',
+      pdfSub: 'ปัดดูอย่างลื่นไหลบนมือถือ หรือสลับระหว่างเมนูตะวันตก เมนูเวียดนาม และรายการไวน์คัดสรร',
+      btnAu: 'เมนูตะวันตก',
+      btnViet: 'เมนูเวียดนาม',
+      btnRuou: 'รายการไวน์',
+      modeSwipe: 'พลิกหน้า',
+      modeScroll: 'เลื่อนต่อเนื่อง',
+      btnFullscreen: 'เต็มจอ',
+      btnDownloadPdf: 'ดาวน์โหลด PDF',
+      hintTapZoom: 'แตะเพื่อดูแบบเต็มจอ',
+      pageCountSuffix: 'หน้า',
+      btnPrev: 'ก่อนหน้า',
+      btnNext: 'ถัดไป',
+      navAbout: 'เกี่ยวกับเรา',
+      navMenu: 'เมนู',
+      navNews: 'ข่าวสาร',
+      navCareer: 'ร่วมงานกับเรา',
+      navReserve: 'จองโต๊ะ',
+      reserveTitle: 'จองที่นั่งของคุณ<br><em>ข้างโต๊ะในสวน</em>',
+      reserveSub: 'เปิดทุกวันตั้งแต่ 07:30 น. ถึงเที่ยงคืน ติดต่อผ่าน Zalo คือช่องทางที่รวดเร็วที่สุด',
+      reserveBtn: 'จองโต๊ะ',
+      reserveZalo: 'ทักผ่าน Zalo',
+      reserveFacebook: 'เยี่ยมชม Facebook',
+      footerBrand: 'โต๊ะอาหารในสวน ริมหาดหมีเคว',
+      footerVisitTitle: 'ที่ตั้ง',
+      footerContactTitle: 'ติดต่อ',
+      footerFollowTitle: 'ติดตาม'
+    },
+    ru: {
+      lang: 'ru',
+      title: 'Меню — Casa Mika, Дананг',
+      desc: 'Полное меню Casa Mika в Дананге — азиатская и европейская кухня, авторский кофе, фирменные коктейли и тщательно подобранная винная карта.',
+      heroEyebrow: '— Меню',
+      heroTitle: 'Полное меню<br><em>для стола в саду.</em>',
+      heroSub: 'Азиатско-европейская кухня, бар и винная карта, созданные для этого часа и для каждого гостя.',
+      pdfEyebrow: '— Книги меню',
+      pdfTitle: 'Листайте меню<br><em>прямо здесь.</em>',
+      pdfSub: 'Плавно листайте на телефоне или переключайтесь между европейским меню, вьетнамским меню и винной картой.',
+      btnAu: 'Европейское меню',
+      btnViet: 'Вьетнамское меню',
+      btnRuou: 'Винная карта',
+      modeSwipe: 'Листать',
+      modeScroll: 'Прокрутка',
+      btnFullscreen: 'Во весь экран',
+      btnDownloadPdf: 'Скачать PDF',
+      hintTapZoom: 'Нажмите для просмотра во весь экран',
+      pageCountSuffix: 'стр.',
+      btnPrev: 'Назад',
+      btnNext: 'Далее',
+      navAbout: 'О нас',
+      navMenu: 'Меню',
+      navNews: 'Новости',
+      navCareer: 'Вакансии',
+      navReserve: 'Бронь',
+      reserveTitle: 'Сохраните место<br><em>за столом в саду.</em>',
+      reserveSub: 'Открыто ежедневно с половины восьмого утра до полуночи. Быстрее всего связаться с нами можно через Zalo.',
+      reserveBtn: 'Забронировать стол',
+      reserveZalo: 'Написать в Zalo',
+      reserveFacebook: 'Мы в Facebook',
+      footerBrand: 'Стол в саду у пляжа Ми Кхе.',
+      footerVisitTitle: 'Адрес',
+      footerContactTitle: 'Контакты',
+      footerFollowTitle: 'Соцсети'
     }
   }[lang];
 
   const showcaseSection = generateShowcaseHTML(lang);
-  const localeMap = { vi: 'vi_VN', en: 'en_US', de: 'de_DE', ko: 'ko_KR' };
   
   const html = `<!DOCTYPE html>
-<html lang="${meta.lang}">
+<html lang="${LANGS[lang].htmlLang}">
 
 <head>
     <!-- Google Tag Manager -->
@@ -307,7 +442,7 @@ function buildMenuPage(lang) {
     <!-- Open Graph / Facebook / Zalo -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Casa Mika">
-    <meta property="og:locale" content="${localeMap[meta.lang] || 'en_US'}">
+    <meta property="og:locale" content="${LANGS[lang].locale}">
     <meta property="og:url" content="https://casamika.com/${meta.lang}/menu/">
     <meta property="og:title" content="${meta.title}">
     <meta property="og:description" content="${meta.desc}">
@@ -327,11 +462,7 @@ function buildMenuPage(lang) {
     <link rel="icon" type="image/png" href="/image/logo/logo-new.png">
     <link rel="apple-touch-icon" href="/image/logo/logo-new.png">
     <link rel="canonical" href="https://casamika.com/${meta.lang}/menu/">
-    <link rel="alternate" hreflang="en" href="https://casamika.com/en/menu/">
-    <link rel="alternate" hreflang="vi" href="https://casamika.com/vi/menu/">
-    <link rel="alternate" hreflang="de" href="https://casamika.com/de/menu/">
-    <link rel="alternate" hreflang="ko" href="https://casamika.com/ko/menu/">
-    <link rel="alternate" hreflang="x-default" href="https://casamika.com/en/menu/">
+    ${hreflangLinks('menu/')}
 
     <!-- Schema.org JSON-LD: BreadcrumbList & Menu -->
     <script type="application/ld+json">
@@ -381,15 +512,7 @@ function buildMenuPage(lang) {
                 <a href="/${meta.lang}/career/" class="ms-nav-link">${meta.navCareer}</a>
                 <a href="${reserveUrl}" target="_blank" rel="noopener" class="ms-btn ms-btn-outline ms-btn-sm">${meta.navReserve}</a>
             </div>
-            <span class="ms-lang-switch" role="group" aria-label="Language">
-                <a href="/vi/menu/" class="ms-lang ${meta.lang === 'vi' ? 'is-active' : ''}" data-lang="vi">VI</a>
-                <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/en/menu/" class="ms-lang ${meta.lang === 'en' ? 'is-active' : ''}" data-lang="en">EN</a>
-                <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/de/menu/" class="ms-lang ${meta.lang === 'de' ? 'is-active' : ''}" data-lang="de">DE</a>
-                <span class="ms-lang-sep" aria-hidden="true">|</span>
-                <a href="/ko/menu/" class="ms-lang ${meta.lang === 'ko' ? 'is-active' : ''}" data-lang="ko">KO</a>
-            </span>
+            ${langSwitcher(lang, 'menu/')}
             <button class="ms-nav-toggle" id="msNavToggle" aria-label="Menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
@@ -591,8 +714,9 @@ function buildMenuPage(lang) {
 
 </html>`;
 
+  fs.mkdirSync(path.join(__dirname, lang, 'menu'), { recursive: true });
   fs.writeFileSync(path.join(__dirname, lang, 'menu', 'index.html'), html, 'utf8');
   console.log(`Generated ${lang}/menu/index.html with interactive menu viewer!`);
 }
 
-['vi', 'en', 'de', 'ko'].forEach(buildMenuPage);
+LANG_CODES.forEach(buildMenuPage);

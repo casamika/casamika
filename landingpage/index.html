@@ -15,36 +15,40 @@
     <link rel="icon" type="image/png" href="/image/logo/logo-new.png">
     <link rel="apple-touch-icon" href="/image/logo/logo-new.png">
     <link rel="canonical" href="https://casamika.com/">
-    <link rel="alternate" hreflang="en" href="https://casamika.com/en/">
     <link rel="alternate" hreflang="vi" href="https://casamika.com/vi/">
-    <link rel="alternate" hreflang="de" href="https://casamika.com/de/">
+    <link rel="alternate" hreflang="en" href="https://casamika.com/en/">
     <link rel="alternate" hreflang="ko" href="https://casamika.com/ko/">
+    <link rel="alternate" hreflang="de" href="https://casamika.com/de/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://casamika.com/zh/">
+    <link rel="alternate" hreflang="th" href="https://casamika.com/th/">
+    <link rel="alternate" hreflang="ru" href="https://casamika.com/ru/">
     <link rel="alternate" hreflang="x-default" href="https://casamika.com/en/">
     <script src="/gate.js"></script>
     <script>
         (function () {
+            var SUPPORTED = ['vi', 'en', 'ko', 'de', 'zh', 'th', 'ru'];
+            var go = function (l) { location.replace('/' + l + '/'); };
             try {
                 // 1. URL param ?lang=xx — explicit override
                 var params = location.search ? new URLSearchParams(location.search) : null;
-                var force = params ? params.get('lang') : null;
-                if (force) {
+                var force = params ? (params.get('lang') || '').toLowerCase().slice(0, 2) : '';
+                if (SUPPORTED.indexOf(force) > -1) {
                     localStorage.setItem('mika-lang', force);
-                    var target = '/' + force + '/';
-                    if (force === 'en') target = '/en/';
-                    location.replace(target);
+                    go(force);
                     return;
                 }
 
-                // 2. Saved preference or browser language
+                // 2. Saved preference, then browser languages (zh-TW/zh-HK cũng vào /zh/)
                 var saved = localStorage.getItem('mika-lang');
-                var lang = saved || (navigator.language || '').slice(0, 2).toLowerCase();
-
-                if (lang === 'vi') location.replace('/vi/');
-                else if (lang === 'de') location.replace('/de/');
-                else if (lang === 'ko') location.replace('/ko/');
-                else location.replace('/en/');
+                if (SUPPORTED.indexOf(saved) > -1) { go(saved); return; }
+                var prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+                for (var i = 0; i < prefs.length; i++) {
+                    var l = String(prefs[i]).slice(0, 2).toLowerCase();
+                    if (SUPPORTED.indexOf(l) > -1) { go(l); return; }
+                }
+                go('en');
             } catch (e) {
-                location.replace('/en/');
+                go('en');
             }
         })();
     </script>

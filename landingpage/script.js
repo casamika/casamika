@@ -163,6 +163,52 @@ const initCasaMika = () => {
         });
     }
 
+    // Language dropdown (VI · EN · KO + DE)
+    document.querySelectorAll('[data-lang-dd]').forEach((dd) => {
+        const toggle = dd.querySelector('.ms-lang-toggle');
+        const items = Array.from(dd.querySelectorAll('.ms-lang'));
+        if (!toggle || !items.length) return;
+
+        const setOpen = (open, focusItem) => {
+            dd.classList.toggle('is-open', open);
+            toggle.setAttribute('aria-expanded', String(open));
+            if (open && focusItem) (dd.querySelector('.ms-lang.is-active') || items[0]).focus();
+        };
+
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setOpen(!dd.classList.contains('is-open'), e.detail === 0);
+        });
+        toggle.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                setOpen(true, true);
+            }
+        });
+        dd.addEventListener('keydown', (e) => {
+            const idx = items.indexOf(document.activeElement);
+            if (e.key === 'Escape' && dd.classList.contains('is-open')) {
+                e.stopPropagation();
+                setOpen(false);
+                toggle.focus();
+            } else if (idx > -1 && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+                e.preventDefault();
+                const next = (idx + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
+                items[next].focus();
+            } else if (e.key === 'Tab' && idx > -1) {
+                setOpen(false);
+            }
+        });
+        document.addEventListener('click', (e) => {
+            if (!dd.contains(e.target)) setOpen(false);
+        });
+        items.forEach((item) => {
+            item.addEventListener('click', () => {
+                try { localStorage.setItem('mika-lang', item.getAttribute('data-lang')); } catch (err) { }
+            });
+        });
+    });
+
     // Lightbox (gallery)
     const lightbox = document.getElementById('msLightbox');
     if (lightbox) {
@@ -299,6 +345,12 @@ const initCasaMika = () => {
             return `/image/menu-pages/${bookKey}/page-${pageNum}.webp`;
         };
 
+        // Nhãn "Trang" theo ngôn ngữ trang (html lang)
+        const pageWord = {
+            vi: 'Trang', en: 'Page', de: 'Seite', ko: '페이지', zh: '第', th: 'หน้า', ru: 'Стр.'
+        }[(document.documentElement.lang || 'en').slice(0, 2)] || 'Page';
+        const pageLabel = (n) => (pageWord === '第' ? `第 ${n} 页` : `${pageWord} ${n}`);
+
         const updateControls = () => {
             const total = manifest[currentBook].totalPages;
             if (currentNumEl) currentNumEl.textContent = String(currentPage);
@@ -368,9 +420,9 @@ const initCasaMika = () => {
                     thumb.type = 'button';
                     thumb.className = `ms-thumb-item ${i === 1 ? 'is-active' : ''}`;
                     thumb.setAttribute('data-page', String(i));
-                    thumb.setAttribute('aria-label', `Trang ${i}`);
+                    thumb.setAttribute('aria-label', pageLabel(i));
                     thumb.innerHTML = `
-                        <img src="${getPageSrc(bookKey, i)}" alt="Trang ${i}" loading="lazy">
+                        <img src="${getPageSrc(bookKey, i)}" alt="${pageLabel(i)}" loading="lazy">
                         <span class="thumb-num">${i}</span>
                     `;
                     thumb.addEventListener('click', () => goToPage(i));
@@ -386,9 +438,16 @@ const initCasaMika = () => {
                     item.className = 'ms-scroll-page-item';
                     item.setAttribute('data-page', String(i));
                     item.innerHTML = `
-                        <span class="ms-scroll-page-badge">Trang ${i} / ${total}</span>
-                        <img src="${getPageSrc(bookKey, i)}" alt="Trang ${i}" loading="${i <= 3 ? 'eager' : 'lazy'}">
+                        <span class="ms-scroll-page-badge">${pageLabel(i)} / ${total}</span>
+                        <img src="${getPageSrc(bookKey, i)}" alt="${pageLabel(i)}" width="1200" height="1697" decoding="async" loading="${i <= 2 ? 'eager' : 'lazy'}">
                     `;
+                    const pageImg = item.querySelector('img');
+                    const markLoaded = () => item.classList.add('is-loaded');
+                    if (pageImg.complete) markLoaded();
+                    else {
+                        pageImg.addEventListener('load', markLoaded, { once: true });
+                        pageImg.addEventListener('error', markLoaded, { once: true });
+                    }
                     item.addEventListener('click', () => {
                         goToPage(i);
                         openLightbox();
