@@ -326,23 +326,19 @@ const initCasaMika = () => {
         // Fallback manifest if not found
         if (!manifest) {
             manifest = {
-                au: { key: 'au', totalPages: 8, pdf: '/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20%C3%82u.pdf' },
-                viet: { key: 'viet', totalPages: 15, pdf: '/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20Vi%E1%BB%87t%20Nam.pdf' },
-                ruou: { key: 'ruou', totalPages: 11, pdf: '/menu/Menu%20danh%20s%C3%A1ch%20c%C3%A1c%20lo%E1%BA%A1i%20r%C6%B0%E1%BB%A3u.pdf' }
+                au: { key: 'au', totalPages: 7, pdf: '/menu/casa-mika-menu-au.pdf' },
+                viet: { key: 'viet', totalPages: 15, pdf: '/menu/casa-mika-menu-viet.pdf' },
+                ruou: { key: 'ruou', totalPages: 12, pdf: '/menu/casa-mika-menu-ruou.pdf' }
             };
         }
-
-        const pdfUrlMap = {
-            au: '/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20%C3%82u.pdf',
-            viet: '/menu/Menu%20%C4%91%E1%BB%93%20%C4%83n%20Vi%E1%BB%87t%20Nam.pdf',
-            ruou: '/menu/Menu%20danh%20s%C3%A1ch%20c%C3%A1c%20lo%E1%BA%A1i%20r%C6%B0%E1%BB%A3u.pdf'
-        };
 
         let currentBook = 'au';
         let currentPage = 1;
 
+        // ?v= đổi theo nội dung menu (sinh bởi convert_pdf_to_images.mjs) → không dính cache ảnh menu cũ
         const getPageSrc = (bookKey, pageNum) => {
-            return `/image/menu-pages/${bookKey}/page-${pageNum}.webp`;
+            const v = manifest[bookKey] && manifest[bookKey].version;
+            return `/image/menu-pages/${bookKey}/page-${pageNum}.webp${v ? `?v=${v}` : ''}`;
         };
 
         // Nhãn "Trang" theo ngôn ngữ trang (html lang)
@@ -409,7 +405,7 @@ const initCasaMika = () => {
 
             // Update PDF download link
             if (downloadPdfLink) {
-                downloadPdfLink.href = pdfUrlMap[bookKey] || '#';
+                downloadPdfLink.href = bookData.pdf || '#';
             }
 
             // Render Thumbnails

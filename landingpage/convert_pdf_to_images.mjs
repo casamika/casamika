@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 import { fileURLToPath, pathToFileURL } from 'url';
 import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
 import { createCanvas } from '@napi-rs/canvas';
@@ -15,13 +16,34 @@ if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
-const filesInMenu = fs.readdirSync(menuDir);
+// Cập nhật menu: thả PDF mới vào menu/ (tên bất kỳ, miễn có chữ "Âu" / "Việt" / "Rượu"), xoá PDF cũ,
+// rồi chạy `npm run menu`. Script tự đổi tên về tên cố định bên dưới để link tải PDF không bao giờ gãy.
+const CANONICAL = {
+  au: 'casa-mika-menu-au.pdf',
+  viet: 'casa-mika-menu-viet.pdf',
+  ruou: 'casa-mika-menu-ruou.pdf'
+};
+const KEYWORDS = { au: ['Âu', 'Au'], viet: ['Việt', 'Viet'], ruou: ['Rượu', 'Ruou'] };
 
-const pdfFiles = [
-  { key: 'au', filename: filesInMenu.find(f => f.includes('Âu')) },
-  { key: 'viet', filename: filesInMenu.find(f => f.includes('Việt')) },
-  { key: 'ruou', filename: filesInMenu.find(f => f.endsWith('.pdf') && !f.includes('Âu') && !f.includes('Việt') && !f.includes('Au') && f !== 'index.html') }
-];
+function resolvePdf(key) {
+  const nfc = s => s.normalize('NFC');
+  const pdfs = fs.readdirSync(menuDir).filter(f => f.toLowerCase().endsWith('.pdf'));
+  const dropped = pdfs.filter(f => f !== CANONICAL[key] && !Object.values(CANONICAL).includes(f)
+    && KEYWORDS[key].some(k => nfc(f).includes(k)));
+  if (dropped.length > 1) {
+    throw new Error(`Có ${dropped.length} file PDF cho menu "${key}" trong menu/: ${dropped.join(', ')} — chỉ giữ lại 1 file.`);
+  }
+  if (dropped.length === 1) {
+    fs.renameSync(path.join(menuDir, dropped[0]), path.join(menuDir, CANONICAL[key]));
+    console.log(`Renamed: ${dropped[0]} -> ${CANONICAL[key]}`);
+  }
+  if (!fs.existsSync(path.join(menuDir, CANONICAL[key]))) {
+    throw new Error(`Không tìm thấy PDF cho menu "${key}" trong menu/.`);
+  }
+  return CANONICAL[key];
+}
+
+const pdfFiles = Object.keys(CANONICAL).map(key => ({ key, filename: resolvePdf(key) }));
 
 async function convertPdf(pdfItem) {
   const filePath = path.join(menuDir, pdfItem.filename);
@@ -39,9 +61,14 @@ async function convertPdf(pdfItem) {
   console.log(`  Total pages: ${numPages}`);
   
   const pagesInfo = [];
+  const hash = crypto.createHash('md5');
   const targetSubDir = path.join(outputDir, pdfItem.key);
   if (!fs.existsSync(targetSubDir)) {
     fs.mkdirSync(targetSubDir, { recursive: true });
+  }
+  // Xoá trang cũ để không sót page-N.webp thừa khi menu mới ít trang hơn
+  for (const f of fs.readdirSync(targetSubDir)) {
+    if (/^page-\d+\.webp$/.test(f)) fs.unlinkSync(path.join(targetSubDir, f));
   }
 
   for (let pageNum = 1; pageNum <= numPages; pageNum++) {
@@ -69,6 +96,7 @@ async function convertPdf(pdfItem) {
       .webp({ quality: 85, effort: 4 })
       .toFile(webpPath);
       
+    hash.update(fs.readFileSync(webpPath));
     const stat = fs.statSync(webpPath);
     console.log(`  Page ${pageNum}/${numPages} saved: ${webpFilename} (${Math.round(stat.size / 1024)} KB)`);
     
@@ -83,6 +111,9 @@ async function convertPdf(pdfItem) {
   return {
     key: pdfItem.key,
     title: pdfItem.filename.replace('.pdf', ''),
+    pdf: `/menu/${pdfItem.filename}`,
+    // Đổi mỗi khi nội dung trang đổi → script.js gắn ?v= để trình duyệt/CDN không giữ ảnh menu cũ
+    version: hash.digest('hex').slice(0, 8),
     totalPages: numPages,
     pages: pagesInfo
   };

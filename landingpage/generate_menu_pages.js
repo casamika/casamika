@@ -544,15 +544,15 @@ function buildMenuPage(lang) {
             <!-- Book selector tabs -->
             <div class="ms-menu-book-tabs fade-up delay-1" role="tablist">
                 <button type="button" class="ms-menu-book-tab is-active" data-book="au" role="tab" aria-selected="true">
-                    <span class="tab-badge">7 ${meta.pageCountSuffix}</span>
+                    <span class="tab-badge">${menuManifest.au.totalPages} ${meta.pageCountSuffix}</span>
                     <span class="tab-name">${meta.btnAu}</span>
                 </button>
                 <button type="button" class="ms-menu-book-tab" data-book="viet" role="tab" aria-selected="false">
-                    <span class="tab-badge">15 ${meta.pageCountSuffix}</span>
+                    <span class="tab-badge">${menuManifest.viet.totalPages} ${meta.pageCountSuffix}</span>
                     <span class="tab-name">${meta.btnViet}</span>
                 </button>
                 <button type="button" class="ms-menu-book-tab" data-book="ruou" role="tab" aria-selected="false">
-                    <span class="tab-badge">12 ${meta.pageCountSuffix}</span>
+                    <span class="tab-badge">${menuManifest.ruou.totalPages} ${meta.pageCountSuffix}</span>
                     <span class="tab-name">${meta.btnRuou}</span>
                 </button>
             </div>
@@ -575,7 +575,7 @@ function buildMenuPage(lang) {
                         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                         <span>${meta.btnFullscreen}</span>
                     </button>
-                    <a href="/menu/Menu%20%C3%82u%20CasaMika%2021_10.pdf" target="_blank" rel="noopener" class="ms-action-btn" id="msDownloadPdfLink">
+                    <a href="${menuManifest.au.pdf}" target="_blank" rel="noopener" class="ms-action-btn" id="msDownloadPdfLink">
                         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         <span>${meta.btnDownloadPdf}</span>
                     </a>
@@ -607,7 +607,7 @@ function buildMenuPage(lang) {
 
                 <!-- Page indicator pill -->
                 <div class="ms-viewer-page-pill" id="msViewerPagePill">
-                    <span id="msCurrentPageNum">1</span> / <span id="msTotalPagesNum">7</span>
+                    <span id="msCurrentPageNum">1</span> / <span id="msTotalPagesNum">${menuManifest.au.totalPages}</span>
                 </div>
 
                 <!-- CONTINUOUS SCROLL VIEW (hidden by default) -->
@@ -642,7 +642,7 @@ function buildMenuPage(lang) {
                 </button>
             </div>
             <div class="ms-lightbox-footer">
-                <span class="ms-lightbox-counter" id="msLightboxCounter">1 / 7</span>
+                <span class="ms-lightbox-counter" id="msLightboxCounter">1 / ${menuManifest.au.totalPages}</span>
             </div>
         </div>
     </div>

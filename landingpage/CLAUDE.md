@@ -203,7 +203,9 @@ Address:   37 Trần Bạch Đằng, Ngũ Hành Sơn, Đà Nẵng 50000 (NAP chu
 Hours:     Mon–Fri 07:30 – 00:00 · Sat–Sun 07:30 – 00:30
 ```
 
-**Chế độ bảo trì:** `var MAINTENANCE = true;` đầu `gate.js` → phủ màn hình "Website đang bảo trì — nhà hàng vẫn mở cửa" (7 ngôn ngữ, mặc định theo `<html lang>`, có thanh chọn ngôn ngữ đổi tại chỗ + lưu `mika-lang`, nút Đặt bàn/Gọi/Zalo/Chỉ đường) lên mọi trang có `gate.js`. Không redirect, nội dung gốc vẫn trong HTML (giữ SEO + đích đến Google Ads). Team xem site thật: thêm `?preview=1`. Tắt: đổi `false` → deploy. Event GTM: `cm_maintenance_view`, `cm_maintenance_lang`.
+**Cập nhật cuốn menu (PDF):** thả PDF mới vào `menu/` (tên bất kỳ, có chữ "Âu" / "Việt" / "Rượu"), rồi `npm run menu`. `convert_pdf_to_images.mjs` tự đổi tên về `casa-mika-menu-{au,viet,ruou}.pdf` (ghi đè bản cũ), render `image/menu-pages/{key}/page-N.webp`, ghi `menu-manifest.json` (`pdf`, `version`, `totalPages`) và sinh lại `{lang}/menu/`. Số trang, link "Tải PDF" và `?v=` chống cache đều lấy từ manifest — không hard-code ở đâu khác.
+
+**Chế độ bảo trì (hiện đang TẮT từ 18/11/2026):** `var MAINTENANCE = true;` đầu `gate.js` → phủ màn hình "Website đang bảo trì — nhà hàng vẫn mở cửa" (7 ngôn ngữ, mặc định theo `<html lang>`, có thanh chọn ngôn ngữ đổi tại chỗ + lưu `mika-lang`, nút Đặt bàn/Gọi/Zalo/Chỉ đường) lên mọi trang có `gate.js`. Không redirect, nội dung gốc vẫn trong HTML (giữ SEO + đích đến Google Ads). Team xem site thật: thêm `?preview=1`. Tắt: đổi `false` → deploy. Event GTM: `cm_maintenance_view`, `cm_maintenance_lang`.
 
 **Local SEO / Google Maps:** NAP, toạ độ pin thật, CID, URL embed + chỉ đường nằm trong `BUSINESS` (`lang-config.js`) — sửa 1 chỗ rồi `npm run generate`. Section `#reserve` trên homepage có nút Gọi / Chỉ đường + iframe `https://www.google.com/maps?cid=…&output=embed` (hiện đúng thẻ doanh nghiệp). JSON-LD có `hasMap`, `geo`, `ReserveAction`. `script.js` đẩy event `cm_contact_click` (contact_type: reserve/call/zalo/directions/map/facebook/email) vào dataLayer cho GTM → GA4 / Google Ads conversion.
 

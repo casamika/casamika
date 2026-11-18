@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "generate": "node generate_homepages.js && node generate_menu_pages.js && node generate_news_pages.js && node generate_sitemap.js",
+    "menu": "node convert_pdf_to_images.mjs && node generate_menu_pages.js",
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview --host"

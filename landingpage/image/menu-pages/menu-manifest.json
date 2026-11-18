@@ -1,7 +1,9 @@
 {
   "au": {
     "key": "au",
-    "title": "Menu Au CasaMika 21_10",
+    "title": "casa-mika-menu-au",
+    "pdf": "/menu/casa-mika-menu-au.pdf",
+    "version": "f42ef886",
     "totalPages": 7,
     "pages": [
       {
@@ -50,7 +52,9 @@
   },
   "viet": {
     "key": "viet",
-    "title": "Menu do an Viet Nam - Vietnamese Menu",
+    "title": "casa-mika-menu-viet",
+    "pdf": "/menu/casa-mika-menu-viet.pdf",
+    "version": "6075f828",
     "totalPages": 15,
     "pages": [
       {
@@ -147,7 +151,9 @@
   },
   "ruou": {
     "key": "ruou",
-    "title": "Menu Rượu CasaMika 21_10",
+    "title": "casa-mika-menu-ruou",
+    "pdf": "/menu/casa-mika-menu-ruou.pdf",
+    "version": "37913708",
     "totalPages": 12,
     "pages": [
       {
